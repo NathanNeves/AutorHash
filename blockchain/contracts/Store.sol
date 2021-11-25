@@ -5,7 +5,7 @@ contract Store{
     Apsota public token;
     event Bought( address indexed sender ,uint256 amount);
     event Sold( address indexed sender,uint256 amount);
-    constructor(){
+    constructor() public{
         token = new Apsota();
         minter = msg.sender;
     }
@@ -14,7 +14,7 @@ contract Store{
         uint256 amountToBuy = msg.value;
         uint256 balance = token.balanceOf(address(this));
         require(amountToBuy > 0, "Voce precisa enviar algum bnb");
-        require(amountToBuy <= balance);
+        require(amountToBuy <= balance, 'Balanco nao funciona');
         token.transfer(msg.sender,amountToBuy);
         emit Bought(msg.sender,amountToBuy);
     }

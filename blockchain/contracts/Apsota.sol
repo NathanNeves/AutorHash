@@ -5,15 +5,14 @@ contract Apsota is IERC20{
     address public minter;
     mapping(address => uint256) public balances;
     mapping(address => mapping(address => uint256)) public allowed;
-    string  constant name  = "Apsota";
+    string  constant name  = "AutoCoin";
     int8 public constant decimals = 10;
     string public symbol;
     uint256 public totalSupply = 10**18 ;
-    uint256 private timeSinceLastReward;
 
     constructor(){
-        minter = msg.sender;
-        symbol = "Aps";
+        symbol = "ATC";
+        balances[msg.sender] = totalSupply;
        
     
     }
