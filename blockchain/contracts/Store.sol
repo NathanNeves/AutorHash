@@ -1,12 +1,12 @@
 pragma solidity >= 0.7.0 < 0.9.0;
-import './Apsota.sol';
+import './Token.sol';
 contract Store{
     address public minter;
-    Apsota public token;
+    Token public token;
     event Bought( address indexed sender ,uint256 amount);
     event Sold( address indexed sender,uint256 amount);
     constructor(){
-        token = new Apsota();
+        token = new Token();
         minter = msg.sender;
     }
 

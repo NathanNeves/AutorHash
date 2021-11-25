@@ -1,5 +1,5 @@
-const Apsota = artifacts.require("Apsota");
+const Token = artifacts.require("Token");
 
 module.exports = function (deployer) {
-  deployer.deploy(Apsota);
+  deployer.deploy(Token);
 };

@@ -63,7 +63,7 @@
       "name": "token",
       "outputs": [
         {
-          "internalType": "contract Apsota",
+          "internalType": "contract Token",
           "name": "",
           "type": "address"
         }
@@ -94,7 +94,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Bought\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Sold\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"buy\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minter\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"sell\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract Apsota\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Store.sol\":\"Store\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Apsota.sol\":{\"keccak256\":\"0xe3a015a5a154494953332d16d010d1f41e2837ef0340758201b479cf11f827bb\",\"urls\":[\"bzz-raw://5f9a896b09f1886e94ee3cb79e5c44e369ad1a6dc4922b751364fd09d0ad419d\",\"dweb:/ipfs/QmW1TVepVoo41aRxzND1JqrfF15VBqupJrTk3Kce41aQ5t\"]},\"project:/contracts/IERC20.sol\":{\"keccak256\":\"0xf0bd660bbe979a93fab866a8bb65989bc5ca6136eb56273a91902a4f94363a81\",\"license\":\"MIT LICENSE\",\"urls\":[\"bzz-raw://983807931010a0a7969230ec6f42af14716239cca5eac202f20f37caa7aec6d8\",\"dweb:/ipfs/QmV7EAuuedo1muFVBuinmaLf7ZhHrY6KzgpmPZpyTDe6ME\"]},\"project:/contracts/Store.sol\":{\"keccak256\":\"0xcad372731ac9f3b5edcc38642ea254f0cf968b3a5fc22e9550ab74ae920f7b60\",\"urls\":[\"bzz-raw://94b1d7b849d945b75452656d6809b6cc90ad109f1bd67d7b42e4ba56f9fe40b5\",\"dweb:/ipfs/QmdMxSmU1NDvJcfmgit7QiXZ1HbU9TTa583nMBN8xqUmS4\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Bought\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Sold\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"buy\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minter\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"sell\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract Token\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Store.sol\":\"Store\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Token.sol\":{\"keccak256\":\"0xe3a015a5a154494953332d16d010d1f41e2837ef0340758201b479cf11f827bb\",\"urls\":[\"bzz-raw://5f9a896b09f1886e94ee3cb79e5c44e369ad1a6dc4922b751364fd09d0ad419d\",\"dweb:/ipfs/QmW1TVepVoo41aRxzND1JqrfF15VBqupJrTk3Kce41aQ5t\"]},\"project:/contracts/IERC20.sol\":{\"keccak256\":\"0xf0bd660bbe979a93fab866a8bb65989bc5ca6136eb56273a91902a4f94363a81\",\"license\":\"MIT LICENSE\",\"urls\":[\"bzz-raw://983807931010a0a7969230ec6f42af14716239cca5eac202f20f37caa7aec6d8\",\"dweb:/ipfs/QmV7EAuuedo1muFVBuinmaLf7ZhHrY6KzgpmPZpyTDe6ME\"]},\"project:/contracts/Store.sol\":{\"keccak256\":\"0xcad372731ac9f3b5edcc38642ea254f0cf968b3a5fc22e9550ab74ae920f7b60\",\"urls\":[\"bzz-raw://94b1d7b849d945b75452656d6809b6cc90ad109f1bd67d7b42e4ba56f9fe40b5\",\"dweb:/ipfs/QmdMxSmU1NDvJcfmgit7QiXZ1HbU9TTa583nMBN8xqUmS4\"]}},\"version\":1}",
   "bytecode": "0x608060405234801561001057600080fd5b5060405161001d906100bf565b604051809103906000f080158015610039573d6000803e3d6000fd5b50600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506100cc565b6111ad80610ac383390190565b6109e8806100db6000396000f3fe60806040526004361061003f5760003560e01c80630754617214610044578063a6f2ae3a1461006f578063e4849b3214610079578063fc0c546a146100a2575b600080fd5b34801561005057600080fd5b506100596100cd565b60405161006691906105e0565b60405180910390f35b6100776100f1565b005b34801561008557600080fd5b506100a0600480360381019061009b9190610636565b6102f7565b005b3480156100ae57600080fd5b506100b7610579565b6040516100c491906106c2565b60405180910390f35b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60003490506000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306040518263ffffffff1660e01b815260040161015391906105e0565b60206040518083038186803b15801561016b57600080fd5b505afa15801561017f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101a391906106f2565b9050600082116101e8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016101df9061077c565b60405180910390fd5b808211156101f557600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a9059cbb33846040518363ffffffff1660e01b81526004016102529291906107ab565b602060405180830381600087803b15801561026c57600080fd5b505af1158015610280573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102a4919061080c565b503373ffffffffffffffffffffffffffffffffffffffff167fc55650ccda1011e1cdc769b1fbf546ebb8c97800b6072b49e06cd560305b1d67836040516102eb9190610839565b60405180910390a25050565b6000811161033a576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610331906108c6565b60405180910390fd5b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663dd62ed3e33306040518363ffffffff1660e01b81526004016103999291906108e6565b60206040518083038186803b1580156103b157600080fd5b505afa1580156103c5573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103e991906106f2565b90508181101561042e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016104259061095b565b60405180910390fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166323b872dd3330856040518463ffffffff1660e01b815260040161048d9392919061097b565b602060405180830381600087803b1580156104a757600080fd5b505af11580156104bb573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104df919061080c565b503373ffffffffffffffffffffffffffffffffffffffff166108fc839081150290604051600060405180830381858888f19350505050158015610526573d6000803e3d6000fd5b503373ffffffffffffffffffffffffffffffffffffffff167fae92ab4b6f8f401ead768d3273e6bb937a13e39827d19c6376e8fd4512a05d9a8360405161056d9190610839565b60405180910390a25050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006105ca8261059f565b9050919050565b6105da816105bf565b82525050565b60006020820190506105f560008301846105d1565b92915050565b600080fd5b6000819050919050565b61061381610600565b811461061e57600080fd5b50565b6000813590506106308161060a565b92915050565b60006020828403121561064c5761064b6105fb565b5b600061065a84828501610621565b91505092915050565b6000819050919050565b600061068861068361067e8461059f565b610663565b61059f565b9050919050565b600061069a8261066d565b9050919050565b60006106ac8261068f565b9050919050565b6106bc816106a1565b82525050565b60006020820190506106d760008301846106b3565b92915050565b6000815190506106ec8161060a565b92915050565b600060208284031215610708576107076105fb565b5b6000610716848285016106dd565b91505092915050565b600082825260208201905092915050565b7f566f6365207072656369736120656e7669617220616c67756d20626e62000000600082015250565b6000610766601d8361071f565b915061077182610730565b602082019050919050565b6000602082019050818103600083015261079581610759565b9050919050565b6107a581610600565b82525050565b60006040820190506107c060008301856105d1565b6107cd602083018461079c565b9392505050565b60008115159050919050565b6107e9816107d4565b81146107f457600080fd5b50565b600081519050610806816107e0565b92915050565b600060208284031215610822576108216105fb565b5b6000610830848285016107f7565b91505092915050565b600060208201905061084e600083018461079c565b92915050565b7f566f636520707265636973612076656e6465722070656c6f206d656e6f73206160008201527f6c67756e7320746f6b656e730000000000000000000000000000000000000000602082015250565b60006108b0602c8361071f565b91506108bb82610854565b604082019050919050565b600060208201905081810360008301526108df816108a3565b9050919050565b60006040820190506108fb60008301856105d1565b61090860208301846105d1565b9392505050565b7f436865636b2074686520746f6b656e20616c6c6f77616e636500000000000000600082015250565b600061094560198361071f565b91506109508261090f565b602082019050919050565b6000602082019050818103600083015261097481610938565b9050919050565b600060608201905061099060008301866105d1565b61099d60208301856105d1565b6109aa604083018461079c565b94935050505056fea2646970667358221220e40a9843aa44bd76248dee133a25495ff38578891d9ed8970b9578a03e7d434e64736f6c634300080900336080604052670de0b6b3a76400006004553480156200001d57600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506040518060400160405280600381526020017f417073000000000000000000000000000000000000000000000000000000000081525060039080519060200190620000ab929190620000b2565b50620001c7565b828054620000c09062000191565b90600052602060002090601f016020900481019282620000e4576000855562000130565b82601f10620000ff57805160ff191683800117855562000130565b8280016001018555821562000130579182015b828111156200012f57825182559160200191906001019062000112565b5b5090506200013f919062000143565b5090565b5b808211156200015e57600081600090555060010162000144565b5090565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b60006002820490506001821680620001aa57607f821691505b60208210811415620001c157620001c062000162565b5b50919050565b610fd680620001d76000396000f3fe608060405234801561001057600080fd5b50600436106100b45760003560e01c8063313ce56711610071578063313ce567146101a35780635c658165146101c157806370a08231146101f157806395d89b4114610221578063a9059cbb1461023f578063dd62ed3e1461026f576100b4565b806307546172146100b9578063095ea7b3146100d75780631249c58b1461010757806318160ddd1461012557806323b872dd1461014357806327e235e314610173575b600080fd5b6100c161029f565b6040516100ce9190610af8565b60405180910390f35b6100f160048036038101906100ec9190610b7a565b6102c3565b6040516100fe9190610bd5565b60405180910390f35b61010f6103b5565b60405161011c9190610bd5565b60405180910390f35b61012d61046b565b60405161013a9190610bff565b60405180910390f35b61015d60048036038101906101589190610c1a565b610471565b60405161016a9190610bd5565b60405180910390f35b61018d60048036038101906101889190610c6d565b610769565b60405161019a9190610bff565b60405180910390f35b6101ab610781565b6040516101b89190610cb6565b60405180910390f35b6101db60048036038101906101d69190610cd1565b610786565b6040516101e89190610bff565b60405180910390f35b61020b60048036038101906102069190610c6d565b6107ab565b6040516102189190610bff565b60405180910390f35b6102296107f4565b6040516102369190610daa565b60405180910390f35b61025960048036038101906102549190610b7a565b610882565b6040516102669190610bd5565b60405180910390f35b61028960048036038101906102849190610cd1565b610a30565b6040516102969190610bff565b60405180910390f35b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600081600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040516103a39190610bff565b60405180910390a36001905092915050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461041057600080fd5b6000606460146004546104239190610dfb565b61042d9190610e84565b905060045481111561043e57600080fd5b60088161044b9190610dfb565b6004600082825461045c9190610eb5565b92505081905550600191505090565b60045481565b600080600260008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905082600160008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054101580156105425750828110155b61054b57600080fd5b6000606460038561055c9190610dfb565b6105669190610e84565b9050806004600082825461057a9190610f0b565b92505081905550808461058d9190610f0b565b935083600160008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282546105de9190610eb5565b9250508190555083600160008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282546106349190610f0b565b925050819055507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8210156106f75783600260008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282546106ef9190610f0b565b925050819055505b8473ffffffffffffffffffffffffffffffffffffffff168673ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef866040516107549190610bff565b60405180910390a36001925050509392505050565b60016020528060005260406000206000915090505481565b600a81565b6002602052816000526040600020602052806000526040600020600091509150505481565b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6003805461080190610f6e565b80601f016020809104026020016040519081016040528092919081815260200182805461082d90610f6e565b801561087a5780601f1061084f5761010080835404028352916020019161087a565b820191906000526020600020905b81548152906001019060200180831161085d57829003601f168201915b505050505081565b600081600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410156108d057600080fd5b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825461091f9190610f0b565b92505081905550600060646003846109379190610dfb565b6109419190610e84565b905080600460008282546109559190610f0b565b9250508190555080836109689190610f0b565b925082600160008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282546109b99190610eb5565b925050819055508373ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef85604051610a1d9190610bff565b60405180910390a3600191505092915050565b6000600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905092915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610ae282610ab7565b9050919050565b610af281610ad7565b82525050565b6000602082019050610b0d6000830184610ae9565b92915050565b600080fd5b610b2181610ad7565b8114610b2c57600080fd5b50565b600081359050610b3e81610b18565b92915050565b6000819050919050565b610b5781610b44565b8114610b6257600080fd5b50565b600081359050610b7481610b4e565b92915050565b60008060408385031215610b9157610b90610b13565b5b6000610b9f85828601610b2f565b9250506020610bb085828601610b65565b9150509250929050565b60008115159050919050565b610bcf81610bba565b82525050565b6000602082019050610bea6000830184610bc6565b92915050565b610bf981610b44565b82525050565b6000602082019050610c146000830184610bf0565b92915050565b600080600060608486031215610c3357610c32610b13565b5b6000610c4186828701610b2f565b9350506020610c5286828701610b2f565b9250506040610c6386828701610b65565b9150509250925092565b600060208284031215610c8357610c82610b13565b5b6000610c9184828501610b2f565b91505092915050565b60008160000b9050919050565b610cb081610c9a565b82525050565b6000602082019050610ccb6000830184610ca7565b92915050565b60008060408385031215610ce857610ce7610b13565b5b6000610cf685828601610b2f565b9250506020610d0785828601610b2f565b9150509250929050565b600081519050919050565b600082825260208201905092915050565b60005b83811015610d4b578082015181840152602081019050610d30565b83811115610d5a576000848401525b50505050565b6000601f19601f8301169050919050565b6000610d7c82610d11565b610d868185610d1c565b9350610d96818560208601610d2d565b610d9f81610d60565b840191505092915050565b60006020820190508181036000830152610dc48184610d71565b905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000610e0682610b44565b9150610e1183610b44565b9250817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0483118215151615610e4a57610e49610dcc565b5b828202905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b6000610e8f82610b44565b9150610e9a83610b44565b925082610eaa57610ea9610e55565b5b828204905092915050565b6000610ec082610b44565b9150610ecb83610b44565b9250827fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03821115610f0057610eff610dcc565b5b828201905092915050565b6000610f1682610b44565b9150610f2183610b44565b925082821015610f3457610f33610dcc565b5b828203905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b60006002820490506001821680610f8657607f821691505b60208210811415610f9a57610f99610f3f565b5b5091905056fea2646970667358221220c3d524aded7c348d423043dcf16c4016f17017e11fbadda7a176f4838a2975f064736f6c63430008090033",
   "deployedBytecode": "0x60806040526004361061003f5760003560e01c80630754617214610044578063a6f2ae3a1461006f578063e4849b3214610079578063fc0c546a146100a2575b600080fd5b34801561005057600080fd5b506100596100cd565b60405161006691906105e0565b60405180910390f35b6100776100f1565b005b34801561008557600080fd5b506100a0600480360381019061009b9190610636565b6102f7565b005b3480156100ae57600080fd5b506100b7610579565b6040516100c491906106c2565b60405180910390f35b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60003490506000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306040518263ffffffff1660e01b815260040161015391906105e0565b60206040518083038186803b15801561016b57600080fd5b505afa15801561017f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101a391906106f2565b9050600082116101e8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016101df9061077c565b60405180910390fd5b808211156101f557600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a9059cbb33846040518363ffffffff1660e01b81526004016102529291906107ab565b602060405180830381600087803b15801561026c57600080fd5b505af1158015610280573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102a4919061080c565b503373ffffffffffffffffffffffffffffffffffffffff167fc55650ccda1011e1cdc769b1fbf546ebb8c97800b6072b49e06cd560305b1d67836040516102eb9190610839565b60405180910390a25050565b6000811161033a576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610331906108c6565b60405180910390fd5b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663dd62ed3e33306040518363ffffffff1660e01b81526004016103999291906108e6565b60206040518083038186803b1580156103b157600080fd5b505afa1580156103c5573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103e991906106f2565b90508181101561042e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016104259061095b565b60405180910390fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166323b872dd3330856040518463ffffffff1660e01b815260040161048d9392919061097b565b602060405180830381600087803b1580156104a757600080fd5b505af11580156104bb573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104df919061080c565b503373ffffffffffffffffffffffffffffffffffffffff166108fc839081150290604051600060405180830381858888f19350505050158015610526573d6000803e3d6000fd5b503373ffffffffffffffffffffffffffffffffffffffff167fae92ab4b6f8f401ead768d3273e6bb937a13e39827d19c6376e8fd4512a05d9a8360405161056d9190610839565b60405180910390a25050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006105ca8261059f565b9050919050565b6105da816105bf565b82525050565b60006020820190506105f560008301846105d1565b92915050565b600080fd5b6000819050919050565b61061381610600565b811461061e57600080fd5b50565b6000813590506106308161060a565b92915050565b60006020828403121561064c5761064b6105fb565b5b600061065a84828501610621565b91505092915050565b6000819050919050565b600061068861068361067e8461059f565b610663565b61059f565b9050919050565b600061069a8261066d565b9050919050565b60006106ac8261068f565b9050919050565b6106bc816106a1565b82525050565b60006020820190506106d760008301846106b3565b92915050565b6000815190506106ec8161060a565b92915050565b600060208284031215610708576107076105fb565b5b6000610716848285016106dd565b91505092915050565b600082825260208201905092915050565b7f566f6365207072656369736120656e7669617220616c67756d20626e62000000600082015250565b6000610766601d8361071f565b915061077182610730565b602082019050919050565b6000602082019050818103600083015261079581610759565b9050919050565b6107a581610600565b82525050565b60006040820190506107c060008301856105d1565b6107cd602083018461079c565b9392505050565b60008115159050919050565b6107e9816107d4565b81146107f457600080fd5b50565b600081519050610806816107e0565b92915050565b600060208284031215610822576108216105fb565b5b6000610830848285016107f7565b91505092915050565b600060208201905061084e600083018461079c565b92915050565b7f566f636520707265636973612076656e6465722070656c6f206d656e6f73206160008201527f6c67756e7320746f6b656e730000000000000000000000000000000000000000602082015250565b60006108b0602c8361071f565b91506108bb82610854565b604082019050919050565b600060208201905081810360008301526108df816108a3565b9050919050565b60006040820190506108fb60008301856105d1565b61090860208301846105d1565b9392505050565b7f436865636b2074686520746f6b656e20616c6c6f77616e636500000000000000600082015250565b600061094560198361071f565b91506109508261090f565b602082019050919050565b6000602082019050818103600083015261097481610938565b9050919050565b600060608201905061099060008301866105d1565b61099d60208301856105d1565b6109aa604083018461079c565b94935050505056fea2646970667358221220e40a9843aa44bd76248dee133a25495ff38578891d9ed8970b9578a03e7d434e64736f6c63430008090033",
   "immutableReferences": {},
@@ -1119,7 +1119,7 @@
                 }
               ]
             },
-            "name": "convert_t_contract$_Apsota_$2029_to_t_address",
+            "name": "convert_t_contract$_Token_$2029_to_t_address",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -1161,7 +1161,7 @@
                           }
                         ],
                         "functionName": {
-                          "name": "convert_t_contract$_Apsota_$2029_to_t_address",
+                          "name": "convert_t_contract$_Token_$2029_to_t_address",
                           "nodeType": "YulIdentifier",
                           "src": "2206:45:16"
                         },
@@ -1182,7 +1182,7 @@
                 }
               ]
             },
-            "name": "abi_encode_t_contract$_Apsota_$2029_to_t_address_fromStack",
+            "name": "abi_encode_t_contract$_Token_$2029_to_t_address_fromStack",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -1272,7 +1272,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "abi_encode_t_contract$_Apsota_$2029_to_t_address_fromStack",
+                      "name": "abi_encode_t_contract$_Token_$2029_to_t_address_fromStack",
                       "nodeType": "YulIdentifier",
                       "src": "2430:58:16"
                     },
@@ -1284,7 +1284,7 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_contract$_Apsota_$2029__to_t_address__fromStack_reversed",
+            "name": "abi_encode_tuple_t_contract$_Token_$2029__to_t_address__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -3792,7 +3792,7 @@
           }
         ]
       },
-      "contents": "{\n\n    function cleanup_t_uint160(value) -> cleaned {\n        cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)\n    }\n\n    function cleanup_t_address(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function abi_encode_t_address_to_t_address_fromStack(value, pos) {\n        mstore(pos, cleanup_t_address(value))\n    }\n\n    function abi_encode_tuple_t_address__to_t_address__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function allocate_unbounded() -> memPtr {\n        memPtr := mload(64)\n    }\n\n    function revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() {\n        revert(0, 0)\n    }\n\n    function revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() {\n        revert(0, 0)\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function validator_revert_t_uint256(value) {\n        if iszero(eq(value, cleanup_t_uint256(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_uint256(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function identity(value) -> ret {\n        ret := value\n    }\n\n    function convert_t_uint160_to_t_uint160(value) -> converted {\n        converted := cleanup_t_uint160(identity(cleanup_t_uint160(value)))\n    }\n\n    function convert_t_uint160_to_t_address(value) -> converted {\n        converted := convert_t_uint160_to_t_uint160(value)\n    }\n\n    function convert_t_contract$_Apsota_$2029_to_t_address(value) -> converted {\n        converted := convert_t_uint160_to_t_address(value)\n    }\n\n    function abi_encode_t_contract$_Apsota_$2029_to_t_address_fromStack(value, pos) {\n        mstore(pos, convert_t_contract$_Apsota_$2029_to_t_address(value))\n    }\n\n    function abi_encode_tuple_t_contract$_Apsota_$2029__to_t_address__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_contract$_Apsota_$2029_to_t_address_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function abi_decode_t_uint256_fromMemory(offset, end) -> value {\n        value := mload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    function abi_decode_tuple_t_uint256_fromMemory(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_uint256_fromMemory(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function store_literal_in_memory_eaf7c8d7df147e21c80bbabda5a0fce4f2e33768bf7020106c09627633de6890(memPtr) {\n\n        mstore(add(memPtr, 0), \"Voce precisa enviar algum bnb\")\n\n    }\n\n    function abi_encode_t_stringliteral_eaf7c8d7df147e21c80bbabda5a0fce4f2e33768bf7020106c09627633de6890_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 29)\n        store_literal_in_memory_eaf7c8d7df147e21c80bbabda5a0fce4f2e33768bf7020106c09627633de6890(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_eaf7c8d7df147e21c80bbabda5a0fce4f2e33768bf7020106c09627633de6890__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_eaf7c8d7df147e21c80bbabda5a0fce4f2e33768bf7020106c09627633de6890_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function abi_encode_t_uint256_to_t_uint256_fromStack(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    function abi_encode_tuple_t_address_t_uint256__to_t_address_t_uint256__fromStack_reversed(headStart , value1, value0) -> tail {\n        tail := add(headStart, 64)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value1,  add(headStart, 32))\n\n    }\n\n    function cleanup_t_bool(value) -> cleaned {\n        cleaned := iszero(iszero(value))\n    }\n\n    function validator_revert_t_bool(value) {\n        if iszero(eq(value, cleanup_t_bool(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_bool_fromMemory(offset, end) -> value {\n        value := mload(offset)\n        validator_revert_t_bool(value)\n    }\n\n    function abi_decode_tuple_t_bool_fromMemory(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_bool_fromMemory(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function store_literal_in_memory_653a8d4b3456ab29713f9ab41f65339a9fe1aa43c177ecc49010c3df112e5de8(memPtr) {\n\n        mstore(add(memPtr, 0), \"Voce precisa vender pelo menos a\")\n\n        mstore(add(memPtr, 32), \"lguns tokens\")\n\n    }\n\n    function abi_encode_t_stringliteral_653a8d4b3456ab29713f9ab41f65339a9fe1aa43c177ecc49010c3df112e5de8_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 44)\n        store_literal_in_memory_653a8d4b3456ab29713f9ab41f65339a9fe1aa43c177ecc49010c3df112e5de8(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_653a8d4b3456ab29713f9ab41f65339a9fe1aa43c177ecc49010c3df112e5de8__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_653a8d4b3456ab29713f9ab41f65339a9fe1aa43c177ecc49010c3df112e5de8_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function abi_encode_tuple_t_address_t_address__to_t_address_t_address__fromStack_reversed(headStart , value1, value0) -> tail {\n        tail := add(headStart, 64)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_address_to_t_address_fromStack(value1,  add(headStart, 32))\n\n    }\n\n    function store_literal_in_memory_727fc1e09070e074c1e4faeaff9f905dd58d37cba7b8f174a2a35f24c4fc6650(memPtr) {\n\n        mstore(add(memPtr, 0), \"Check the token allowance\")\n\n    }\n\n    function abi_encode_t_stringliteral_727fc1e09070e074c1e4faeaff9f905dd58d37cba7b8f174a2a35f24c4fc6650_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 25)\n        store_literal_in_memory_727fc1e09070e074c1e4faeaff9f905dd58d37cba7b8f174a2a35f24c4fc6650(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_727fc1e09070e074c1e4faeaff9f905dd58d37cba7b8f174a2a35f24c4fc6650__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_727fc1e09070e074c1e4faeaff9f905dd58d37cba7b8f174a2a35f24c4fc6650_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function abi_encode_tuple_t_address_t_address_t_uint256__to_t_address_t_address_t_uint256__fromStack_reversed(headStart , value2, value1, value0) -> tail {\n        tail := add(headStart, 96)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_address_to_t_address_fromStack(value1,  add(headStart, 32))\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value2,  add(headStart, 64))\n\n    }\n\n}\n",
+      "contents": "{\n\n    function cleanup_t_uint160(value) -> cleaned {\n        cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)\n    }\n\n    function cleanup_t_address(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function abi_encode_t_address_to_t_address_fromStack(value, pos) {\n        mstore(pos, cleanup_t_address(value))\n    }\n\n    function abi_encode_tuple_t_address__to_t_address__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function allocate_unbounded() -> memPtr {\n        memPtr := mload(64)\n    }\n\n    function revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() {\n        revert(0, 0)\n    }\n\n    function revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() {\n        revert(0, 0)\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function validator_revert_t_uint256(value) {\n        if iszero(eq(value, cleanup_t_uint256(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_uint256(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function identity(value) -> ret {\n        ret := value\n    }\n\n    function convert_t_uint160_to_t_uint160(value) -> converted {\n        converted := cleanup_t_uint160(identity(cleanup_t_uint160(value)))\n    }\n\n    function convert_t_uint160_to_t_address(value) -> converted {\n        converted := convert_t_uint160_to_t_uint160(value)\n    }\n\n    function convert_t_contract$_Token_$2029_to_t_address(value) -> converted {\n        converted := convert_t_uint160_to_t_address(value)\n    }\n\n    function abi_encode_t_contract$_Token_$2029_to_t_address_fromStack(value, pos) {\n        mstore(pos, convert_t_contract$_Token_$2029_to_t_address(value))\n    }\n\n    function abi_encode_tuple_t_contract$_Token_$2029__to_t_address__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_contract$_Token_$2029_to_t_address_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function abi_decode_t_uint256_fromMemory(offset, end) -> value {\n        value := mload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    function abi_decode_tuple_t_uint256_fromMemory(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_uint256_fromMemory(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function store_literal_in_memory_eaf7c8d7df147e21c80bbabda5a0fce4f2e33768bf7020106c09627633de6890(memPtr) {\n\n        mstore(add(memPtr, 0), \"Voce precisa enviar algum bnb\")\n\n    }\n\n    function abi_encode_t_stringliteral_eaf7c8d7df147e21c80bbabda5a0fce4f2e33768bf7020106c09627633de6890_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 29)\n        store_literal_in_memory_eaf7c8d7df147e21c80bbabda5a0fce4f2e33768bf7020106c09627633de6890(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_eaf7c8d7df147e21c80bbabda5a0fce4f2e33768bf7020106c09627633de6890__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_eaf7c8d7df147e21c80bbabda5a0fce4f2e33768bf7020106c09627633de6890_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function abi_encode_t_uint256_to_t_uint256_fromStack(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    function abi_encode_tuple_t_address_t_uint256__to_t_address_t_uint256__fromStack_reversed(headStart , value1, value0) -> tail {\n        tail := add(headStart, 64)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value1,  add(headStart, 32))\n\n    }\n\n    function cleanup_t_bool(value) -> cleaned {\n        cleaned := iszero(iszero(value))\n    }\n\n    function validator_revert_t_bool(value) {\n        if iszero(eq(value, cleanup_t_bool(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_bool_fromMemory(offset, end) -> value {\n        value := mload(offset)\n        validator_revert_t_bool(value)\n    }\n\n    function abi_decode_tuple_t_bool_fromMemory(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_bool_fromMemory(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function store_literal_in_memory_653a8d4b3456ab29713f9ab41f65339a9fe1aa43c177ecc49010c3df112e5de8(memPtr) {\n\n        mstore(add(memPtr, 0), \"Voce precisa vender pelo menos a\")\n\n        mstore(add(memPtr, 32), \"lguns tokens\")\n\n    }\n\n    function abi_encode_t_stringliteral_653a8d4b3456ab29713f9ab41f65339a9fe1aa43c177ecc49010c3df112e5de8_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 44)\n        store_literal_in_memory_653a8d4b3456ab29713f9ab41f65339a9fe1aa43c177ecc49010c3df112e5de8(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_653a8d4b3456ab29713f9ab41f65339a9fe1aa43c177ecc49010c3df112e5de8__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_653a8d4b3456ab29713f9ab41f65339a9fe1aa43c177ecc49010c3df112e5de8_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function abi_encode_tuple_t_address_t_address__to_t_address_t_address__fromStack_reversed(headStart , value1, value0) -> tail {\n        tail := add(headStart, 64)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_address_to_t_address_fromStack(value1,  add(headStart, 32))\n\n    }\n\n    function store_literal_in_memory_727fc1e09070e074c1e4faeaff9f905dd58d37cba7b8f174a2a35f24c4fc6650(memPtr) {\n\n        mstore(add(memPtr, 0), \"Check the token allowance\")\n\n    }\n\n    function abi_encode_t_stringliteral_727fc1e09070e074c1e4faeaff9f905dd58d37cba7b8f174a2a35f24c4fc6650_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 25)\n        store_literal_in_memory_727fc1e09070e074c1e4faeaff9f905dd58d37cba7b8f174a2a35f24c4fc6650(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_727fc1e09070e074c1e4faeaff9f905dd58d37cba7b8f174a2a35f24c4fc6650__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_727fc1e09070e074c1e4faeaff9f905dd58d37cba7b8f174a2a35f24c4fc6650_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function abi_encode_tuple_t_address_t_address_t_uint256__to_t_address_t_address_t_uint256__fromStack_reversed(headStart , value2, value1, value0) -> tail {\n        tail := add(headStart, 96)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_address_to_t_address_fromStack(value1,  add(headStart, 32))\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value2,  add(headStart, 64))\n\n    }\n\n}\n",
       "id": 16,
       "language": "Yul",
       "name": "#utility.yul"
@@ -3800,12 +3800,12 @@
   ],
   "sourceMap": "59:1051:15:-:0;;;251:82;;;;;;;;;;283:12;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;275:5;;:20;;;;;;;;;;;;;;;;;;315:10;306:6;;:19;;;;;;;;;;;;;;;;;;59:1051;;;;;;;;;;:::o;:::-;;;;;;;",
   "deployedSourceMap": "59:1051:15:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;80:21;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;341:343;;;:::i;:::-;;692:413;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;108:19;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;80:21;;;;;;;;;;;;:::o;341:343::-;381:19;403:9;381:31;;423:15;441:5;;;;;;;;;;;:15;;;465:4;441:30;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;423:48;;504:1;490:11;:15;482:57;;;;;;;;;;;;:::i;:::-;;;;;;;;;573:7;558:11;:22;;550:31;;;;;;592:5;;;;;;;;;;;:14;;;607:10;618:11;592:38;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;653:10;646:30;;;664:11;646:30;;;;;;:::i;:::-;;;;;;;;370:314;;341:343::o;692:413::-;756:1;747:6;:10;739:67;;;;;;;;;;;;:::i;:::-;;;;;;;;;817:17;837:5;;;;;;;;;;;:15;;;853:10;873:4;837:42;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;817:62;;911:6;898:9;:19;;890:57;;;;;;;;;;;;:::i;:::-;;;;;;;;;958:5;;;;;;;;;;;:18;;;977:10;997:4;1004:6;958:53;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1030:10;1022:28;;:36;1051:6;1022:36;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1079:10;1074:23;;;1090:6;1074:23;;;;;;:::i;:::-;;;;;;;;728:377;692:413;:::o;108:19::-;;;;;;;;;;;;;:::o;7:126:16:-;44:7;84:42;77:5;73:54;62:65;;7:126;;;:::o;139:96::-;176:7;205:24;223:5;205:24;:::i;:::-;194:35;;139:96;;;:::o;241:118::-;328:24;346:5;328:24;:::i;:::-;323:3;316:37;241:118;;:::o;365:222::-;458:4;496:2;485:9;481:18;473:26;;509:71;577:1;566:9;562:17;553:6;509:71;:::i;:::-;365:222;;;;:::o;674:117::-;783:1;780;773:12;920:77;957:7;986:5;975:16;;920:77;;;:::o;1003:122::-;1076:24;1094:5;1076:24;:::i;:::-;1069:5;1066:35;1056:63;;1115:1;1112;1105:12;1056:63;1003:122;:::o;1131:139::-;1177:5;1215:6;1202:20;1193:29;;1231:33;1258:5;1231:33;:::i;:::-;1131:139;;;;:::o;1276:329::-;1335:6;1384:2;1372:9;1363:7;1359:23;1355:32;1352:119;;;1390:79;;:::i;:::-;1352:119;1510:1;1535:53;1580:7;1571:6;1560:9;1556:22;1535:53;:::i;:::-;1525:63;;1481:117;1276:329;;;;:::o;1611:60::-;1639:3;1660:5;1653:12;;1611:60;;;:::o;1677:142::-;1727:9;1760:53;1778:34;1787:24;1805:5;1787:24;:::i;:::-;1778:34;:::i;:::-;1760:53;:::i;:::-;1747:66;;1677:142;;;:::o;1825:126::-;1875:9;1908:37;1939:5;1908:37;:::i;:::-;1895:50;;1825:126;;;:::o;1957:141::-;2022:9;2055:37;2086:5;2055:37;:::i;:::-;2042:50;;1957:141;;;:::o;2104:161::-;2206:52;2252:5;2206:52;:::i;:::-;2201:3;2194:65;2104:161;;:::o;2271:252::-;2379:4;2417:2;2406:9;2402:18;2394:26;;2430:86;2513:1;2502:9;2498:17;2489:6;2430:86;:::i;:::-;2271:252;;;;:::o;2529:143::-;2586:5;2617:6;2611:13;2602:22;;2633:33;2660:5;2633:33;:::i;:::-;2529:143;;;;:::o;2678:351::-;2748:6;2797:2;2785:9;2776:7;2772:23;2768:32;2765:119;;;2803:79;;:::i;:::-;2765:119;2923:1;2948:64;3004:7;2995:6;2984:9;2980:22;2948:64;:::i;:::-;2938:74;;2894:128;2678:351;;;;:::o;3035:169::-;3119:11;3153:6;3148:3;3141:19;3193:4;3188:3;3184:14;3169:29;;3035:169;;;;:::o;3210:179::-;3350:31;3346:1;3338:6;3334:14;3327:55;3210:179;:::o;3395:366::-;3537:3;3558:67;3622:2;3617:3;3558:67;:::i;:::-;3551:74;;3634:93;3723:3;3634:93;:::i;:::-;3752:2;3747:3;3743:12;3736:19;;3395:366;;;:::o;3767:419::-;3933:4;3971:2;3960:9;3956:18;3948:26;;4020:9;4014:4;4010:20;4006:1;3995:9;3991:17;3984:47;4048:131;4174:4;4048:131;:::i;:::-;4040:139;;3767:419;;;:::o;4192:118::-;4279:24;4297:5;4279:24;:::i;:::-;4274:3;4267:37;4192:118;;:::o;4316:332::-;4437:4;4475:2;4464:9;4460:18;4452:26;;4488:71;4556:1;4545:9;4541:17;4532:6;4488:71;:::i;:::-;4569:72;4637:2;4626:9;4622:18;4613:6;4569:72;:::i;:::-;4316:332;;;;;:::o;4654:90::-;4688:7;4731:5;4724:13;4717:21;4706:32;;4654:90;;;:::o;4750:116::-;4820:21;4835:5;4820:21;:::i;:::-;4813:5;4810:32;4800:60;;4856:1;4853;4846:12;4800:60;4750:116;:::o;4872:137::-;4926:5;4957:6;4951:13;4942:22;;4973:30;4997:5;4973:30;:::i;:::-;4872:137;;;;:::o;5015:345::-;5082:6;5131:2;5119:9;5110:7;5106:23;5102:32;5099:119;;;5137:79;;:::i;:::-;5099:119;5257:1;5282:61;5335:7;5326:6;5315:9;5311:22;5282:61;:::i;:::-;5272:71;;5228:125;5015:345;;;;:::o;5366:222::-;5459:4;5497:2;5486:9;5482:18;5474:26;;5510:71;5578:1;5567:9;5563:17;5554:6;5510:71;:::i;:::-;5366:222;;;;:::o;5594:231::-;5734:34;5730:1;5722:6;5718:14;5711:58;5803:14;5798:2;5790:6;5786:15;5779:39;5594:231;:::o;5831:366::-;5973:3;5994:67;6058:2;6053:3;5994:67;:::i;:::-;5987:74;;6070:93;6159:3;6070:93;:::i;:::-;6188:2;6183:3;6179:12;6172:19;;5831:366;;;:::o;6203:419::-;6369:4;6407:2;6396:9;6392:18;6384:26;;6456:9;6450:4;6446:20;6442:1;6431:9;6427:17;6420:47;6484:131;6610:4;6484:131;:::i;:::-;6476:139;;6203:419;;;:::o;6628:332::-;6749:4;6787:2;6776:9;6772:18;6764:26;;6800:71;6868:1;6857:9;6853:17;6844:6;6800:71;:::i;:::-;6881:72;6949:2;6938:9;6934:18;6925:6;6881:72;:::i;:::-;6628:332;;;;;:::o;6966:175::-;7106:27;7102:1;7094:6;7090:14;7083:51;6966:175;:::o;7147:366::-;7289:3;7310:67;7374:2;7369:3;7310:67;:::i;:::-;7303:74;;7386:93;7475:3;7386:93;:::i;:::-;7504:2;7499:3;7495:12;7488:19;;7147:366;;;:::o;7519:419::-;7685:4;7723:2;7712:9;7708:18;7700:26;;7772:9;7766:4;7762:20;7758:1;7747:9;7743:17;7736:47;7800:131;7926:4;7800:131;:::i;:::-;7792:139;;7519:419;;;:::o;7944:442::-;8093:4;8131:2;8120:9;8116:18;8108:26;;8144:71;8212:1;8201:9;8197:17;8188:6;8144:71;:::i;:::-;8225:72;8293:2;8282:9;8278:18;8269:6;8225:72;:::i;:::-;8307;8375:2;8364:9;8360:18;8351:6;8307:72;:::i;:::-;7944:442;;;;;;:::o",
-  "source": "pragma solidity >= 0.7.0 < 0.9.0;\r\nimport './Apsota.sol';\r\ncontract Store{\r\n    address public minter;\r\n    Apsota public token;\r\n    event Bought( address indexed sender ,uint256 amount);\r\n    event Sold( address indexed sender,uint256 amount);\r\n    constructor(){\r\n        token = new Apsota();\r\n        minter = msg.sender;\r\n    }\r\n\r\n    function buy() payable public{\r\n        uint256 amountToBuy = msg.value;\r\n        uint256 balance = token.balanceOf(address(this));\r\n        require(amountToBuy > 0, \"Voce precisa enviar algum bnb\");\r\n        require(amountToBuy <= balance);\r\n        token.transfer(msg.sender,amountToBuy);\r\n        emit Bought(msg.sender,amountToBuy);\r\n    }\r\n\r\n    function sell(uint256 amount) public{\r\n        require(amount > 0, \"Voce precisa vender pelo menos alguns tokens\");\r\n        uint256 allowance = token.allowance(msg.sender, address(this));\r\n        require(allowance >= amount, \"Check the token allowance\");\r\n        token.transferFrom(msg.sender, address(this), amount);\r\n        payable(msg.sender).transfer(amount);\r\n        emit Sold(msg.sender,amount);\r\n    }\r\n\r\n}",
-  "sourcePath": "C:\\Users\\natha\\Documents\\meusProjetos\\Apsota\\blockchain\\contracts\\Store.sol",
+  "source": "pragma solidity >= 0.7.0 < 0.9.0;\r\nimport './Token.sol';\r\ncontract Store{\r\n    address public minter;\r\n    Token public token;\r\n    event Bought( address indexed sender ,uint256 amount);\r\n    event Sold( address indexed sender,uint256 amount);\r\n    constructor(){\r\n        token = new Token();\r\n        minter = msg.sender;\r\n    }\r\n\r\n    function buy() payable public{\r\n        uint256 amountToBuy = msg.value;\r\n        uint256 balance = token.balanceOf(address(this));\r\n        require(amountToBuy > 0, \"Voce precisa enviar algum bnb\");\r\n        require(amountToBuy <= balance);\r\n        token.transfer(msg.sender,amountToBuy);\r\n        emit Bought(msg.sender,amountToBuy);\r\n    }\r\n\r\n    function sell(uint256 amount) public{\r\n        require(amount > 0, \"Voce precisa vender pelo menos alguns tokens\");\r\n        uint256 allowance = token.allowance(msg.sender, address(this));\r\n        require(allowance >= amount, \"Check the token allowance\");\r\n        token.transferFrom(msg.sender, address(this), amount);\r\n        payable(msg.sender).transfer(amount);\r\n        emit Sold(msg.sender,amount);\r\n    }\r\n\r\n}",
+  "sourcePath": "C:\\Users\\leova\\source\\repos\\AutorHash\\blockchain\\contracts\\Store.sol",
   "ast": {
     "absolutePath": "project:/contracts/Store.sol",
     "exportedSymbols": {
-      "Apsota": [
+      "Token": [
         2029
       ],
       "IERC20": [
@@ -3833,8 +3833,8 @@
         "src": "0:33:15"
       },
       {
-        "absolutePath": "project:/contracts/Apsota.sol",
-        "file": "./Apsota.sol",
+        "absolutePath": "project:/contracts/Token.sol",
+        "file": "./Token.sol",
         "id": 2196,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
@@ -3903,15 +3903,15 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Apsota_$2029",
-              "typeString": "contract Apsota"
+              "typeIdentifier": "t_contract$_Token_$2029",
+              "typeString": "contract Token"
             },
             "typeName": {
               "id": 2200,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
                 "id": 2199,
-                "name": "Apsota",
+                "name": "Token",
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 2029,
                 "src": "108:6:15"
@@ -3919,8 +3919,8 @@
               "referencedDeclaration": 2029,
               "src": "108:6:15",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Apsota_$2029",
-                "typeString": "contract Apsota"
+                "typeIdentifier": "t_contract$_Token_$2029",
+                "typeString": "contract Token"
               }
             },
             "visibility": "public"
@@ -4090,8 +4090,8 @@
                       "referencedDeclaration": 2201,
                       "src": "275:5:15",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Apsota_$2029",
-                        "typeString": "contract Apsota"
+                        "typeIdentifier": "t_contract$_Token_$2029",
+                        "typeString": "contract Token"
                       }
                     },
                     "nodeType": "Assignment",
@@ -4108,15 +4108,15 @@
                         "nodeType": "NewExpression",
                         "src": "283:10:15",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_Apsota_$2029_$",
-                          "typeString": "function () returns (contract Apsota)"
+                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_Token_$2029_$",
+                          "typeString": "function () returns (contract Token)"
                         },
                         "typeName": {
                           "id": 2218,
                           "nodeType": "UserDefinedTypeName",
                           "pathNode": {
                             "id": 2217,
-                            "name": "Apsota",
+                            "name": "Token",
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 2029,
                             "src": "287:6:15"
@@ -4124,8 +4124,8 @@
                           "referencedDeclaration": 2029,
                           "src": "287:6:15",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_Apsota_$2029",
-                            "typeString": "contract Apsota"
+                            "typeIdentifier": "t_contract$_Token_$2029",
+                            "typeString": "contract Token"
                           }
                         }
                       },
@@ -4140,14 +4140,14 @@
                       "src": "283:12:15",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Apsota_$2029",
-                        "typeString": "contract Apsota"
+                        "typeIdentifier": "t_contract$_Token_$2029",
+                        "typeString": "contract Token"
                       }
                     },
                     "src": "275:20:15",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Apsota_$2029",
-                      "typeString": "contract Apsota"
+                      "typeIdentifier": "t_contract$_Token_$2029",
+                      "typeString": "contract Token"
                     }
                   },
                   "id": 2222,
@@ -4415,8 +4415,8 @@
                         "referencedDeclaration": 2201,
                         "src": "441:5:15",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Apsota_$2029",
-                          "typeString": "contract Apsota"
+                          "typeIdentifier": "t_contract$_Token_$2029",
+                          "typeString": "contract Token"
                         }
                       },
                       "id": 2240,
@@ -4708,8 +4708,8 @@
                         "referencedDeclaration": 2201,
                         "src": "592:5:15",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Apsota_$2029",
-                          "typeString": "contract Apsota"
+                          "typeIdentifier": "t_contract$_Token_$2029",
+                          "typeString": "contract Token"
                         }
                       },
                       "id": 2262,
@@ -5110,8 +5110,8 @@
                         "referencedDeclaration": 2201,
                         "src": "837:5:15",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Apsota_$2029",
-                          "typeString": "contract Apsota"
+                          "typeIdentifier": "t_contract$_Token_$2029",
+                          "typeString": "contract Token"
                         }
                       },
                       "id": 2290,
@@ -5373,8 +5373,8 @@
                         "referencedDeclaration": 2201,
                         "src": "958:5:15",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Apsota_$2029",
-                          "typeString": "contract Apsota"
+                          "typeIdentifier": "t_contract$_Token_$2029",
+                          "typeString": "contract Token"
                         }
                       },
                       "id": 2308,
@@ -5686,7 +5686,7 @@
   "legacyAST": {
     "absolutePath": "project:/contracts/Store.sol",
     "exportedSymbols": {
-      "Apsota": [
+      "Token": [
         2029
       ],
       "IERC20": [
@@ -5714,8 +5714,8 @@
         "src": "0:33:15"
       },
       {
-        "absolutePath": "project:/contracts/Apsota.sol",
-        "file": "./Apsota.sol",
+        "absolutePath": "project:/contracts/Token.sol",
+        "file": "./Token.sol",
         "id": 2196,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
@@ -5784,15 +5784,15 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Apsota_$2029",
-              "typeString": "contract Apsota"
+              "typeIdentifier": "t_contract$_Token_$2029",
+              "typeString": "contract Token"
             },
             "typeName": {
               "id": 2200,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
                 "id": 2199,
-                "name": "Apsota",
+                "name": "Token",
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 2029,
                 "src": "108:6:15"
@@ -5800,8 +5800,8 @@
               "referencedDeclaration": 2029,
               "src": "108:6:15",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Apsota_$2029",
-                "typeString": "contract Apsota"
+                "typeIdentifier": "t_contract$_Token_$2029",
+                "typeString": "contract Token"
               }
             },
             "visibility": "public"
@@ -5971,8 +5971,8 @@
                       "referencedDeclaration": 2201,
                       "src": "275:5:15",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Apsota_$2029",
-                        "typeString": "contract Apsota"
+                        "typeIdentifier": "t_contract$_Token_$2029",
+                        "typeString": "contract Token"
                       }
                     },
                     "nodeType": "Assignment",
@@ -5989,15 +5989,15 @@
                         "nodeType": "NewExpression",
                         "src": "283:10:15",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_Apsota_$2029_$",
-                          "typeString": "function () returns (contract Apsota)"
+                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_Token_$2029_$",
+                          "typeString": "function () returns (contract Token)"
                         },
                         "typeName": {
                           "id": 2218,
                           "nodeType": "UserDefinedTypeName",
                           "pathNode": {
                             "id": 2217,
-                            "name": "Apsota",
+                            "name": "Token",
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 2029,
                             "src": "287:6:15"
@@ -6005,8 +6005,8 @@
                           "referencedDeclaration": 2029,
                           "src": "287:6:15",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_Apsota_$2029",
-                            "typeString": "contract Apsota"
+                            "typeIdentifier": "t_contract$_Token_$2029",
+                            "typeString": "contract Token"
                           }
                         }
                       },
@@ -6021,14 +6021,14 @@
                       "src": "283:12:15",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Apsota_$2029",
-                        "typeString": "contract Apsota"
+                        "typeIdentifier": "t_contract$_Token_$2029",
+                        "typeString": "contract Token"
                       }
                     },
                     "src": "275:20:15",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Apsota_$2029",
-                      "typeString": "contract Apsota"
+                      "typeIdentifier": "t_contract$_Token_$2029",
+                      "typeString": "contract Token"
                     }
                   },
                   "id": 2222,
@@ -6296,8 +6296,8 @@
                         "referencedDeclaration": 2201,
                         "src": "441:5:15",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Apsota_$2029",
-                          "typeString": "contract Apsota"
+                          "typeIdentifier": "t_contract$_Token_$2029",
+                          "typeString": "contract Token"
                         }
                       },
                       "id": 2240,
@@ -6589,8 +6589,8 @@
                         "referencedDeclaration": 2201,
                         "src": "592:5:15",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Apsota_$2029",
-                          "typeString": "contract Apsota"
+                          "typeIdentifier": "t_contract$_Token_$2029",
+                          "typeString": "contract Token"
                         }
                       },
                       "id": 2262,
@@ -6991,8 +6991,8 @@
                         "referencedDeclaration": 2201,
                         "src": "837:5:15",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Apsota_$2029",
-                          "typeString": "contract Apsota"
+                          "typeIdentifier": "t_contract$_Token_$2029",
+                          "typeString": "contract Token"
                         }
                       },
                       "id": 2290,
@@ -7254,8 +7254,8 @@
                         "referencedDeclaration": 2201,
                         "src": "958:5:15",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Apsota_$2029",
-                          "typeString": "contract Apsota"
+                          "typeIdentifier": "t_contract$_Token_$2029",
+                          "typeString": "contract Token"
                         }
                       },
                       "id": 2308,
@@ -7572,12 +7572,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x5e0E84f42b98602AaB1caDfD4ca70587146ffd21",
-      "transactionHash": "0x04316b972a4c59a21019107305cf4bf3d8c0568d9d4a04baa29e28062f75ac93"
+      "address": "0x1807195d81cce19D9b80a609a869c6ED0B32D1F4",
+      "transactionHash": "0xbdaf4f02e1b2b2b66841d1586b54abe9fc8cee132b7a6a2a63cec0d579b75c42"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-10T16:25:09.166Z",
+  "updatedAt": "2021-11-11T00:22:57.808Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

@@ -181,7 +181,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT LICENSE\r\n// Abstract contract for the full ERC20 Token standard\r\n// https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md\r\npragma solidity >= 0.7.0 < 0.9.0;\r\n\r\n\r\ninterface IERC20 {\r\n    /// @param _owner The address from which the balance will be retrieved\r\n    /// @return balance The balance\r\n    function balanceOf(address _owner) external view returns (uint256 balance);\r\n\r\n    /// @notice send `_value` token to `_to` from `msg.sender`\r\n    /// @param _to The address of the recipient\r\n    /// @param _value The amount of token to be transferred\r\n    /// @return success Whether the transfer was successful or not\r\n    function transfer(address _to, uint256 _value)\r\n        external\r\n        returns (bool success);\r\n\r\n    /// @notice send `_value` token to `_to` from `_from` on the condition it is approved by `_from`\r\n    /// @param _from The address of the sender\r\n    /// @param _to The address of the recipient\r\n    /// @param _value The amount of token to be transferred\r\n    /// @return success Whether the transfer was successful or not\r\n    function transferFrom(\r\n        address _from,\r\n        address _to,\r\n        uint256 _value\r\n    ) external returns (bool success);\r\n\r\n    /// @notice `msg.sender` approves `_spender` to spend `_value` tokens\r\n    /// @param _spender The address of the account able to transfer the tokens\r\n    /// @param _value The amount of tokens to be approved for transfer\r\n    /// @return success Whether the approval was successful or not\r\n    function approve(address _spender, uint256 _value)\r\n        external\r\n        returns (bool success);\r\n\r\n    /// @param _owner The address of the account owning tokens\r\n    /// @param _spender The address of the account able to transfer the tokens\r\n    /// @return remaining Amount of remaining tokens allowed to spent\r\n    function allowance(address _owner, address _spender)\r\n        external\r\n        view\r\n        returns (uint256 remaining);\r\n\r\n    // solhint-disable-next-line no-simple-event-func-name\r\n    event Transfer(address indexed _from, address indexed _to, uint256 _value);\r\n    event Approval(\r\n        address indexed _owner,\r\n        address indexed _spender,\r\n        uint256 _value\r\n    );\r\n}",
-  "sourcePath": "C:\\Users\\natha\\Documents\\meusProjetos\\Apsota\\blockchain\\contracts\\IERC20.sol",
+  "sourcePath": "C:\\Users\\leova\\source\\repos\\AutorHash\\blockchain\\contracts\\IERC20.sol",
   "ast": {
     "absolutePath": "project:/contracts/IERC20.sol",
     "exportedSymbols": {
@@ -1862,7 +1862,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-10T16:24:56.342Z",
+  "updatedAt": "2021-11-11T00:22:51.555Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
