@@ -1,10 +1,9 @@
 const db = require('../database/ConnectionString');
 const {Model,DataTypes} = require('sequelize');
-const Badge = db.define('badge',{
+const Obra = db.define('obra',{
     id:{
-        type:DataTypes.INTEGER,
-        primaryKey:true,
-        autoIncrement:true
+        type:DataTypes.STRING,
+        primaryKey:true
     },
     name:{
         type:DataTypes.STRING,
@@ -16,12 +15,7 @@ const Badge = db.define('badge',{
         type:DataTypes.TEXT,
         required:true,
         allowNull:false
-    },
-    img_blob:{
-        type:DataTypes.BLOB,
-        allowNull:false,
-        required:true
     }
 })
 
-module.exports = Badge;
+module.exports = Obra;

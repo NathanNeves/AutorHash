@@ -1,21 +1,21 @@
 const db = require('../database/ConnectionString');
 const {Model,DataTypes} = require('sequelize');
 const User = require('./User');
-const NFTUsers = db.define('nft_users',{
+const Anuncio = db.define('anuncio',{
     id:{
         type:DataTypes.INTEGER,
         primaryKey:true,
         autoIncrement:true
     },
-    id_user:{
-        type:DataTypes.INTEGER,
-        allowNull:false
+    valor:{
+        type:DataTypes.DOUBLE,
+        allowNull:false,
     },
-    hash:{
-        type:DataTypes.TEXT,
+    status:{
+        type:DataTypes.BOOLEAN,
         allowNull:false
     }
 });
 
 
-module.exports = NFTUsers;
+module.exports = Anuncio;

@@ -1,3 +1,5 @@
+const User = require("../models/User");
+
 class Store{
 
     constructor(web3Instance,storeAbi){
@@ -5,15 +7,16 @@ class Store{
         this.abi = storeAbi;
     }
     
-    comprarToken =  async(req,res) =>{
+    mintNFT =  async(req,res) =>{
         try{
-            let {value} = req.body;
-            let id = req.userId;
+            let {userData} = req;
+            let id = userData.id;
+            let user = await User.findByPk(id);
+            let publicAddress = user.publicAddress;
         }catch(e){
             console.log(e);
             res.status(200).send({mensagem:"Erro interno no sistema"});
         }
-
     }
 
 }

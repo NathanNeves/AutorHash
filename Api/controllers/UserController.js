@@ -1,23 +1,23 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
+const ethUtil = require('ethereumjs-util');
 class UserController{
     invalidToken = [];
 
 
     static register = async (req,res)=>{
         try{
-            let {email,nome,cargo_id,publicAdress} = req.body;
+            let {email,nome,publicAddress} = req.body;
             let user = await User.create({
                 email,
                 nome,
-                cargo_id,
-                publicAdress
+                publicAddress
             }
             );
             if(user.id){
-                return res.status(200).send({mensagem:"Usuário criado com sucesso"});
+                return res.status(200).send({mensagem:"Usuário criado com sucesso",success:true});
             }
-                return res.status(500).send({mensagem:"Erro ao criar usuário"});
+                return res.status(500).send({mensagem:"Erro ao criar usuário",success:false});
         }catch(e){
             console.log(e);
         }
@@ -25,7 +25,8 @@ class UserController{
 
     
     static getNonce = async (req,res) => {
-        let user = await User.findOne({where:publicAdress});
+        let  {publicAddress} = req.body;
+        let user = await User.findOne({where:{publicAddress}});
         if(user === null) return res.status(404).send({mensagem:"Você não está cadastrado"});
         return res.status(200).send({nonce:user.nonce});
     }
@@ -33,10 +34,9 @@ class UserController{
     static login = async (req,res) =>{  
         try{
             let {publicAddress,signature} = req.body;
-            let user = await User.findOne({where:publicAdress});
+            let user = await User.findOne({where:{publicAddress}});
             if(user === null) return res.status(404).send({mensagem:"Você não está cadastrado"});
-            const msg = `Estou assinando meu nonce ${user.nonce}`;
-            const msgBuffer = ethUtil.toBuffer(msg);
+            const msgBuffer = ethUtil.toBuffer('0x'+user.nonce.toString(16));
             const msgHash = ethUtil.hashPersonalMessage(msgBuffer);
             const signatureBuffer = ethUtil.toBuffer(signature);
             const signatureParams = ethUtil.fromRpcSig(signatureBuffer);
@@ -49,7 +49,7 @@ class UserController{
             const addressBuffer = ethUtil.publicToAddress(publicKey);
             const address = ethUtil.bufferToHex(addressBuffer);
             if (address.toLowerCase() === publicAddress.toLowerCase()) {
-                let userData = {id:user.id,publicAdress};
+                let userData = {id:user.id,publicAddress};
                 const token = jwt.sign(userData,process.env.TOKEN_SECRET,{expiresIn:3000});
                 const refreshToken = jwt.sign(userData,process.env.REFRESH_TOKEN_SECRET,{expiresIn:3060});
                 user.nonce = Math.floor(Math.random() * 1000000);
@@ -62,11 +62,24 @@ class UserController{
             }
         }catch(e){
             console.log(e);
+            return res.status(500).send({error:"Erro interno do sistema"});
+            
         }
     }
 
-    static refreshToken = async () =>{
-        
+    static refreshToken = async (req,res) =>{
+        try{
+            let {refreshToken} = req;
+            let decoded = jwt.verify(refreshToken,process.env.REFRESH_TOKEN_SECRET);
+            const new_token = jwt.sign({id:decoded.id,publicAddress:decoded.publicAddress},process.env.TOKEN_SECRET,{expiresIn:3000});
+            const new_refresh_token = jwt.sign({id:decoded.id,publicAddress:decoded.publicAddress},process.env.REFRESH_TOKEN_SECRET,{expiresIn:3060});
+            return res.status(200).send({new_token,new_refresh_token});
+
+        }catch(e){
+            console.log(e);
+            return res.status(500).send({error:"Erro interno do sistema"});
+            
+        }
     }
 
 }

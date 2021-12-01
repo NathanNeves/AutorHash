@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './Pages/App';
+import {Routes,Route,BrowserRouter} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-
+import Login from './Pages/Login';
+import Painel from './Pages/Painel';
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App/>} />
+      <Route path="/login" element={<Login/>} />
+      <Route path="/painel/*" element={<Painel/>} />
+    </Routes>
+  </BrowserRouter>
+  ,
   document.getElementById('root')
 );
 
