@@ -29,9 +29,6 @@ function App() {
           <div className="p-3">
             <Input onChange={(e)=>{setEmailState(e.value)}} value={emailState} placeholder="E-mail"></Input>
           </div>
-          <div className="p-3">
-            <Select options={selectValues} value={selectState} onChange={(e)=>{setSelectedState(e.value)}}></Select>
-          </div>
           <div className="p-3 w-22">
             <OrangeButton disabled={false}>
               <div>
