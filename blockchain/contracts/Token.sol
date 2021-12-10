@@ -13,7 +13,10 @@ contract Token is IERC20{
     constructor(){
         minter = msg.sender;
         symbol = "Aut";
+<<<<<<< HEAD
         balances[msg.sender] = totalSupply/1000;
+=======
+>>>>>>> e314548082f33e59eba852e24a0932615de1ca3d
        
     
     }
