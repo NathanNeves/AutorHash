@@ -5,23 +5,15 @@ contract Token is IERC20{
     address public minter;
     mapping(address => uint256) public balances;
     mapping(address => mapping(address => uint256)) public allowed;
-<<<<<<< HEAD:blockchain/contracts/Apsota.sol
-    string  constant name  = "AutoCoin";
-=======
     string  constant name  = "AutorCoin";
->>>>>>> 7f4769b28a70ee6ed30734fe6e909c4a38e68cb3:blockchain/contracts/Token.sol
     int8 public constant decimals = 10;
     string public symbol;
     uint256 public totalSupply = 10**18 ;
 
     constructor(){
-<<<<<<< HEAD:blockchain/contracts/Apsota.sol
-        symbol = "ATC";
-        balances[msg.sender] = totalSupply;
-=======
         minter = msg.sender;
         symbol = "Aut";
->>>>>>> 7f4769b28a70ee6ed30734fe6e909c4a38e68cb3:blockchain/contracts/Token.sol
+        balances[msg.sender] = totalSupply/1000;
        
     
     }
@@ -42,11 +34,11 @@ contract Token is IERC20{
         returns (bool success)
     {
         require(balances[msg.sender] >= _value);
-        balances[msg.sender] -= _value;
         uint256 burn_percentage = _value * 3/100;
+        balances[msg.sender] -= _value;
         totalSupply -= burn_percentage;
         _value = _value - burn_percentage;
-        balances[_to] += _value  ;
+        balances[_to] += _value ;
         emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
         return true;
     }

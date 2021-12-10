@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.3.2",
-    "@truffle/hdwallet-provider": "^1.7.0",
+    "@truffle/hdwallet-provider": "^2.0.0",
     "checkpoint-store": "^1.1.0",
     "eth-json-rpc-errors": "^2.0.2",
     "eth-rpc-errors": "^3.0.0",

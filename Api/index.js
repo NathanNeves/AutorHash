@@ -8,12 +8,22 @@ let web3 = new Web3('http://127.0.0.1:7545')
 const UserController = require('./controllers/UserController');
 const User = require('./models/User');
 const cors = require('cors');
+const multer = require('multer');
+let { NFTStorage, File } = require('nft.storage');
+let upload = multer({
+    dest:'uploads/',
+    limits:{fileSize:'10000'}
+}).single('fileToUpload');
+
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());
 app.post('/api/register',UserController.register);
 app.post('/api/login',UserController.login);
+
 app.post('/api/getNonce',UserController.getNonce);
+
+
 
 app.listen(8000,()=>{
     console.log('Rodando servidor na porta 8000');
