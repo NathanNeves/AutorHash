@@ -15,7 +15,7 @@ const Obra = db.define('obra',{
         type:DataTypes.TEXT,
         required:true,
         allowNull:false
-    }
+    },
 })
 
 module.exports = Obra;
