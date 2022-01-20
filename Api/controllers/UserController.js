@@ -2,7 +2,7 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const ethUtil = require('ethereumjs-util');
 class UserController{
-    invalidToken = [];
+//    invalidToken = [];
 
 
     static register = async (req,res)=>{
