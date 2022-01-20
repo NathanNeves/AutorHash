@@ -17,6 +17,11 @@ const routes = [
     name: 'Registrar Obra', 
   },
   {
+    path: '/app/loja',
+    icon: 'CartIcon',
+    name: 'Loja',
+  },
+  {
     path: '/app/forms',
     icon: 'FormsIcon',
     name: 'Forms',
