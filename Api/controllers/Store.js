@@ -1,6 +1,6 @@
 const User = require("../models/User");
-const { Obra } = require("../models");
-const contract = require("../../blockchain/build/AutToken.json");
+const { Obra,Transacao } = require("../models");
+const contract = require("../../blockchain/build/contracts/AutToken.json");
 class Store{
 
     constructor(nftStorage,File,web3){
@@ -9,12 +9,14 @@ class Store{
         this.web3 = web3;
     }
     
-    mint =  async(req,res) =>{
+    static mint =  async(req,res) =>{
         try{
             let {name,description,transactionHash} = req.body;
-            let trx = await this.web3.eth.getTransactionReceipt(transactionHash);
-            if(!trx.status) return res.status(200).send({msg:"Transação não funcionou"});
-            trx.block
+            let transactionInfo = await this.web3.eth.getTransaction(transactionHash);
+            if(transactionInfo.from !== req.user.publicAddress || transaction.to  !== process.env.STORE_WALLET){ 
+                return res.status(403).send({msg:"Transação invalida"});
+            }
+            Transacao.create({userId:req.user.id,transactionHash});
             const {buffer,filename,mimetype} = req.file
             const metadata = await this.client.store({
                 name,
@@ -31,8 +33,6 @@ class Store{
             res.status(200).send({mensagem:"Erro interno no sistema"});
         }
     }
-
-
-
-
 }
+
+module.exports = Store;

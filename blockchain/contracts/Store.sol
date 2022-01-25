@@ -3,6 +3,7 @@ import './Token.sol';
 contract Store{
     address public minter;
     Token public token;
+    uint256 public tokenPrice;
     event Bought( address indexed sender ,uint256 amount);
     event Sold( address indexed sender,uint256 amount);
     constructor(){
@@ -10,8 +11,15 @@ contract Store{
         minter = msg.sender;
     }
 
+
+    function _setTokenPrice(uint256 price) public returns(uint256 newprice){
+        require(minter == msg.sender);
+        tokenPrice = price;
+        return tokenPrice;
+    }
+
     function buy() payable public{
-        uint256 amountToBuy = msg.value;
+        uint256 amountToBuy = msg.value/tokenPrice;
         uint256 balance = token.balanceOf(address(this));
         require(amountToBuy > 0, "Voce precisa enviar algum bnb");
         require(amountToBuy <= balance, 'Balanco nao funciona');
