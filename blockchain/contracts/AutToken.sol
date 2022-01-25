@@ -10,6 +10,8 @@ contract AutToken is ERC721URIStorage{
         minter = msg.sender;
     }
 
+    
+
     function authenticateDocument(address tokenOwner, string memory tokenURI) public returns (uint256) {
         _tokenIds.increment();
         uint256 newItemId = _tokenIds.current();
