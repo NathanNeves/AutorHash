@@ -8,6 +8,10 @@ import SectionTitle from '../components/Typography/SectionTitle'
 import PageTitle from '../components/Typography/PageTitle'
 import {  
   ChatIcon, 
+  AnkaIcon,
+  MuseuIcon,
+  DepositoIcon,
+  AnuncioIcon,
   CartIcon, 
   MoneyIcon, 
   PeopleIcon 
@@ -62,7 +66,7 @@ function Dashboard() {
       <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3">
         <InfoCard title="Obras Registradas" value="12">
           <RoundIcon
-            icon={PeopleIcon}
+            icon={MuseuIcon}
             iconColorClass="text-orange-500 dark:text-orange-100"
             bgColorClass="bg-orange-100 dark:bg-orange-500"
             className="mr-4"
@@ -79,9 +83,9 @@ function Dashboard() {
 
         </InfoCard>
 
-        <InfoCard title="Total de Vendas" value="376">
+        <InfoCard title="Total de Anúncios" value="376">
           <RoundIcon
-            icon={CartIcon}
+            icon={AnuncioIcon}
             iconColorClass="text-blue-500 dark:text-blue-100"
             bgColorClass="bg-blue-100 dark:bg-blue-500"
             className="mr-4"

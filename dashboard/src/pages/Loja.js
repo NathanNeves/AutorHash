@@ -69,7 +69,7 @@ function Loja() {
     <>
       <PageTitle>Loja</PageTitle>
 
-      <SectionTitle>Anuncios</SectionTitle>
+      <SectionTitle>Anúncios</SectionTitle>
       <TableContainer className="mb-8">
         <Table>
           <TableHeader>

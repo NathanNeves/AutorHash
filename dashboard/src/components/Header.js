@@ -55,7 +55,7 @@ function Header() {
         </div>*/}
         <ul className="flex items-center flex-shrink-0 space-x-6">
           <li>
-            <Button>Comprar AutorCoins</Button>
+            <Button>Comprar AUT$</Button>
           </li>
           <li>
             AUT$ 46.760,89
