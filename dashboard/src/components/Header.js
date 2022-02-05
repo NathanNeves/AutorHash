@@ -11,10 +11,12 @@ import {
   OutlineLogoutIcon,
 } from '../icons'
 import { InfoCard ,Card, Button ,Avatar, Badge, Input, Dropdown, DropdownItem, WindmillContext } from '@windmill/react-ui'
+import { useHistory } from 'react-router-dom'
 
 function Header() {
   const { mode, toggleMode } = useContext(WindmillContext)
   const { toggleSidebar } = useContext(SidebarContext)
+  const history = useHistory();
 
   const [isNotificationsMenuOpen, setIsNotificationsMenuOpen] = useState(false)
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
@@ -25,6 +27,10 @@ function Header() {
 
   function handleProfileClick() {
     setIsProfileMenuOpen(!isProfileMenuOpen)
+  }
+
+  const redirect = ()=> {
+    history.push("/app/comprarAutorcoin")
   }
 
   return (
@@ -55,7 +61,7 @@ function Header() {
         </div>*/}
         <ul className="flex items-center flex-shrink-0 space-x-6">
           <li>
-            <Button>Comprar AutorCoins</Button>
+            <Button onClick={redirect}>Comprar AutorCoins</Button>
           </li>
           <li>
             AUT$ 46.760,89

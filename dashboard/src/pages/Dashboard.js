@@ -28,6 +28,8 @@ import {
   Pagination,
 } from '@windmill/react-ui'
 
+import { useHistory } from 'react-router-dom'
+
 import {
   doughnutOptions,
   lineOptions,
@@ -38,6 +40,7 @@ import {
 function Dashboard() {
   const [page, setPage] = useState(1)
   const [data, setData] = useState([])
+  const history = useHistory();
 
   // pagination setup
   const resultsPerPage = 5
@@ -46,6 +49,10 @@ function Dashboard() {
   // pagination change control
   function onPageChange(p) {
     setPage(p)
+  }
+
+  const redirect = ()=> {
+    history.push("/app/comprarAutorcoin")
   }
 
   // on page change, load new sliced data
@@ -90,7 +97,7 @@ function Dashboard() {
       </div>
 
       <div>
-        <Button size="larger" className="w-full">Comprar AutorCoins</Button>
+        <Button size="larger" className="w-full" onClick={redirect}>Comprar AutorCoins</Button>
       </div>
 
       <div className="grid gap-6 mt-8 mb-8 md:grid-cols-2">
