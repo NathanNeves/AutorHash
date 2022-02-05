@@ -61,11 +61,7 @@ function Header() {
         </div>*/}
         <ul className="flex items-center flex-shrink-0 space-x-6">
           <li>
-<<<<<<< HEAD
-            <Button onClick={redirect}>Comprar AutorCoins</Button>
-=======
-            <Button>Comprar AUT$</Button>
->>>>>>> 7d27e384ab27cb660ad720e3a4c5d9181a478477
+            <Button onClick={redirect}>Comprar AUT$</Button>
           </li>
           <li>
             AUT$ 46.760,89

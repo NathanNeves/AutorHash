@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL:"http://localhost:8000",
+    baseURL:"https://f04f-45-163-236-161.ngrok.io/api",
     timeout:10000
 })
 
