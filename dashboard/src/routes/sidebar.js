@@ -27,6 +27,11 @@ const routes = [
     name: 'Forms',
   },
   {
+    path: '/app/meusAnuncios',
+    icon: 'CardsIcon',
+    name: 'Meus Anúncios',
+  },
+  {
     path: '/app/cards',
     icon: 'CardsIcon',
     name: 'Cards',

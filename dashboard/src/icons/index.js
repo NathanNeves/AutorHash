@@ -26,8 +26,16 @@ import { ReactComponent as DropdownIcon } from './dropdown.svg'
 import { ReactComponent as OutlinePersonIcon } from './outlinePerson.svg'
 import { ReactComponent as OutlineCogIcon } from './outlineCog.svg'
 import { ReactComponent as OutlineLogoutIcon } from './outlineLogout.svg'
+import { ReactComponent as MuseuIcon } from './museu.svg'
+import { ReactComponent as DepositoIcon } from './deposito.svg'
+import { ReactComponent as AnuncioIcon } from './anuncio.svg'
+import { ReactComponent as AnkaIcon } from './anka.svg'
 
 export {
+  MuseuIcon,
+  DepositoIcon,
+  AnuncioIcon,
+  AnkaIcon,
   ButtonsIcon,
   CardsIcon,
   ChartsIcon,

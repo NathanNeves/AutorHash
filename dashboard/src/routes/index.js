@@ -12,6 +12,8 @@ const Page404 = lazy(() => import('../pages/404'))
 const Blank = lazy(() => import('../pages/Blank'))
 const RegistrarObra = lazy(() => import('../pages/RegistrarObra'))
 const Loja = lazy(() => import('../pages/Loja'))
+const MeusAnuncios = lazy(() => import('../pages/MeusAnuncios'))
+const ComprarAutorcoin = lazy(() => import('../pages/ComprarAutorcoin'))
 
 /**
  * ⚠ These are internal routes!
@@ -67,6 +69,14 @@ const routes = [
   {
     path: '/loja',
     component: Loja,
+  },
+  {
+    path: '/meusAnuncios',
+    component: MeusAnuncios,
+  },
+  {
+    path: '/comprarAutorcoin',
+    component: ComprarAutorcoin,
   },
 ]
 

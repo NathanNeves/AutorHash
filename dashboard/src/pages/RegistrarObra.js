@@ -26,19 +26,17 @@ function RegistrarObra() {
       <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
         <Label>
           <span>Título</span>
-          <Input className="mt-1" placeholder="Myne Rose"/>
+          <Input className="mt-1" placeholder="Título da Obra"/>
         </Label>
 
         <Label className="mt-2">
           <span>Nome do Autor</span>
-          <Input className="mt-1" placeholder="Gabriel Lamounier"/>
+          <Input className="mt-1" placeholder="Nome do Autor e Co-Autores"/>
         </Label>
-
-        <Button className="mt-3">Adicionar Co-Autor +</Button>
 
         <Label className="mt-3">
           <span>Descrição da Obra</span>
-          <Textarea className="mt-1" rows="6" placeholder="Uma arte digital desenhada por Gabriel Lamounier que contém uma com orelhas de gato" />
+          <Textarea className="mt-1" rows="6" placeholder="Descrição" />
         </Label>
 
         <Label className="mt-3">

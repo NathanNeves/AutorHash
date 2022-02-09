@@ -22,7 +22,7 @@ import response from '../utils/demo/tableData'
 // make a copy of the data, for the second table
 const response2 = response.concat([])
 
-function Loja() {
+function MeusAnuncios() {
   /**
    * DISCLAIMER: This code could be badly improved, but for the sake of the example
    * and readability, all the logic for both table are here.
@@ -67,17 +67,16 @@ function Loja() {
 
   return (
     <>
-      <PageTitle>Loja</PageTitle>
+      <PageTitle>Meus Anuncios</PageTitle>
 
-      <SectionTitle>Anúncios</SectionTitle>
+      <SectionTitle>Anuncios</SectionTitle>
       <TableContainer className="mb-8">
         <Table>
           <TableHeader>
             <tr>
-              <TableCell>Client</TableCell>
-              <TableCell>Amount</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell>Date</TableCell>
+              <TableCell>Obra</TableCell>
+              <TableCell>Valor</TableCell>
+              <TableCell>Data do Anúncio</TableCell>
             </tr>
           </TableHeader>
           <TableBody>
@@ -85,7 +84,6 @@ function Loja() {
               <TableRow key={i}>
                 <TableCell>
                   <div className="flex items-center text-sm">
-                    <Avatar className="hidden mr-3 md:block" src={user.avatar} alt="User avatar" />
                     <div>
                       <p className="font-semibold">{user.name}</p>
                       <p className="text-xs text-gray-600 dark:text-gray-400">{user.job}</p>
@@ -94,9 +92,6 @@ function Loja() {
                 </TableCell>
                 <TableCell>
                   <span className="text-sm">$ {user.amount}</span>
-                </TableCell>
-                <TableCell>
-                  <Badge type={user.status}>{user.status}</Badge>
                 </TableCell>
                 <TableCell>
                   <span className="text-sm">{new Date(user.date).toLocaleDateString()}</span>
@@ -118,4 +113,4 @@ function Loja() {
   )
 }
 
-export default Loja
+export default MeusAnuncios
