@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+import { Card, CardBody } from '@windmill/react-ui'
 import PageTitle from '../components/Typography/PageTitle'
 import SectionTitle from '../components/Typography/SectionTitle'
 import CTA from '../components/CTA'
@@ -17,6 +18,8 @@ import {
   Pagination,
 } from '@windmill/react-ui'
 import { EditIcon, TrashIcon } from '../icons'
+
+import logo from "../icons/AutorCoin.png"
 
 import response from '../utils/demo/tableData'
 // make a copy of the data, for the second table
@@ -70,50 +73,41 @@ function Loja() {
       <PageTitle>Loja</PageTitle>
 
       <SectionTitle>Anúncios</SectionTitle>
-      <TableContainer className="mb-8">
-        <Table>
-          <TableHeader>
-            <tr>
-              <TableCell>Client</TableCell>
-              <TableCell>Amount</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell>Date</TableCell>
-            </tr>
-          </TableHeader>
-          <TableBody>
-            {dataTable1.map((user, i) => (
-              <TableRow key={i}>
-                <TableCell>
-                  <div className="flex items-center text-sm">
-                    <Avatar className="hidden mr-3 md:block" src={user.avatar} alt="User avatar" />
-                    <div>
-                      <p className="font-semibold">{user.name}</p>
-                      <p className="text-xs text-gray-600 dark:text-gray-400">{user.job}</p>
-                    </div>
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <span className="text-sm">$ {user.amount}</span>
-                </TableCell>
-                <TableCell>
-                  <Badge type={user.status}>{user.status}</Badge>
-                </TableCell>
-                <TableCell>
-                  <span className="text-sm">{new Date(user.date).toLocaleDateString()}</span>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        <TableFooter>
-          <Pagination
-            totalResults={totalResults}
-            resultsPerPage={resultsPerPage}
-            onChange={onPageChangeTable1}
-            label="Table navigation"
-          />
-        </TableFooter>
-      </TableContainer>
+      <div className="grid gap-6 mb-8 md:grid-cols-3">
+      <Card>
+          <CardBody>
+          <div className="flex flex-col items-center">
+            <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
+            <img style={{width: "90%"}} src={logo}/>
+            </div>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardBody>
+          <div className="flex flex-col items-center">
+            <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
+            <img style={{width: "90%"}} src={logo}/>
+            </div>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardBody>
+          <div className="flex flex-col items-center">
+            <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
+            <img style={{width: "90%"}} src={logo}/>
+            </div>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardBody>
+          <div className="flex flex-col items-center">
+            <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
+            <img style={{width: "90%"}} src={logo}/>
+            </div>
+          </CardBody>
+        </Card>
+
+      </div>
     </>
   )
 }
