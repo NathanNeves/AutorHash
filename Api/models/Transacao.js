@@ -9,6 +9,8 @@ const Transacao = db.define('transacao',{
         type:DataTypes.INTEGER,
         allowNull:false
     }
+},{
+    freezeTableName:true
 });
 
 
