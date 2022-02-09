@@ -1,33 +1,43 @@
 const User = require("../models/User");
 const { Obra,Transacao } = require("../models");
-const contract = require("../../blockchain/build/contracts/AutToken.json");
+const fs = require('fs');
+let { File,Blob } = require('nft.storage');
+const contract_abi = fs.readFileSync('../blockchain/build/contracts/AutToken.json','utf-8');
 class Store{
 
-    constructor(nftStorage,File,web3){
-        this.File = File;
+    constructor(nftStorage,web3){
         this.client = nftStorage;
         this.web3 = web3;
     }
     
-    static mint =  async(req,res) =>{
+    mint =  async(req,res) =>{
         try{
             let {name,description,transactionHash} = req.body;
-            let transactionInfo = await this.web3.eth.getTransaction(transactionHash);
-            if(transactionInfo.from !== req.user.publicAddress || transaction.to  !== process.env.STORE_WALLET){ 
+            let transacao =  await Transacao.findOne({where:{transactionHash}});
+            if(transacao !== null){
+                return res.status(403).send({msg:"Transacao invalida"});
+            }
+            let transactionInfo = await this.web3.eth.getTransactionReceipt(transactionHash);
+            let transactionValue = await this.web3.eth.getTransaction(transactionHash);
+            transactionValue = transactionValue.value
+            if(transactionInfo.from !== req.user.publicAddress || transactionInfo.to  !== process.env.STORE_WALLET || transactionInfo.status == false ||  transactionValue <= 0.01  ){ 
                 return res.status(403).send({msg:"Transação invalida"});
             }
             Transacao.create({userId:req.user.id,transactionHash});
-            const {buffer,filename,mimetype} = req.file
+            const {filename,mimetype,originalname} = req.file;
             const metadata = await this.client.store({
                 name,
                 description,
-                image:new this.File(buffer,filename,{type:mimetype})
+                image: new File([await fs.promises.readFile('./uploads/'+filename)],filename, {
+                  type: mimetype,
+                })
             });
             let url = metadata.url;
-            let contract = await new this.web3.eth.Contract(JSON.parse(contract).abi,process.env.NFT_STORAGE_ADDRESS); 
-            web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_WALLET_KEY);
-            let transaction = await contract.methods.authenticateDocument(req.publicAddress,url).send({from:process.env.PRIVATE_WALLET_KEY,value:1000});
-            return res.status(200).send({msg:transaction});
+            let contract = await new this.web3.eth.Contract(JSON.parse(contract_abi).abi,process.env.NFT_CONTRACT_ADDRESS); 
+            let account = this.web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_WALLET_KEY);
+            let transaction = await contract.methods.authenticateDocument;
+            let response = await transaction(req.user.publicAddress,url).send({from:account.address,gas:200000});
+            return res.status(200).send({msg:response});
         }catch(e){
             console.log(e);
             res.status(200).send({mensagem:"Erro interno no sistema"});

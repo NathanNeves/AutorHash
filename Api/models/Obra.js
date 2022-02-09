@@ -16,6 +16,11 @@ const Obra = db.define('obra',{
         required:true,
         allowNull:false
     },
+    image_url:{
+        type:DataTypes.TEXT,
+        required:true,
+        allowNull:false
+    }
 })
 
 module.exports = Obra;

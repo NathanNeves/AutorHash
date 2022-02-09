@@ -3,28 +3,57 @@ const express = require('express');
 let fs = require('fs');
 const { strictEqual } = require('assert');
 const app = express();
-let store = fs.readFileSync('../blockchain/build/contracts/Store.json','utf-8');
+//let store = fs.readFileSync('../blockchain/build/contracts/Store.json','utf-8');
 let web3 = new Web3('http://127.0.0.1:7545')
 const UserController = require('./controllers/UserController');
 const User = require('./models/User');
 const Store = require('./controllers/Store');
+const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const multer = require('multer');
 let { NFTStorage, File } = require('nft.storage');
 const { application } = require('express');
+let storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './uploads')
+    },
+    filename: function (req, file, cb) {
+      let extArray = file.mimetype.split("/");
+      let extension = extArray[extArray.length - 1];
+      cb(null, file.fieldname + '-' + Date.now()+ '.' +extension)
+    }
+});
+
+
 let upload = multer({
-    dest:'uploads/',
+    storage,
     limits:{fileSize:'10000'}
 }).single('fileToUpload');
 
 
 
+function verifyJWT(req, res, next){
+    const token = req.headers['x-access-token'];
+    if (!token) return res.status(401).json({ auth: false, message: 'No token provided.' });
+    
+    jwt.verify(token, process.env.TOKEN_SECRET, function(err, decoded) {
+      if (err) return res.status(500).json({ auth: false, message: 'Failed to authenticate token.' });
+      
+      // se tudo estiver ok, salva no request para uso posterior
+      req.user = decoded;
+      next();
+    });
+}
+
+
+let nftStorage = new NFTStorage({token:process.env.NFT_STORAGE_API_KEY,endpoint:"https://api.nft.storage"});
+let store = new Store(nftStorage,web3);
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());
 app.post('/api/register',UserController.register);
 app.post('/api/login',UserController.login);
-app.post('/api/mint',upload,Store.mint);
+app.post('/api/mint',verifyJWT,upload,store.mint);
 app.post('/api/getNonce',UserController.getNonce);
 
 
