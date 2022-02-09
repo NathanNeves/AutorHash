@@ -26,10 +26,10 @@ const User = db.define('user',{
         type:DataTypes.INTEGER,
         allowNull:false,
         defaultValue: () => Math.floor(Math.random() * 1000000)
-    }
-    /*moeda:{
+    },
+    moeda:{
         type:DataTypes.DOUBLE,
         allowNull:true
-    }*/
+    }
 });
 module.exports = User;

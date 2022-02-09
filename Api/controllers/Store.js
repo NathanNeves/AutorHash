@@ -24,6 +24,7 @@ class Store{
                 return res.status(403).send({msg:"Transação invalida"});
             }
             Transacao.create({userId:req.user.id,transactionHash});
+            
             const {filename,mimetype,originalname} = req.file;
             const metadata = await this.client.store({
                 name,
@@ -32,12 +33,39 @@ class Store{
                   type: mimetype,
                 })
             });
-            let url = metadata.url;
+            
             let contract = await new this.web3.eth.Contract(JSON.parse(contract_abi).abi,process.env.NFT_CONTRACT_ADDRESS); 
             let account = this.web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_WALLET_KEY);
             let transaction = await contract.methods.authenticateDocument;
             let response = await transaction(req.user.publicAddress,url).send({from:account.address,gas:200000});
+            Obra.create({name,description,image:metadata.url});
+            await fs.promises.rm('./uploads/'+filename)
             return res.status(200).send({msg:response});
+        }catch(e){
+            console.log(e);
+            res.status(200).send({mensagem:"Erro interno no sistema"});
+        }
+    }
+
+
+    buyAutorCoins = async (req,res) => {
+        try{
+            let {transactionHash} = req.body;
+            let transacao =  await Transacao.findOne({where:{transactionHash}});
+            let transactionInfo = await this.web3.eth.getTransactionReceipt(transactionHash);
+            let transactionValue = await this.web3.eth.getTransaction(transactionHash);
+            transactionValue = transactionValue.value
+            if(transacao !== null){
+                return res.status(403).send({msg:"Transacao invalida"});
+            }
+            
+            if(transactionInfo.from !== req.user.publicAddress || transactionInfo.to  !== process.env.STORE_WALLET || transactionInfo.status == false || transactionValue > 0  ){ 
+                return res.status(403).send({msg:"Transação invalida"});
+            }
+            let user = await User.findByPk(req.user.id);
+            user.moeda = transactionValue*950;
+            await user.save();
+            res.status(200).send({msg:"Transação realizada com sucesso"});
         }catch(e){
             console.log(e);
             res.status(200).send({mensagem:"Erro interno no sistema"});
