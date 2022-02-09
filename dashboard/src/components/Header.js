@@ -61,11 +61,7 @@ function Header() {
         </div>*/}
         <ul className="flex items-center flex-shrink-0 space-x-6">
           <li>
-<<<<<<< HEAD
             <Button onClick={redirect}>Comprar AutorCoins</Button>
-=======
-            <Button>Comprar AUT$</Button>
->>>>>>> 7d27e384ab27cb660ad720e3a4c5d9181a478477
           </li>
           <li>
             AUT$ 46.760,89
@@ -121,36 +117,14 @@ function Header() {
           {/* <!-- Profile menu --> */}
           <li className="relative">
             <button
-              className="rounded-full focus:shadow-outline-purple focus:outline-none"
-              onClick={handleProfileClick}
+              className="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
+              onClick={() => alert('Log out!')}
               aria-label="Account"
               aria-haspopup="true"
             >
-              <Avatar
-                className="align-middle"
-                src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
-                alt=""
-                aria-hidden="true"
-              />
+            <OutlineLogoutIcon className="w-5 h-5" aria-hidden="true" />
+              
             </button>
-            <Dropdown
-              align="right"
-              isOpen={isProfileMenuOpen}
-              onClose={() => setIsProfileMenuOpen(false)}
-            >
-              <DropdownItem tag="a" href="#">
-                <OutlinePersonIcon className="w-4 h-4 mr-3" aria-hidden="true" />
-                <span>Profile</span>
-              </DropdownItem>
-              <DropdownItem tag="a" href="#">
-                <OutlineCogIcon className="w-4 h-4 mr-3" aria-hidden="true" />
-                <span>Settings</span>
-              </DropdownItem>
-              <DropdownItem onClick={() => alert('Log out!')}>
-                <OutlineLogoutIcon className="w-4 h-4 mr-3" aria-hidden="true" />
-                <span>Log out</span>
-              </DropdownItem>
-            </Dropdown>
           </li>
         </ul>
       </div>
