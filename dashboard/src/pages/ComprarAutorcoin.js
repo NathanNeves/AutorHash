@@ -30,7 +30,7 @@ function ComprarAutorcoin() {
       
       <div style={{width: "40%"}} className="px-4 py-3 mb-2 bg-white rounded-lg shadow-md dark:bg-gray-800">
         <Label>
-          <Input type="number" className="mt-1" placeholder="10" />
+          <Input type="number" className="mt-1" placeholder="0" />
         </Label>
       </div>
       <Button size="larger" onClick={openModal}>Comprar</Button><br/>

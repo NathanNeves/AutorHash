@@ -61,6 +61,7 @@ function Dashboard() {
 
   // on page change, load new sliced data
   // here you would make another server request for new data
+  
   useEffect(() => {
     setData(response.slice((page - 1) * resultsPerPage, page * resultsPerPage))
   }, [page])
@@ -68,7 +69,7 @@ function Dashboard() {
   return (
     <>
       <PageTitle>Meu Painel</PageTitle>
-
+      <SectionTitle>Olá, Leonardo!</SectionTitle>
       {/* <!-- Cards --> */}
       <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3">
         <InfoCard title="Obras Registradas" value="12">

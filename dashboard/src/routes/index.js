@@ -15,6 +15,9 @@ const Loja = lazy(() => import('../pages/Loja'))
 const MeusAnuncios = lazy(() => import('../pages/MeusAnuncios'))
 const ComprarAutorcoin = lazy(() => import('../pages/ComprarAutorcoin'))
 const Obra = lazy(() => import('../pages/ObraInfo'))
+const Anuncio = lazy(() => import('../pages/AnuncioInfo'))
+const CriarAnuncio = lazy(() => import('../pages/CriarAnuncio'))
+
 
 /**
  * ⚠ These are internal routes!
@@ -82,6 +85,14 @@ const routes = [
   {
     path: '/obra',
     component: Obra,
+  },
+  {
+    path: '/anuncio',
+    component: Anuncio,
+  },
+  {
+    path: '/criaranuncio',
+    component: CriarAnuncio,
   },
 ]
 

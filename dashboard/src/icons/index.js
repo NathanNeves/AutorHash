@@ -30,8 +30,10 @@ import { ReactComponent as MuseuIcon } from './museu.svg'
 import { ReactComponent as DepositoIcon } from './deposito.svg'
 import { ReactComponent as AnuncioIcon } from './anuncio.svg'
 import { ReactComponent as AnkaIcon } from './anka.svg'
+import { ReactComponent as CheckIcon } from './check.svg'
 
 export {
+  CheckIcon,
   MuseuIcon,
   DepositoIcon,
   AnuncioIcon,
