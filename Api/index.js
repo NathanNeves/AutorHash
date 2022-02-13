@@ -8,6 +8,7 @@ let web3 = new Web3('http://127.0.0.1:7545')
 const UserController = require('./controllers/UserController');
 const User = require('./models/User');
 const Store = require('./controllers/Store');
+const ObraController = require('./controllers/ObraController');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const multer = require('multer');
@@ -55,7 +56,8 @@ app.post('/api/register',UserController.register);
 app.post('/api/login',UserController.login);
 app.post('/api/mint',verifyJWT,upload,store.mint);
 app.post('/api/getNonce',UserController.getNonce);
-
+app.get('/api/listObras',ObraController.listObras);
+app.get("/api/getObra",ObraController.getObra);
 
 
 app.listen(8000,()=>{
