@@ -37,7 +37,7 @@ function verifyJWT(req, res, next){
     if (!token) return res.status(401).json({ auth: false, message: 'No token provided.' });
     
     jwt.verify(token, process.env.TOKEN_SECRET, function(err, decoded) {
-      if (err) return res.status(500).json({ auth: false, message: 'Failed to authenticate token.' });
+      if (err) return res.status(403).json({ auth: false, message: 'Failed to authenticate token.' });
       
       // se tudo estiver ok, salva no request para uso posterior
       req.user = decoded;
@@ -55,6 +55,7 @@ app.post('/api/register',UserController.register);
 app.post('/api/login',UserController.login);
 app.post('/api/mint',verifyJWT,upload,store.mint);
 app.post('/api/getNonce',UserController.getNonce);
+app.post('/api/buy',verifyJWT,store.buyAutorCoins);
 
 
 
