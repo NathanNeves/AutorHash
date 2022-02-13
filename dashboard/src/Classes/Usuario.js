@@ -51,4 +51,12 @@ export default class Usuario{
         localStorage.removeItem("token");
         return true;
     }
+
+    static getHeader = () =>{
+        token = localStorage.getItem("token")
+
+        return {
+            "x-access-token": token
+        }
+    }
 }

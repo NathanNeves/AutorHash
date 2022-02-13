@@ -49,6 +49,7 @@ class Store{
 
 
     buyAutorCoins = async (req,res) => {
+        console.log("cheguei aqui")
         try{
             let {transactionHash} = req.body;
             let transacao =  await Transacao.findOne({where:{transactionHash}});
