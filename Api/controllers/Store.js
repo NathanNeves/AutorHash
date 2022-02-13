@@ -23,7 +23,6 @@ class Store{
             if(transactionInfo.from !== req.user.publicAddress || transactionInfo.to  !== process.env.STORE_WALLET || transactionInfo.status == false ||  transactionValue <= 0.01  ){ 
                 return res.status(403).send({msg:"Transação invalida"});
             }
-            Transacao.create({userId:req.user.id,transactionHash});
             
             const {filename,mimetype,originalname} = req.file;
             const metadata = await this.client.store({
@@ -37,9 +36,10 @@ class Store{
             let contract = await new this.web3.eth.Contract(JSON.parse(contract_abi).abi,process.env.NFT_CONTRACT_ADDRESS); 
             let account = this.web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_WALLET_KEY);
             let transaction = await contract.methods.authenticateDocument;
-            let response = await transaction(req.user.publicAddress,url).send({from:account.address,gas:200000});
-            Obra.create({name,description,image:metadata.url});
+            let response = await transaction(req.user.publicAddress,metadata.url).send({from:account.address,gas:200000});
+            await Obra.create({name,description,image_url:metadata.url,userId:req.user.id,id:response.events.Transfer.returnValues.tokenId});
             await fs.promises.rm('./uploads/'+filename)
+            await Transacao.create({userId:req.user.id,transactionHash});
             return res.status(200).send({msg:response});
         }catch(e){
             console.log(e);
