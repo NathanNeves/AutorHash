@@ -48,6 +48,7 @@ import {
 function Dashboard() {
   const [page, setPage] = useState(1)
   const [data, setData] = useState([])
+  const [nome, setNome] = useState("")
   const history = useHistory();
 
   // pagination setup
@@ -66,14 +67,15 @@ function Dashboard() {
   // on page change, load new sliced data
   // here you would make another server request for new data
   
-  useEffect(() => {
+  useEffect(async () => {
     setData(response.slice((page - 1) * resultsPerPage, page * resultsPerPage))
+    setNome(await localStorage.getItem("nome"))
   }, [page])
 
   return (
     <>
       <PageTitle>Meu Painel</PageTitle>
-      <SectionTitle>Olá, Leonardo!</SectionTitle>
+      <SectionTitle>Olá, {nome}</SectionTitle>
       {/* <!-- Cards --> */}
       <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3">
         <InfoCard title="Obras Registradas" value="12">
