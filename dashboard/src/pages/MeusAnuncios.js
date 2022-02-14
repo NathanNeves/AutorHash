@@ -98,6 +98,12 @@ function MeusAnuncios() {
           </Select>
           </Label>
 
+          <Label className="mr-3">
+          <span>Criado em:</span>
+          
+            <Input type="date" className='mt-1' type='date'/>
+            </Label>
+
           <div className="mr-3 mt-6">
           <Button icon={SearchIcon} aria-label="Like" />
           </div>

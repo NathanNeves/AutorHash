@@ -85,7 +85,7 @@ function Loja() {
              
             <Label className="mr-3">
           <span>Anúncio</span>
-          <Input className="mt-1" placeholder="Jane Doe" />
+          <Input className="mt-1"  placeholder="Jane Doe" />
           </Label>
           
           <Label className="mr-3">
@@ -97,6 +97,12 @@ function Loja() {
             <option>AUT$ 150</option>
           </Select>
           </Label>
+
+          <Label className="mr-3">
+          <span>Criado em:</span>
+          
+            <Input type="date" className='mt-1' type='date'/>
+            </Label>
 
           <div className="mr-3 mt-6">
           <Button icon={SearchIcon} aria-label="Like" />
