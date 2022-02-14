@@ -8,11 +8,12 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.3.2",
-    "@truffle/hdwallet-provider": "^2.0.0",
+    "@truffle/hdwallet-provider": "^2.0.3",
     "checkpoint-store": "^1.1.0",
     "eth-json-rpc-errors": "^2.0.2",
     "eth-rpc-errors": "^3.0.0",
     "ethereum-common": "^0.2.0",
+    "ethereum-cryptography": "^1.0.0",
     "ethereumjs-common": "^1.5.2",
     "events": "^3.3.0",
     "exit-on-epipe": "^1.0.1",

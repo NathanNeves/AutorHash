@@ -8,6 +8,7 @@ let web3 = new Web3('http://127.0.0.1:7545')
 const UserController = require('./controllers/UserController');
 const User = require('./models/User');
 const Store = require('./controllers/Store');
+const ObraController = require('./controllers/ObraController');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const multer = require('multer');
@@ -37,7 +38,7 @@ function verifyJWT(req, res, next){
     if (!token) return res.status(401).json({ auth: false, message: 'No token provided.' });
     
     jwt.verify(token, process.env.TOKEN_SECRET, function(err, decoded) {
-      if (err) return res.status(500).json({ auth: false, message: 'Failed to authenticate token.' });
+      if (err) return res.status(403).json({ auth: false, message: 'Failed to authenticate token.' });
       
       // se tudo estiver ok, salva no request para uso posterior
       req.user = decoded;
@@ -55,6 +56,9 @@ app.post('/api/register',UserController.register);
 app.post('/api/login',UserController.login);
 app.post('/api/mint',verifyJWT,upload,store.mint);
 app.post('/api/getNonce',UserController.getNonce);
+app.get('/api/listObras',ObraController.listObras);
+app.get("/api/getObra",ObraController.getObra);
+app.post('/api/buy',verifyJWT,store.buyAutorCoins);
 
 
 
