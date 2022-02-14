@@ -3,8 +3,12 @@ import axios from 'axios';
 
 export default class Store{
 
-    static comprarCoin = (publicAddress) => {
-        ethereum.request({
+    static comprarCoin = async () => {
+
+        let publicAddress = localStorage.getItem("publicAddressUser")
+        console.log("comprandedao mos")
+        try{
+        await window.ethereum.request({
             method: 'eth_sendTransaction',
             params: [
               {
@@ -17,12 +21,16 @@ export default class Store{
             ],
         })
         .then(async (txHash) => {
-                res = await request.postRequest("/buy",{"transactionHash": txHash})
+                console.log("dale")
+                let res = await request.postRequest("/buy",{"transactionHash": txHash})
                 if(res.status != 200){
                     return {"status":res.status, "error": res.body.error};
                 }
                 return {"status":res.status, "mensagem": res.body.mensagem};
             })
-        .catch((error) => {console.error; return;});
+        .catch((error) => console.error);
+        }catch(e){
+            console.log(e)
+        }
     }
 }

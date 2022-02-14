@@ -6,7 +6,7 @@ import { BrowserRouter as useHistory } from 'react-router-dom'
 export default class Request{
 
     async postRequest(url, body){
-       res = await axios.post(url, body, user.getHeader)
+       let res = await axios.post(url, body, user.getHeader)
 
        if(this.toLogin(res.status)){
             return;
@@ -16,7 +16,7 @@ export default class Request{
     }
 
     async getRequest(url, body){
-        res = await axios.get(url, body, user.getHeader)
+        let res = await axios.get(url, body, user.getHeader)
 
         if(this.toLogin(res.status)){
             return;

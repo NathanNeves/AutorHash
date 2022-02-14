@@ -1,21 +1,13 @@
 import React, { useState } from 'react'
 
+import Store from "../Classes/Store"
+
 import PageTitle from '../components/Typography/PageTitle'
-import { Input, Label, Button, Modal, ModalHeader, ModalBody, ModalFooter, } from '@windmill/react-ui'
+import {Button, } from '@windmill/react-ui'
 
 import logo from "../icons/AutorCoin.png"
 
 function ComprarAutorcoin() {
-  
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  
-  function openModal() {
-    setIsModalOpen(true)
-  }
-
-  function closeModal() {
-    setIsModalOpen(false)
-  }
 
   return (
     <>
@@ -26,37 +18,11 @@ function ComprarAutorcoin() {
       <p className="text-gray-700 dark:text-gray-300">
         Compre AutorCoins para registrar suas obras!
       </p>
-      <p className="text-gray-700 dark:text-gray-300">Digite a quantidade de AutorCoins que deseja comprar</p> <br/> 
-      
-      <div style={{width: "40%"}} className="px-4 py-3 mb-2 bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <Label>
-          <Input type="number" className="mt-1" placeholder="0" />
-        </Label>
-      </div>
-      <Button size="larger" onClick={openModal}>Comprar</Button><br/>
-    </div>
+      <p className="text-gray-700 dark:text-gray-300">Ao clicar no botão de compra você será redirecionado para a extensão da Metamask.</p> <br/> 
+      <p className="text-gray-700 dark:text-gray-300">A quantidade de AutorCoin adquirida é igual a 1000x (um mil vezes) a quantidade de Ethereum transferida.</p> <br/>
 
-    <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <ModalHeader>Confirmar o Registro</ModalHeader>
-        <ModalBody>
-        <p>O registro de sua obra irá custar um total de 0.11111 AutorCoins</p><br />
-        <b >LEMBRE-SE!</b><br />
-        <p>Confira as informações inseridas nos campos. Caso estejam corretas clique em continuar</p>
-          
-        </ModalBody>
-        <ModalFooter>
-          
-          <div className="hidden sm:block">
-            <Button layout="outline" onClick={closeModal}>
-              Cancelar
-            </Button>
-          </div>
-          <div className="hidden sm:block">
-            <Button>Confirmar</Button> 
-          </div>
-          
-        </ModalFooter>
-      </Modal>
+      <Button size="larger" onClick={Store.comprarCoin()}>Comprar</Button><br/>
+    </div>
 
     </>
   )

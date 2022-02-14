@@ -25,6 +25,7 @@ export default class Usuario{
             let response = await axios.post('/login',{publicAddress,signature});
             response = response.data;
             if(response.token){
+                localStorage.setItem("publicAddressUser",publicAddress);
                 localStorage.setItem("token",response.token);
                 localStorage.setItem('refreshToken',response.refreshToken)
                 return true;
@@ -52,8 +53,8 @@ export default class Usuario{
         return true;
     }
 
-    static getHeader = () =>{
-        token = localStorage.getItem("token")
+    static getHeader = async () =>{
+        let token = await localStorage.getItem("token")
 
         return {
             "x-access-token": token
