@@ -68,13 +68,14 @@ function CriarAnuncio() {
         
         <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
         <TableContainer className="mb-8">
-        <SectionTitle>Meus Anúncios</SectionTitle>
+        <SectionTitle>Minhas Obras</SectionTitle>
         <Table>
           <TableHeader>
             <tr>
-              <TableCell>Client</TableCell>
+              <TableCell>Obra</TableCell>
               <TableCell></TableCell>
               <TableCell>Anúnciar</TableCell>
+              <TableCell>Data de Registro</TableCell>
             </tr>
           </TableHeader>
           <TableBody>
@@ -102,6 +103,9 @@ function CriarAnuncio() {
                   
                   <Button >Selecionar</Button>
 
+                </TableCell>
+                <TableCell>
+                  <span className="text-sm">{new Date(user.date).toLocaleDateString()}</span>
                 </TableCell>
               </TableRow>
             ))}

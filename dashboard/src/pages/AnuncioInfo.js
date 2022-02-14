@@ -32,7 +32,11 @@ function AnuncioInfo() {
             <p className="mb-3 font-semibold text-gray-600 dark:text-gray-300">"Nome do Anuncio"</p>
             <div className="flex">
             <p className="mb-3 mr-1 text-gray-600 dark:text-gray-400">Valor:</p> 
-            <p className="mb-3 text-gray-600 dark:text-gray-400">300 AUT$</p>
+            <p className="mb-1 text-gray-600 dark:text-gray-400">300 AUT$</p>
+            </div>
+            <div className="flex">
+            <p className="mb-3 mr-1 text-gray-600 dark:text-gray-400">Criado em:</p> 
+            <p className="mb-1 text-gray-600 dark:text-gray-400">20/02/2022</p>
             </div>
             </div>
             <Button onClick={openModal} >Comprar Obra</Button>
@@ -51,6 +55,11 @@ function AnuncioInfo() {
         <div className="flex">
         <b className="mb-2 mr-1 text-gray-600 dark:text-gray-400">Valor:</b> 
             <p className="mb-2 text-gray-600 dark:text-gray-400">300 AUT$</p>
+            </div>
+
+            <div className="flex">
+            <b className="mb-3 mr-1 text-gray-600 dark:text-gray-400">Criado em:</b> 
+            <p className="mb-3 text-gray-600 dark:text-gray-400">20/02/2022</p>
             </div>
         <div className="flex">
             
@@ -84,6 +93,11 @@ function AnuncioInfo() {
             <p className="mb-3 font-semibold text-gray-600 dark:text-gray-300">Titulo da Obra</p>
               <p className="mb-4 text-gray-600 dark:text-gray-400">
                 Autor Hash
+              </p>
+
+              <p className="mb-3 font-semibold text-gray-600 dark:text-gray-300">Registrada em:</p>
+              <p className="mb-4 text-gray-600 dark:text-gray-400">
+                19/02/2022
               </p>
             </CardBody>
           </Card>

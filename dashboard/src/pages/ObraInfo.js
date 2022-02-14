@@ -21,6 +21,11 @@ function ObraInfo() {
               <p className="mb-4 text-gray-600 dark:text-gray-400">
                 Autor Hash
               </p>
+
+              <p className="mb-3 font-semibold text-gray-600 dark:text-gray-300">Registrada em:</p>
+              <p className="mb-4 text-gray-600 dark:text-gray-400">
+                19/02/2022
+              </p>
             </CardBody>
           </Card>
           <Card style={{width: "100%"}}>

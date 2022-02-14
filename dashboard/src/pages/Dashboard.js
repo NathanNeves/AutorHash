@@ -13,6 +13,7 @@ import {
   DepositoIcon,
   AnuncioIcon,
   CartIcon, 
+  SearchIcon,
   MoneyIcon, 
   PeopleIcon 
 } from '../icons'
@@ -27,6 +28,9 @@ import {
   TableFooter,
   TableContainer,
   Button,
+  Card, 
+  CardBody,
+  Input, Label, Select,
   Avatar,
   Badge,
   Pagination,
@@ -105,9 +109,42 @@ function Dashboard() {
         <Button size="larger" className="w-full" onClick={redirect}>Comprar AutorCoins</Button>
       </div>
 
-      <div className="grid gap-6 mt-8 mb-8 md:grid-cols-2">
-      <TableContainer className="mb-8">
-        <SectionTitle>Minhas Obras</SectionTitle>
+      
+
+      <div className="grid gap-6 mt-8 md:grid-cols-1">
+      
+      <TableContainer className="mb-2">
+      <SectionTitle>Minhas Obras</SectionTitle>
+        <Card style={{width: "100%"}} className="mb-2">
+      
+      <CardBody>
+      <SectionTitle>Filtro:</SectionTitle>
+      <div className="flex direction-row">
+       
+      <Label className="mr-3">
+    <span>Anúncio</span>
+    <Input className="mt-1" placeholder="Jane Doe" />
+    </Label>
+    
+    <Label className="mr-3">
+    <span>Valor Até:</span>
+    <Select className="mt-1">
+      <option>AUT$ 25</option>
+      <option>AUT$ 50</option>
+      <option>AUT$ 100</option>
+      <option>AUT$ 150</option>
+    </Select>
+    </Label>
+
+    <div className="mr-3 mt-6">
+    <Button icon={SearchIcon} aria-label="Like" />
+    </div>
+
+      </div>
+      </CardBody>
+    </Card>
+
+
         <Table>
           <TableHeader>
             <tr>
@@ -147,46 +184,7 @@ function Dashboard() {
         </TableFooter>
       </TableContainer>
 
-      <TableContainer className="mb-8">
-        <SectionTitle>Meus Anuncios</SectionTitle>
-        <Table>
-          <TableHeader>
-            <tr>
-              <TableCell>Client</TableCell>
-              <TableCell>Amount</TableCell>
-              <TableCell>Date</TableCell>
-            </tr>
-          </TableHeader>
-          <TableBody>
-            {data.map((user, i) => (
-              <TableRow key={i}>
-                <TableCell>
-                  <div className="flex items-center text-sm">
-                    <div>
-                      <p className="font-semibold">{user.name}</p>
-                      <p className="text-xs text-gray-600 dark:text-gray-400">{user.job}</p>
-                    </div>
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <span className="text-sm">$ {user.amount}</span>
-                </TableCell>
-                <TableCell>
-                  <span className="text-sm">{new Date(user.date).toLocaleDateString()}</span>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        <TableFooter>
-          <Pagination
-            totalResults={totalResults}
-            resultsPerPage={resultsPerPage}
-            onChange={onPageChange}
-            label="Table navigation"
-          />
-        </TableFooter>
-      </TableContainer>
+      
       </div>
     </>
   )

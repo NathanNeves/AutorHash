@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-
+import { useHistory } from 'react-router-dom'
 import { Card, CardBody } from '@windmill/react-ui'
+import { SearchIcon } from '../icons'
 import PageTitle from '../components/Typography/PageTitle'
 import SectionTitle from '../components/Typography/SectionTitle'
 import CTA from '../components/CTA'
@@ -8,7 +9,7 @@ import {
   Table,
   TableHeader,
   TableCell,
-  TableBody,
+  TableBody,Input, Label, Select,
   TableRow,
   TableFooter,
   TableContainer,
@@ -26,6 +27,8 @@ import response from '../utils/demo/tableData'
 const response2 = response.concat([])
 
 function Loja() {
+
+  
   /**
    * DISCLAIMER: This code could be badly improved, but for the sake of the example
    * and readability, all the logic for both table are here.
@@ -72,13 +75,47 @@ function Loja() {
     <>
       <PageTitle>Loja</PageTitle>
 
+      <div className="flex">
+      
+      <Card style={{width: "100%"}} className="mb-6">
+      
+            <CardBody>
+            <SectionTitle>Filtro:</SectionTitle>
+            <div className="flex direction-row">
+             
+            <Label className="mr-3">
+          <span>Anúncio</span>
+          <Input className="mt-1" placeholder="Jane Doe" />
+          </Label>
+          
+          <Label className="mr-3">
+          <span>Valor Até:</span>
+          <Select className="mt-1">
+            <option>AUT$ 25</option>
+            <option>AUT$ 50</option>
+            <option>AUT$ 100</option>
+            <option>AUT$ 150</option>
+          </Select>
+          </Label>
+
+          <div className="mr-3 mt-6">
+          <Button icon={SearchIcon} aria-label="Like" />
+          </div>
+
+            </div>
+            </CardBody>
+          </Card>
+
+      </div>
+
       <SectionTitle>Anúncios</SectionTitle>
       <div className="grid gap-6 mb-8 md:grid-cols-3">
       <Card>
           <CardBody>
           <div className="flex flex-col items-center">
-            <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
+            <p className="mb-4 font-bold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
             <img style={{width: "90%"}} src={logo}/>
+            <span className="text-gray-600 dark:text-gray-300">Criado em: 20/02/2022</span>
             </div>
           </CardBody>
         </Card>
@@ -87,6 +124,7 @@ function Loja() {
           <div className="flex flex-col items-center">
             <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
             <img style={{width: "90%"}} src={logo}/>
+            <span className="text-gray-600 dark:text-gray-300">Criado em: 20/02/2022</span>
             </div>
           </CardBody>
         </Card>
@@ -95,6 +133,7 @@ function Loja() {
           <div className="flex flex-col items-center">
             <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
             <img style={{width: "90%"}} src={logo}/>
+            <span className="text-gray-600 dark:text-gray-300">Criado em: 20/02/2022</span>
             </div>
           </CardBody>
         </Card>
@@ -103,6 +142,7 @@ function Loja() {
           <div className="flex flex-col items-center">
             <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
             <img style={{width: "90%"}} src={logo}/>
+            <span className="text-gray-600 dark:text-gray-300">Criado em: 20/02/2022</span>
             </div>
           </CardBody>
         </Card>
