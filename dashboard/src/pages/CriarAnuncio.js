@@ -73,7 +73,7 @@ function CriarAnuncio() {
           <TableHeader>
             <tr>
               <TableCell>Obra</TableCell>
-              <TableCell></TableCell>
+              
               <TableCell>Anúnciar</TableCell>
               <TableCell>Data de Registro</TableCell>
             </tr>
@@ -89,19 +89,16 @@ function CriarAnuncio() {
                     </div>
                   </div>
                 </TableCell>
-                <TableCell>
-                <div className="flex items-center text-sm">
-                    <div>
-                    <RoundIcon icon={CheckIcon} className="hidden bg-white rounded-lg shadow-md dark:bg-gray-800"/>
-                    </div>
-                  </div>
                 
-                
-                </TableCell>
                 
                 <TableCell>
                   
-                  <Button >Selecionar</Button>
+                <Label radio>
+                  <div className="flex flex-justify-center ml-6">
+                    
+                  <Input type="radio" size="larger" value="" name="Selecionar" />
+                  </div>
+                </Label>
 
                 </TableCell>
                 <TableCell>
