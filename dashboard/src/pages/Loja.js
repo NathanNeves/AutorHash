@@ -13,6 +13,8 @@ import { EditIcon, TrashIcon } from '../icons'
 import Request from '../Classes/Request'
 
 import logo from "../icons/AutorCoin.png"
+import logo2 from "../assets/img/create-account-office-dark.jpeg"
+import logo3 from "../assets/img/create-account-office.jpeg"
 
 function Loja() {
   const history = useHistory();
@@ -101,7 +103,7 @@ function Loja() {
       <div className="grid gap-6 mb-8 md:grid-cols-3">
       {data.map((anuncio, i) => (        
         <Card onClick={()=>{redirectAnuncio(anuncio.id)}}>
-          <CardBody >
+          <CardBody className="flex flex-col items-center justify-between" style={{height: "100%"}}>
           <div className="flex flex-col items-center">
             <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">{anuncio.obra.name}</p>
             <img style={{width: "90%"}} src={anuncio.obra.image_url}/>
