@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+
 import InfoCard from '../components/Cards/InfoCard'
 import ChartCard from '../components/Chart/ChartCard'
 import { Doughnut, Line } from 'react-chartjs-2'
@@ -50,18 +51,34 @@ import styled from 'styled-components';
 
 
 
+ 
+       
+  
+
+
 function Dashboard() {
   const [page, setPage] = useState(1)
   const [nome, setNome] = useState("")
   const [obras, setObras] = useState([])
   const [totalResults, setTotalResults] = useState(0)
   const history = useHistory();
+  
+  
 
   const HoverText = styled.p`
 	
 	:hover {
 		cursor: pointer;
 	}
+`
+
+const Hext = styled.p`
+	
+{
+  overflow: hidden;
+  width: 200px;
+  text-overflow: ellipsis;
+}
 `
 
   // pagination setup
@@ -133,7 +150,6 @@ function Dashboard() {
         <Button size="larger" className="w-full" onClick={redirect}>Comprar AutorCoins</Button>
       </div>
 
-      
 
       <div className="grid gap-6 mt-8 md:grid-cols-1">
       
@@ -183,8 +199,9 @@ function Dashboard() {
                     </div>
                   </div>
                   </HoverText> </TableCell>
-                <TableCell><HoverText>
-                  <span className="text-sm">{obra.description}</span>
+                <TableCell><HoverText><Hext>
+                  <span className="text-sm" >{obra.description}</span>
+                  </Hext>
                   </HoverText></TableCell>
                 <TableCell><HoverText>
                   <span className="text-sm">{new Date(obra.createdAt).toLocaleDateString()}</span>

@@ -4,7 +4,7 @@ import Request from '../Classes/Request'
 import { Input, HelperText, Label, Select, Textarea, Button, Modal, ModalHeader, ModalBody, ModalFooter, } from '@windmill/react-ui'
 import { useHistory } from 'react-router-dom'
 import { MailIcon } from '../icons'
-
+import loadingif from "../icons/loading-buffering.gif"
 const FormData = require('form-data');
 
 function RegistrarObra() {
@@ -19,6 +19,10 @@ function RegistrarObra() {
   const history = useHistory();
 
   const enviarForm = async () =>{
+
+    document.getElementById("confirmb").style.display = "none";
+    document.getElementById("cancelb").style.display = "none";
+    document.getElementById("lgif").style.display = "block";
 
     let fData = new FormData();
     fData.append("name", name)
@@ -96,14 +100,16 @@ function RegistrarObra() {
           
         </ModalBody>
         <ModalFooter>
-          
+        <img id='lgif' className="hidden mb-2" style={{width: "5%"}} src={loadingif}/>
           <div className="hidden sm:block">
-            <Button layout="outline" onClick={closeModal}>
+            
+            <Button id='cancelb' layout="outline" onClick={closeModal}>
               Cancelar
             </Button>
           </div>
+          
           <div className="hidden sm:block">
-            <Button onClick={()=>{enviarForm()}}>Confirmar</Button>
+            <Button id='confirmb' onClick={()=>{enviarForm()}}>Confirmar</Button>
           </div>
           
         </ModalFooter>
