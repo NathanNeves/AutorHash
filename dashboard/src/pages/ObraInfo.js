@@ -62,7 +62,7 @@ function ObraInfo() {
         <Card>
           <CardBody>
           <p className="mb-1 font-semibold text-gray-600 dark:text-gray-300">Imagem</p>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col p-3  items-center">
             <img style={{width: "90%"}} src={imgurl}/>
           </div>  
           </CardBody>

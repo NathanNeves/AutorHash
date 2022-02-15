@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Store from "../Classes/Store"
 
 import PageTitle from '../components/Typography/PageTitle'
-import {Button, } from '@windmill/react-ui'
+import {Button, Input } from '@windmill/react-ui'
 
 import logo from "../icons/AutorCoin.png"
 
@@ -18,9 +18,11 @@ function ComprarAutorcoin() {
       <p className="text-gray-700 dark:text-gray-300">
         Compre AutorCoins para registrar suas obras!
       </p>
-      <p className="text-gray-700 dark:text-gray-300">Ao clicar no botão de compra você será redirecionado para a extensão da Metamask.</p> <br/> 
+      <p className="text-gray-700 dark:text-gray-300">Ao clicar no botão de compra você será redirecionado para a extensão da Metamask.</p> 
       <p className="text-gray-700 dark:text-gray-300">A quantidade de AutorCoin adquirida é igual a 1000x (um mil vezes) a quantidade de Ethereum transferida.</p> <br/>
-
+<div>
+      <Input type="number" size="small" className="mt-1 mb-3" placeholder="Quantidade de AutorCoin" />
+      </div>
       <Button size="larger" onClick={()=>{Store.comprarCoin()}}>Comprar</Button><br/>
     </div>
 

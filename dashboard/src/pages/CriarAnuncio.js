@@ -66,8 +66,8 @@ function CriarAnuncio() {
           <Input type="number" className="mt-1" placeholder="" />
         </Label>
         
-        <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <TableContainer className="mb-8">
+        <div className="px-4 py-3 mt-5 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <TableContainer className=" mb-4">
         <SectionTitle>Minhas Obras</SectionTitle>
         <Table>
           <TableHeader>

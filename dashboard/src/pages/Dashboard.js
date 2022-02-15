@@ -46,12 +46,23 @@ import {
   lineLegends,
 } from '../utils/demo/chartsData'
 
+import styled from 'styled-components';
+
+
+
 function Dashboard() {
   const [page, setPage] = useState(1)
   const [nome, setNome] = useState("")
   const [obras, setObras] = useState([])
   const [totalResults, setTotalResults] = useState(0)
   const history = useHistory();
+
+  const HoverText = styled.p`
+	
+	:hover {
+		cursor: pointer;
+	}
+`
 
   // pagination setup
   const resultsPerPage = 5
@@ -163,23 +174,24 @@ function Dashboard() {
           </TableHeader>
           <TableBody>
             {obras.map((obra, i) => (
+              
               <TableRow key={i} onClick={()=>{redirectObra(obra.id)}}>
-                <TableCell >
+                <TableCell > <HoverText>
                   <div className="flex items-center text-sm">
                     <div>
                       <p className="font-semibold">{obra.name}</p>
                     </div>
                   </div>
-                </TableCell>
-                <TableCell>
+                  </HoverText> </TableCell>
+                <TableCell><HoverText>
                   <span className="text-sm">{obra.description}</span>
-                </TableCell>
-                <TableCell>
+                  </HoverText></TableCell>
+                <TableCell><HoverText>
                   <span className="text-sm">{new Date(obra.createdAt).toLocaleDateString()}</span>
-                </TableCell>
-              </TableRow>
+                  </HoverText></TableCell>
+                </TableRow>
             ))}
-          </TableBody>
+            </TableBody>
         </Table>
         <TableFooter>
           <Pagination
