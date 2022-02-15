@@ -27,8 +27,10 @@ import response from '../utils/demo/tableData'
 const response2 = response.concat([])
 
 function Loja() {
-
-  
+  const history = useHistory();
+  const redirect = ()=> {
+    history.push("/app/criaranuncio")
+  }
   /**
    * DISCLAIMER: This code could be badly improved, but for the sake of the example
    * and readability, all the logic for both table are here.
@@ -80,7 +82,10 @@ function Loja() {
       <Card style={{width: "100%"}} className="mb-6">
       
             <CardBody>
+              
             <SectionTitle>Filtro:</SectionTitle>
+            <div className="flex justify-between">
+            
             <div className="flex direction-row">
              
             <Label className="mr-3">
@@ -109,6 +114,9 @@ function Loja() {
           </div>
 
             </div>
+            <Button onClick={redirect}>Criar Anúncio</Button>
+            </div>
+            
             </CardBody>
           </Card>
 
