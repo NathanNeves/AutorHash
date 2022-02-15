@@ -12,17 +12,7 @@ class Store{
     
     mint =  async(req,res) =>{
         try{
-            let {name,description,transactionHash} = req.body;
-            let transacao =  await Transacao.findOne({where:{transactionHash}});
-            if(transacao !== null){
-                return res.status(403).send({msg:"Transacao invalida"});
-            }
-            let transactionInfo = await this.web3.eth.getTransactionReceipt(transactionHash);
-            let transactionValue = await this.web3.eth.getTransaction(transactionHash);
-            transactionValue = transactionValue.value
-            if(transactionInfo.from !== req.user.publicAddress || transactionInfo.to  !== process.env.STORE_WALLET || transactionInfo.status == false ||  transactionValue <= 0.01  ){ 
-                return res.status(403).send({msg:"Transação invalida"});
-            }
+            let {name,description} = req.body;
             
             const {filename,mimetype,originalname} = req.file;
             const metadata = await this.client.store({
@@ -39,11 +29,10 @@ class Store{
             let response = await transaction(req.user.publicAddress,metadata.url).send({from:account.address,gas:200000});
             await Obra.create({name,description,image_url:metadata.url,userId:req.user.id,id:response.events.Transfer.returnValues.tokenId});
             await fs.promises.rm('./uploads/'+filename)
-            await Transacao.create({userId:req.user.id,transactionHash});
             return res.status(200).send({msg:response});
         }catch(e){
             console.log(e);
-            res.status(200).send({mensagem:"Erro interno no sistema"});
+            res.status(500).send({mensagem:"Erro interno no sistema"});
         }
     }
 

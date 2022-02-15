@@ -8,12 +8,7 @@ export default class Request{
     static async postRequest(url, body){
         
         let token = await user.getHeader()
-        axios.defaults.headers.post['x-access-token'] = token
-        let res = await axios.post(url, body)
-
-       if(this.toLogin(res.status)){
-            return;
-       }
+        let res = await axios.post(url, body, token)
 
        return res;
     }

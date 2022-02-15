@@ -54,6 +54,7 @@ function Dashboard() {
   const [page, setPage] = useState(1)
   const [nome, setNome] = useState("")
   const [obras, setObras] = useState([])
+  const [totalResults, setTotalResults] = useState(0)
   const history = useHistory();
 
   const HoverText = styled.p`
@@ -65,7 +66,7 @@ function Dashboard() {
 
   // pagination setup
   const resultsPerPage = 5
-  const totalResults = obras.length
+
 
   // pagination change control
   function onPageChange(p) {
@@ -87,6 +88,8 @@ function Dashboard() {
 
     Request.getRequest("/listObras?size=500&page=0").then(res => {
       setObras(res.data.obras.slice((page - 1) * resultsPerPage, page * resultsPerPage))
+      console.log(res.data.obras)
+      setTotalResults(res.data.obras.length)
     })
     setNome(localStorage.getItem("nome"))
   }, [page])
