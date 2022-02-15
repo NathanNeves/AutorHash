@@ -60,8 +60,8 @@ app.post('/api/getNonce',UserController.getNonce);
 app.get('/api/listObras',verifyJWT,ObraController.listObras);
 app.get("/api/getObra",verifyJWT,ObraController.getObra);
 app.post('/api/buy',verifyJWT,store.buyAutorCoins);
-app.get('/api/getAd',verifyJWT,LojaController.getSingleAd);
-app.get('/api/getAds',verifyJWT,LojaController.listAds);
+app.get('/api/getAnuncio',verifyJWT,LojaController.getSingleAd);
+app.get('/api/getAnuncios',verifyJWT,LojaController.listAds);
 
 
 app.listen(8000,()=>{

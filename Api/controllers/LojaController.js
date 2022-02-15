@@ -25,7 +25,6 @@ class LojaController{
                 }
 
                 let whereAnuncio = {
-                    price,
                     status:true
                 };
                 if(my === true){

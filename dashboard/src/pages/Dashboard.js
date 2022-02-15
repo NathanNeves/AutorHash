@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-
 import InfoCard from '../components/Cards/InfoCard'
-import ChartCard from '../components/Chart/ChartCard'
-import { Doughnut, Line } from 'react-chartjs-2'
-import ChartLegend from '../components/Chart/ChartLegend'
 import SectionTitle from '../components/Typography/SectionTitle'
 import PageTitle from '../components/Typography/PageTitle'
 import {  
@@ -40,13 +36,6 @@ import {
 
 import { useHistory } from 'react-router-dom'
 
-import {
-  doughnutOptions,
-  lineOptions,
-  doughnutLegends,
-  lineLegends,
-} from '../utils/demo/chartsData'
-
 import styled from 'styled-components';
 
 
@@ -62,8 +51,6 @@ function Dashboard() {
   const [obras, setObras] = useState([])
   const [totalResults, setTotalResults] = useState(0)
   const history = useHistory();
-  
-  
 
   const HoverText = styled.p`
 	
@@ -105,7 +92,6 @@ const Hext = styled.p`
 
     Request.getRequest("/listObras?size=500&page=0").then(res => {
       setObras(res.data.obras.slice((page - 1) * resultsPerPage, page * resultsPerPage))
-      console.log(res.data.obras)
       setTotalResults(res.data.obras.length)
     })
     setNome(localStorage.getItem("nome"))
