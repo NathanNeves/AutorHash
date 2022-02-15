@@ -21,6 +21,8 @@ import {
 import { EditIcon, TrashIcon } from '../icons'
 
 import logo from "../icons/AutorCoin.png"
+import logo2 from "../assets/img/create-account-office-dark.jpeg"
+import logo3 from "../assets/img/create-account-office.jpeg"
 
 import response from '../utils/demo/tableData'
 // make a copy of the data, for the second table
@@ -125,39 +127,41 @@ function Loja() {
       <SectionTitle>Anúncios</SectionTitle>
       <div className="grid gap-6 mb-8 md:grid-cols-3">
       <Card>
-          <CardBody>
-          <div className="flex flex-col items-center">
+          <CardBody className="flex flex-col items-center justify-between" style={{height: "100%"}}>
+          
             <p className="mb-4 font-bold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
             <img style={{width: "90%"}} src={logo}/>
             <span className="text-gray-600 dark:text-gray-300">Criado em: 20/02/2022</span>
-            </div>
+          
           </CardBody>
         </Card>
         <Card>
-          <CardBody>
-          <div className="flex flex-col items-center">
+          <CardBody className="flex flex-col items-center justify-between" style={{height: "100%"}}> 
+          
             <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
-            <img style={{width: "90%"}} src={logo}/>
+            <img style={{width: "90%"}} src={logo2}/>
+            <div>
             <span className="text-gray-600 dark:text-gray-300">Criado em: 20/02/2022</span>
             </div>
+            
           </CardBody>
         </Card>
         <Card>
-          <CardBody>
-          <div className="flex flex-col items-center">
+          <CardBody  className="flex flex-col items-center justify-between" style={{height: "100%"}}>
+         
             <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
-            <img style={{width: "90%"}} src={logo}/>
+            <img style={{width: "90%"}} src={logo3}/>
             <span className="text-gray-600 dark:text-gray-300">Criado em: 20/02/2022</span>
-            </div>
+           
           </CardBody>
         </Card>
         <Card>
-          <CardBody>
-          <div className="flex flex-col items-center">
+          <CardBody  className="flex flex-col items-center justify-between" style={{height: "100%"}}>
+          
             <p className="mb-4 font-semibold text-gray-600 dark:text-gray-300">Token da AutorHash</p>
             <img style={{width: "90%"}} src={logo}/>
             <span className="text-gray-600 dark:text-gray-300">Criado em: 20/02/2022</span>
-            </div>
+          
           </CardBody>
         </Card>
 
