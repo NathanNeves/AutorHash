@@ -1,4 +1,6 @@
 import axios from './Axios';
+import jwt_decode from "jwt-decode";
+
 
 export default class Usuario{
     constructor(nome,email,publicAddress){
@@ -25,9 +27,13 @@ export default class Usuario{
             let response = await axios.post('/login',{publicAddress,signature});
             response = response.data;
             if(response.token){
+                let decoded = jwt_decode(response.token);
+                console.log(decoded);
                 localStorage.setItem("publicAddressUser",publicAddress);
                 localStorage.setItem("token",response.token);
                 localStorage.setItem('refreshToken',response.refreshToken)
+                localStorage.setItem('userId',decoded.id)
+                localStorage.setItem('nome',decoded.nome)
                 return true;
             }
 
@@ -55,9 +61,12 @@ export default class Usuario{
 
     static getHeader = async () =>{
         let token = await localStorage.getItem("token")
-
+        
         return {
-            "x-access-token": token
+            "headers": {
+                "x-access-token": token,
+            }
+   
         }
     }
 }

@@ -19,6 +19,7 @@ import {
 } from '../icons'
 import RoundIcon from '../components/RoundIcon'
 import response from '../utils/demo/tableData'
+import Request from '../Classes/Request'
 import {
   Table,
   TableHeader,
@@ -47,12 +48,13 @@ import {
 
 function Dashboard() {
   const [page, setPage] = useState(1)
-  const [data, setData] = useState([])
+  const [nome, setNome] = useState("")
+  const [obras, setObras] = useState([])
   const history = useHistory();
 
   // pagination setup
   const resultsPerPage = 5
-  const totalResults = response.length
+  const totalResults = obras.length
 
   // pagination change control
   function onPageChange(p) {
@@ -63,17 +65,25 @@ function Dashboard() {
     history.push("/app/comprarAutorcoin")
   }
 
+  const redirectObra = (obraID)=> {
+    history.push("/app/obra/"+obraID)
+  }
+
   // on page change, load new sliced data
   // here you would make another server request for new data
   
   useEffect(() => {
-    setData(response.slice((page - 1) * resultsPerPage, page * resultsPerPage))
+
+    Request.getRequest("/listObras?size=500&page=0").then(res => {
+      setObras(res.data.obras.slice((page - 1) * resultsPerPage, page * resultsPerPage))
+    })
+    setNome(localStorage.getItem("nome"))
   }, [page])
 
   return (
     <>
       <PageTitle>Meu Painel</PageTitle>
-      <SectionTitle>Olá, Leonardo!</SectionTitle>
+      <SectionTitle>Olá, {nome}</SectionTitle>
       {/* <!-- Cards --> */}
       <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3">
         <InfoCard title="Obras Registradas" value="12">
@@ -122,18 +132,8 @@ function Dashboard() {
       <div className="flex direction-row">
        
       <Label className="mr-3">
-    <span>Anúncio</span>
-    <Input className="mt-1" placeholder="Jane Doe" />
-    </Label>
-    
-    <Label className="mr-3">
-    <span>Valor Até:</span>
-    <Select className="mt-1">
-      <option>AUT$ 25</option>
-      <option>AUT$ 50</option>
-      <option>AUT$ 100</option>
-      <option>AUT$ 150</option>
-    </Select>
+    <span>Obra</span>
+    <Input className="mt-1" placeholder="Monalisa" />
     </Label>
 
     <Label className="mr-3">
@@ -153,27 +153,26 @@ function Dashboard() {
         <Table>
           <TableHeader>
             <tr>
-              <TableCell>Client</TableCell>
-              <TableCell>Amount</TableCell>
-              <TableCell>Date</TableCell>
+              <TableCell>Titulo</TableCell>
+              <TableCell>Descrição</TableCell>
+              <TableCell>Criada em</TableCell>
             </tr>
           </TableHeader>
           <TableBody>
-            {data.map((user, i) => (
-              <TableRow key={i}>
-                <TableCell>
+            {obras.map((obra, i) => (
+              <TableRow key={i} onClick={()=>{redirectObra(obra.id)}}>
+                <TableCell >
                   <div className="flex items-center text-sm">
                     <div>
-                      <p className="font-semibold">{user.name}</p>
-                      <p className="text-xs text-gray-600 dark:text-gray-400">{user.job}</p>
+                      <p className="font-semibold">{obra.name}</p>
                     </div>
                   </div>
                 </TableCell>
                 <TableCell>
-                  <span className="text-sm">$ {user.amount}</span>
+                  <span className="text-sm">{obra.description}</span>
                 </TableCell>
                 <TableCell>
-                  <span className="text-sm">{new Date(user.date).toLocaleDateString()}</span>
+                  <span className="text-sm">{new Date(obra.createdAt).toLocaleDateString()}</span>
                 </TableCell>
               </TableRow>
             ))}

@@ -83,7 +83,7 @@ const routes = [
     component: ComprarAutorcoin,
   },
   {
-    path: '/obra',
+    path: `/obra/:id`,
     component: Obra,
   },
   {

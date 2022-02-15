@@ -21,7 +21,7 @@ function ComprarAutorcoin() {
       <p className="text-gray-700 dark:text-gray-300">Ao clicar no botão de compra você será redirecionado para a extensão da Metamask.</p> <br/> 
       <p className="text-gray-700 dark:text-gray-300">A quantidade de AutorCoin adquirida é igual a 1000x (um mil vezes) a quantidade de Ethereum transferida.</p> <br/>
 
-      <Button size="larger" onClick={Store.comprarCoin()}>Comprar</Button><br/>
+      <Button size="larger" onClick={()=>{Store.comprarCoin()}}>Comprar</Button><br/>
     </div>
 
     </>
