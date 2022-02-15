@@ -76,7 +76,7 @@ const Hext = styled.p`
 	
 {
   overflow: hidden;
-  width: 200px;
+  width: 39vw;
   text-overflow: ellipsis;
 }
 `
