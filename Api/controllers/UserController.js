@@ -49,7 +49,7 @@ class UserController{
             const addressBuffer = ethUtil.publicToAddress(publicKey);
             const address = ethUtil.bufferToHex(addressBuffer);
             if (address.toLowerCase() === publicAddress.toLowerCase()) {
-                let userData = {id:user.id,publicAddress};
+                let userData = {id:user.id,publicAddress,name:user.nome};
                 const token = jwt.sign(userData,process.env.TOKEN_SECRET,{expiresIn:3000});
                 const refreshToken = jwt.sign(userData,process.env.REFRESH_TOKEN_SECRET,{expiresIn:3060});
                 user.nonce = Math.floor(Math.random() * 1000000);

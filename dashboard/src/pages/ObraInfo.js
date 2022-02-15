@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
+import {useParams} from 'react-router-dom'
+import Request from '../Classes/Request'
 
 import PageTitle from '../components/Typography/PageTitle'
 import SectionTitle from '../components/Typography/SectionTitle'
@@ -9,6 +12,24 @@ import RoundIcon from '../components/RoundIcon'
 import logo from "../icons/AutorCoin.png"
 
 function ObraInfo() {
+
+  const [titulo, setTitulo] = useState("")
+  const [descricao, setDescricao] = useState("")
+  const [imgurl, setImgurl] = useState("")
+  const [date, setDate] = useState("")
+
+  const {id} = useParams()
+
+  useEffect(() => {
+    
+    Request.getRequest(`/getObra?obraId=`+id).then(res =>{
+      setTitulo(res.data.name)
+      setDescricao(res.data.description)
+      setImgurl(res.data.image_url)
+      setDate(res.data.createdAt)
+      })
+  })
+
   return (
     <>
       <PageTitle>Minha Obra</PageTitle>
@@ -19,12 +40,12 @@ function ObraInfo() {
             <CardBody>
             <p className="mb-3 font-semibold text-gray-600 dark:text-gray-300">Titulo da Obra</p>
               <p className="mb-4 text-gray-600 dark:text-gray-400">
-                Autor Hash
+                {titulo}
               </p>
 
               <p className="mb-3 font-semibold text-gray-600 dark:text-gray-300">Registrada em:</p>
               <p className="mb-4 text-gray-600 dark:text-gray-400">
-                19/02/2022
+                {date}
               </p>
             </CardBody>
           </Card>
@@ -32,7 +53,7 @@ function ObraInfo() {
             <CardBody>
             <p className="mb-3 font-semibold text-gray-600 dark:text-gray-300">Descrição</p>
               <p className="mb-4 text-gray-600 dark:text-gray-400">
-              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam non est ac est hendrerit venenatis. Donec eget tempor metus. Nulla non ante eu nibh facilisis tristique. Proin vitae accumsan augue, sed ornare ex. Morbi mollis tortor maximus diam blandit egestas. Nam eget mauris non mauris convallis consequat. Maecenas eget urna eu dolor pharetra ultrices. Morbi bibendum purus ut urna feugiat pharetra. Sed hendrerit, massa ac scelerisque accumsan, augue velit sodales nibh, id egestas arcu eros sit amet risus. Phasellus elementum augue sit amet ligula eleifend egestas. Aenean nibh odio, sodales id maximus vel, finibus sed magna. Sed ut metus luctus, faucibus magna sed, vestibulum tellus. Pellentesque a suscipit turpis. Praesent vulputate in risus non cursus. Aenean tempus ut urna at finibus.
+              {descricao}
               </p>
             </CardBody>
           </Card>
@@ -42,7 +63,7 @@ function ObraInfo() {
           <CardBody>
           <p className="mb-1 font-semibold text-gray-600 dark:text-gray-300">Imagem</p>
           <div className="flex flex-col items-center">
-            <img style={{width: "90%"}} src={logo}/>
+            <img style={{width: "90%"}} src={imgurl}/>
           </div>  
           </CardBody>
         </Card>
