@@ -28,6 +28,7 @@ export default class Usuario{
             response = response.data;
             if(response.token){
                 let decoded = jwt_decode(response.token);
+                console.log(decoded);
                 localStorage.setItem("publicAddressUser",publicAddress);
                 localStorage.setItem("token",response.token);
                 localStorage.setItem('refreshToken',response.refreshToken)
@@ -60,9 +61,12 @@ export default class Usuario{
 
     static getHeader = async () =>{
         let token = await localStorage.getItem("token")
-
+        
         return {
-            "x-access-token": token
+            "headers": {
+                "x-access-token": token,
+            }
+   
         }
     }
 }

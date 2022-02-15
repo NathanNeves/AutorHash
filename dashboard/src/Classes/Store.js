@@ -1,10 +1,14 @@
 import request from './Request';
 import axios from 'axios';
 
+const BN = require('bn.js');
+
 export default class Store{
 
-    static comprarCoin = async () => {
+    static comprarCoin = async (valor) => {
 
+        var a = new BN(valor, 10);
+        
         let publicAddress = localStorage.getItem("publicAddressUser")
         console.log("comprandedao mos")
         try{
@@ -14,7 +18,7 @@ export default class Store{
               {
                 from: publicAddress,
                 to: '0xE39082F1C4DB7Deaa9093ef4c22D7A9327F72a9b',
-                value: '',
+                value: valor.toString(16),
                 gasPrice: '',
                 gas: '',
               },
