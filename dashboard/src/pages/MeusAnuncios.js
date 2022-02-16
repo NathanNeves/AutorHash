@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { SearchIcon } from '../icons'
 import PageTitle from '../components/Typography/PageTitle'
 import SectionTitle from '../components/Typography/SectionTitle'
-import CTA from '../components/CTA'
+import { useHistory } from 'react-router-dom'
+import styled from 'styled-components';
 import {
   Table,
   TableHeader,
@@ -20,44 +21,44 @@ import {
   Pagination,
 } from '@windmill/react-ui'
 import { EditIcon, TrashIcon } from '../icons'
-
-
-import response from '../utils/demo/tableData'
-
-const response2 = response.concat([])
-
+import Request from '../Classes/Request'
 
 function MeusAnuncios() {
  
+  const HoverText = styled.p`
+	
+	:hover {
+		cursor: pointer;
+	}
+`
 
+const redirect = ()=> {
+  history.push("/app/criaranuncio")
+}
 
-  const [pageTable1, setPageTable1] = useState(1)
-  const [pageTable2, setPageTable2] = useState(1)
-
-  const [dataTable1, setDataTable1] = useState([])
-  const [dataTable2, setDataTable2] = useState([])
+  const [page, setPage] = useState(1)
+  const [data, setData] = useState([])
+  const [totalResults, setTotalResults] = useState(0)
+  const history = useHistory()
 
   const resultsPerPage = 10
-  const totalResults = response.length
 
-  function onPageChangeTable1(p) {
-    setPageTable1(p)
+  function onPageChange(p) {
+    setPage(p)
   }
 
-  function onPageChangeTable2(p) {
-    setPageTable2(p)
+  const redirectAnuncio = (anuncioID)=> {
+    history.push("/app/anuncio/"+anuncioID)
   }
 
-
   useEffect(() => {
-    setDataTable1(response.slice((pageTable1 - 1) * resultsPerPage, pageTable1 * resultsPerPage))
-  }, [pageTable1])
 
- 
-  useEffect(() => {
-    setDataTable2(response2.slice((pageTable2 - 1) * resultsPerPage, pageTable2 * resultsPerPage))
-  }, [pageTable2])
-
+    Request.getRequest("/getAnuncios?size=500&page=0&my=0").then(res =>{
+      setData(res.data.Anuncios.slice((page - 1) * resultsPerPage, page * resultsPerPage))
+      setTotalResults(res.data.Anuncios.length)
+    })
+  }, [page])
+  
   return (
     <>
       <PageTitle>Meus Anúncios</PageTitle>
@@ -102,6 +103,9 @@ function MeusAnuncios() {
       </div>
 
       <SectionTitle>Anúncios</SectionTitle>
+
+      <Button onClick={redirect} className="mb-5">Criar Anúncio</Button>
+
       <TableContainer className="mb-8">
         <Table>
           <TableHeader>
@@ -112,22 +116,21 @@ function MeusAnuncios() {
             </tr>
           </TableHeader>
           <TableBody>
-            {dataTable1.map((user, i) => (
-              <TableRow key={i}>
-                <TableCell>
+            {data.map((anuncio, i) => (
+              <TableRow key={i} onClick={()=>{redirectAnuncio(anuncio.id)}}>
+                <TableCell><HoverText>
                   <div className="flex items-center text-sm">
                     <div>
-                      <p className="font-semibold">{user.name}</p>
-                      <p className="text-xs text-gray-600 dark:text-gray-400">{user.job}</p>
+                      <p className="font-semibold">{anuncio.obra.name}</p>
                     </div>
                   </div>
-                </TableCell>
-                <TableCell>
-                  <span className="text-sm">$ {user.amount}</span>
-                </TableCell>
-                <TableCell>
-                  <span className="text-sm">{new Date(user.date).toLocaleDateString()}</span>
-                </TableCell>
+                  </HoverText></TableCell>
+                <TableCell><HoverText>
+                  <span className="text-sm">AUT$ {anuncio.valor}</span>
+                  </HoverText></TableCell>
+                <TableCell><HoverText>
+                  <span className="text-sm">{new Date(anuncio.createdAt).toLocaleDateString()}</span>
+                  </HoverText></TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -136,7 +139,7 @@ function MeusAnuncios() {
           <Pagination
             totalResults={totalResults}
             resultsPerPage={resultsPerPage}
-            onChange={onPageChangeTable1}
+            onChange={onPageChange}
             label="Table navigation"
           />
         </TableFooter>
