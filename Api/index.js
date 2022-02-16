@@ -15,6 +15,8 @@ const multer = require('multer');
 let { NFTStorage, File } = require('nft.storage');
 const { application } = require('express');
 const LojaController = require('./controllers/LojaController');
+const AdController = require('./controllers/AdController');
+const 
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, './uploads')
@@ -62,6 +64,9 @@ app.get("/api/getObra",verifyJWT,ObraController.getObra);
 app.post('/api/buy',verifyJWT,store.buyAutorCoins);
 app.get('/api/getAnuncio',verifyJWT,LojaController.getSingleAd);
 app.get('/api/getAnuncios',verifyJWT,LojaController.listAds);
+app.delete('/api/deletarAnuncio',verifyJWT,AdController.deleteAd);
+app.post('/api/criarAnuncio',verifyJWT,AdController.createAd);
+app.put('/api/editarAnuncio',verifyJWT,AdController.editAd);
 
 
 app.listen(8000,()=>{
