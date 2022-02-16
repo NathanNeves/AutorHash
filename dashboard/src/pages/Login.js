@@ -60,16 +60,7 @@ function Login() {
                   <img style={{marginLeft: "5px"}} className="w-8" src={Metamask}/>
                 </div>  
               </Button>
-
               <p className="mt-4">
-                <Link
-                  className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                  to="/forgot-password"
-                >
-                  Esqueceu sua Senha?
-                </Link>
-              </p>
-              <p className="mt-1">
                 <Link
                   className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
                   to="/create-account"

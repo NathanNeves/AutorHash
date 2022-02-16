@@ -89,6 +89,9 @@ const Hext = styled.p`
     Request.getRequest("/getAnuncios?size=500&page=0&my=1").then(res =>{
       setTotalResults1(res.data.Anuncios.length)
     })
+    Request.getRequest("/getSaldo").then(res=>{
+      localStorage.setItem("saldo",res.data.balance)
+    })
     setSaldo(localStorage.getItem("saldo"))
     setNome(localStorage.getItem("nome"))
   }, [page])

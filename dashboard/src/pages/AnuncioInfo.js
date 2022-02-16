@@ -6,14 +6,68 @@ import Request from '../Classes/Request'
 import PageTitle from '../components/Typography/PageTitle'
 import { Card, CardBody, Input, Label, Button, Modal, ModalHeader, ModalBody, ModalFooter, } from '@windmill/react-ui'
 import logo from "../icons/AutorCoin.png"
+import { useHistory } from 'react-router-dom'
+import loadingif from "../icons/loading-buffering.gif"
 
 function AnuncioInfo() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen1, setIsModalOpen1] = useState(false)
   const [isModalOpen2, setIsModalOpen2] = useState(false)
   const [anuncio, setAnuncio] = useState({})
   const [obra, setObra] = useState({})
   const [aux, setAux] = useState(0)
   const [isMine,setIsMine] = useState(false)
+  const [mensagem, setMensagem] = useState("")
+  const history = useHistory();
+  
+
+  let redirectEditar = (anuncioID) =>{
+    history.push("/app/editaranuncio/"+anuncioID)
+  }
+
+  let deletarAnuncio = (obraID)=>{
+      document.getElementById("confirmb").style.display = "none";
+      document.getElementById("cancelb").style.display = "none";
+      document.getElementById("lgif").style.display = "block";
+
+      let body = {
+        "nftId":obraID,
+      }
+
+    Request.postRequest("/deletarAnuncio",body).then(res=>{
+      if(res.status != 200){
+        setMensagem(res.data.error)
+        closeModal2();
+        openModal1();
+      }else{
+        setMensagem("Anúncio Deletado com Sucesso!")
+        closeModal2();
+        openModal1();
+      }
+    })
+  }
+
+  let comprarObra = (obraID)=>{
+    document.getElementById("confirmb1").style.display = "none";
+    document.getElementById("cancelb1").style.display = "none";
+    document.getElementById("lgif1").style.display = "block";
+
+    let body = {
+      "obraId":obraID,
+    }
+
+  Request.postRequest("/buyObra",body).then(res=>{
+    if(res.status != 200){
+      setMensagem(res.data.error)
+      closeModal();
+      openModal1();
+    }else{
+      setMensagem("Obra Adquirida com Sucesso")
+      closeModal();
+      openModal1();
+    }
+  })
+}
 
 
   const {id} = useParams()
@@ -27,11 +81,19 @@ function AnuncioInfo() {
     }
 
     function openModal2() {
-      setIsModalOpen(true)
+      setIsModalOpen2(true)
     }
   
     function closeModal2() {
-      setIsModalOpen(false)
+      setIsModalOpen2(false)
+    }
+    function openModal1() {
+      setIsModalOpen1(true)
+    }
+  
+    function closeModal1() {
+      setIsModalOpen1(false)
+      history.push("/app/loja")
     }
 
     useEffect(() => {
@@ -56,7 +118,7 @@ function AnuncioInfo() {
       <PageTitle>Anúncio</PageTitle>
       <div className="flex mb-4 mt-2">
         {isMine ?
-        <Button size="larger" className="mr-5">Editar Anúncio</Button>:
+        <Button onClick={()=>{redirectEditar(anuncio.id)}} size="larger" className="mr-5">Editar Anúncio</Button>:
         <></>
         }
         {isMine ?
@@ -99,14 +161,14 @@ function AnuncioInfo() {
           
         </ModalBody>
         <ModalFooter>
-          
+        <img id='lgif' className="hidden mb-2" style={{width: "5%"}} src={loadingif}/>
           <div className="hidden sm:block">
-            <Button layout="outline" onClick={()=>{closeModal2()}}>
+            <Button id='cancelb' layout="outline" onClick={()=>{closeModal2()}}>
               Cancelar
             </Button>
           </div>
           <div className="hidden sm:block">
-            <Button>Confirmar</Button>
+            <Button id='confirmb' onClick={()=>{deletarAnuncio(obra.id)}}>Confirmar</Button>
           </div>
           
         </ModalFooter>
@@ -135,13 +197,30 @@ function AnuncioInfo() {
         </ModalBody>
         <ModalFooter>
           
+        <img id='lgif1' className="hidden mb-2" style={{width: "5%"}} src={loadingif}/>
           <div className="hidden sm:block">
-            <Button layout="outline" onClick={()=>{closeModal()}}>
+            <Button id='cancelb1' layout="outline" onClick={()=>{closeModal()}}>
               Cancelar
             </Button>
           </div>
           <div className="hidden sm:block">
-            <Button>Confirmar</Button>
+            <Button id='confirmb1' onClick={()=>{comprarObra(obra.id)}}>Confirmar</Button>
+          </div>
+          
+        </ModalFooter>
+      </Modal>
+
+      <Modal isOpen={isModalOpen1} onClose={closeModal1}>
+        <ModalHeader>Mensagem</ModalHeader>
+        <ModalBody>
+        <p>{mensagem}</p><br />          
+        </ModalBody>
+        <ModalFooter>
+          
+          <div className="hidden sm:block">
+            <Button layout="outline" onClick={closeModal1}>
+              Cancelar
+            </Button>
           </div>
           
         </ModalFooter>

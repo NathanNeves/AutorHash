@@ -4,12 +4,20 @@ import Store from "../Classes/Store"
 
 import PageTitle from '../components/Typography/PageTitle'
 import {Button, Input } from '@windmill/react-ui'
+import { useHistory } from 'react-router-dom'
 
 import logo from "../icons/AutorCoin.png"
 
 function ComprarAutorcoin() {
 
   const [valor,setValor] = useState(0)
+  const history = useHistory();
+
+
+  let comprarCoinn = async (val) =>{
+    await Store.comprarCoin(val)
+    history.push("/app/dashboard")
+  }
 
   return (
     <>
@@ -25,7 +33,7 @@ function ComprarAutorcoin() {
 <div>
       <Input type="number" value={valor} onChange={e=>setValor(e.target.value)} size="small" className="mt-1 mb-3" placeholder="Quantidade de AutorCoin" />
       </div>
-      <Button size="larger" onClick={()=>{Store.comprarCoin(valor)}}>Comprar</Button><br/>
+      <Button size="larger" onClick={()=>{comprarCoinn(valor)}}>Comprar</Button><br/>
     </div>
 
     </>

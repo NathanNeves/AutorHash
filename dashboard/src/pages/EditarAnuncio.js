@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import {useParams} from 'react-router-dom'
+
+import Request from '../Classes/Request'
 
 import CTA from '../components/CTA'
 import PageTitle from '../components/Typography/PageTitle'
@@ -15,27 +18,56 @@ import { Input, HelperText, Label, Select, Textarea, Button, Modal, ModalHeader,
   import { useHistory } from 'react-router-dom'
 import { MailIcon } from '../icons'
 import { CheckIcon } from '../icons'
+import loadingif from "../icons/loading-buffering.gif"
 
 function EditarAnuncio() {
 
-  const [page, setPage] = useState(1)
-  const [data, setData] = useState([])
+  const [anuncio, setAnuncio] = useState({})
+  const [obra, setObra] = useState({})
+  const [aux, setAux] = useState(0)
+  const [valor, setValor] = useState(0)
+  const {id} = useParams()
+  const [mensagem, setMensagem] = useState("")
   const history = useHistory();
 
-  const resultsPerPage = 5
-  const totalResults = response.length
+  useEffect(() => {
 
-  function onPageChange(p) {
-    setPage(p)
+    if(aux==0){
+      Request.getRequest("/getAnuncio?anuncioId="+id).then(res => {
+        setAnuncio(res.data)
+        setObra(res.data.obra)
+        setAux(1)
+      })
+    }
+    
+  })
+
+    let handleSubButton = (val,nftId)=>{
+
+      document.getElementById("confirmb").style.display = "none";
+      document.getElementById("cancelb").style.display = "none";
+      document.getElementById("lgif").style.display = "block";
+
+      let body = {
+        "valor":val,
+        "nftId":nftId,
+      }
+
+    Request.postRequest("/editarAnuncio",body).then(res=>{
+      if(res.status != 200){
+        setMensagem(res.data.error)
+        closeModal();
+        openModal1();
+      }else{
+        setMensagem("Anúncio Editado com Sucesso!")
+        closeModal();
+        openModal1();
+      }
+    })
   }
 
-
-
-  useEffect(() => {
-    setData(response.slice((page - 1) * resultsPerPage, page * resultsPerPage))
-  }, [page])
-
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [isModalOpen1, setIsModalOpen1] = useState(false)
   
     function openModal() {
       setIsModalOpen(true)
@@ -45,6 +77,14 @@ function EditarAnuncio() {
       setIsModalOpen(false)
     }
 
+    function openModal1() {
+      setIsModalOpen1(true)
+    }
+  
+    function closeModal1() {
+      setIsModalOpen1(false)
+    }
+
   return (
     <>
       <PageTitle>Editar Anúncio</PageTitle>
@@ -52,11 +92,11 @@ function EditarAnuncio() {
       <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
         
 
-      <p className="mb-3 font-semibold text-gray-600 dark:text-gray-300"></p> {/* {obra.name} */}
+      <p className="mb-3 font-semibold text-gray-600 dark:text-gray-300">{obra.name}</p> 
 
         <Label className="mt-3">
           <span>Valor:</span>
-          <Input type="number" className="mt-1" placeholder="" />
+          <Input type="number" value={valor} onChange={e=>setValor(e.target.value)} className="mt-1" placeholder="" />
         </Label>
         
         
@@ -69,11 +109,11 @@ function EditarAnuncio() {
         <ModalBody>
         <div className="flex">
             <b className="mb-3 mr-1 text-gray-600 dark:text-gray-400">Obra:</b> 
-            <p className="mb-3 text-gray-600 dark:text-gray-400">Título da Obra</p>
+            <p className="mb-3 text-gray-600 dark:text-gray-400">{obra.name}</p>
             </div>
         <div className="flex">
         <b className="mb-2 mr-1 text-gray-600 dark:text-gray-400">Valor:</b> 
-            <p className="mb-2 text-gray-600 dark:text-gray-400">0 AUT$</p>
+            <p className="mb-2 text-gray-600 dark:text-gray-400">AUT$ {anuncio.valor}</p>
             </div>
         
         <b >LEMBRE-SE!</b><br />
@@ -81,14 +121,30 @@ function EditarAnuncio() {
           
         </ModalBody>
         <ModalFooter>
-          
+        <img id='lgif' className="hidden mb-2" style={{width: "5%"}} src={loadingif}/>
           <div className="hidden sm:block">
-            <Button layout="outline" onClick={closeModal}>
+            <Button id='cancelb' layout="outline" onClick={closeModal}>
               Cancelar
             </Button>
           </div>
           <div className="hidden sm:block">
-            <Button>Confirmar</Button>
+            <Button id='confirmb' onClick={()=>{handleSubButton(valor,obra.id)}}>Confirmar</Button>
+          </div>
+          
+        </ModalFooter>
+      </Modal>
+
+      <Modal isOpen={isModalOpen1} onClose={closeModal1}>
+        <ModalHeader>Mensagem</ModalHeader>
+        <ModalBody>
+        <p>{mensagem}</p><br />          
+        </ModalBody>
+        <ModalFooter>
+          
+          <div className="hidden sm:block">
+            <Button layout="outline" onClick={closeModal1}>
+              Cancelar
+            </Button>
           </div>
           
         </ModalFooter>

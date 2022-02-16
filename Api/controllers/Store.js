@@ -17,7 +17,7 @@ class Store{
             if(user.moeda <= 0){
                 return res.status(403).send({msg:"Saldo insuficiente"});
             }
-            user.moeda-= 2000;
+            user.moeda -= 2;
             await user.save();
             const {filename,mimetype,originalname} = req.file;
             const metadata = await this.client.store({
@@ -81,19 +81,29 @@ class Store{
             }
             let user = await User.findByPk(req.user.id);
             let user2 = await User.findByPk(anuncio.userId);
-            novoSaldo =  user.moeda - anuncio.valor;
+            let novoSaldo =  user.moeda - anuncio.valor;
             if(novoSaldo < 0){
                 return res.status(403).send({msg:"Saldo insuficiente"});
             }
+
+            let obra = await Obra.findByPk(obraId);
+            if(obra == null){
+                return res.status(403).send({msg:"Obra Inexistente"});
+            }
+            obra.userId = user.id;
             user.moeda = novoSaldo;
             user2.moeda += anuncio.valor;
             let contract = await new this.web3.eth.Contract(JSON.parse(contract_abi).abi,process.env.NFT_CONTRACT_ADDRESS); 
-            let account = this.web3.eth.accounts.transfer(process.env.PRIVATE_WALLET_KEY);
+            let account = this.web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_WALLET_KEY);
             let transaction = await contract.methods.transferFrom;
             let response = await transaction(process.env.STORE_WALLET,req.user.publicAddress,obraId).send({from:account.address,gas:200000});
             await anuncio.destroy();
-         
+            await obra.save()
+            await user.save()
+            await user2.save()
+            res.status(200).send({msg:"Transação realizada com sucesso"});
         }catch(e){
+            console.log(e)
             res.status(500).send({msg:"Erro interno no sistema"});
         }
     }

@@ -36,7 +36,11 @@ export default class Usuario{
                 localStorage.setItem('userId',decoded.id)
                 localStorage.setItem('nome',decoded.name)
                 let saldo = await Request.getRequest("/getSaldo")
-                localStorage.setItem('saldo',saldo.data.balance)
+                if(saldo.data.balance!=null){
+                    localStorage.setItem('saldo',saldo.data.balance)
+                }else{
+                    localStorage.setItem('saldo',0)
+                }
                 return true;
             }
 

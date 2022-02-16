@@ -87,7 +87,7 @@ const routes = [
     component: CriarAnuncio,
   },
   {
-    path: '/editaranuncio"/:id',
+    path: '/editaranuncio/:id',
     component: EditarAnuncio,
   },
 ]

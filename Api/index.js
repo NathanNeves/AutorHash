@@ -52,6 +52,7 @@ function verifyJWT(req, res, next){
 
 let nftStorage = new NFTStorage({token:process.env.NFT_STORAGE_API_KEY,endpoint:"https://api.nft.storage"});
 let store = new Store(nftStorage,web3);
+let adController = new AdController(nftStorage,web3);
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());
@@ -64,9 +65,10 @@ app.get("/api/getObra",verifyJWT,ObraController.getObra);
 app.post('/api/buy',verifyJWT,store.buyAutorCoins);
 app.get('/api/getAnuncio',verifyJWT,LojaController.getSingleAd);
 app.get('/api/getAnuncios',verifyJWT,LojaController.listAds);
-app.post('/api/deletarAnuncio',verifyJWT,AdController.deleteAd);
-app.post('/api/criarAnuncio',verifyJWT,AdController.createAd);
-app.post('/api/editarAnuncio',verifyJWT,AdController.editAd);
+app.post('/api/deletarAnuncio',verifyJWT,adController.deleteAd);
+app.post('/api/criarAnuncio',verifyJWT,adController.createAd);
+app.post('/api/editarAnuncio',verifyJWT,adController.editAd);
+app.post('/api/buyObra',verifyJWT,store.buy);
 app.get('/api/getSaldo',verifyJWT,UserController.getUserBalance);
 
 

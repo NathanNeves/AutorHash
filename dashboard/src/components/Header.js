@@ -90,7 +90,7 @@ function Header() {
           <li className="relative">
             <button
               className="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
-              onClick={() => alert('Log out!')}
+              onClick={() => {history.push("/login")}}
               aria-label="Account"
               aria-haspopup="true"
             >
