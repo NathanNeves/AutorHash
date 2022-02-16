@@ -15,25 +15,38 @@ import { Input, HelperText, Label, Select, Textarea, Button, Modal, ModalHeader,
   import { useHistory } from 'react-router-dom'
 import { MailIcon } from '../icons'
 import { CheckIcon } from '../icons'
+import styled from 'styled-components';
+import Request from '../Classes/Request'
 
 function CriarAnuncio() {
 
   const [page, setPage] = useState(1)
-  const [data, setData] = useState([])
+  const [obras, setObras] = useState([])
+  const [totalResults, setTotalResults] = useState(0)
   const history = useHistory();
 
   const resultsPerPage = 5
-  const totalResults = response.length
+
+  const Hext = styled.p`
+	
+{
+  overflow: hidden;
+  width: 39vw;
+  text-overflow: ellipsis;
+}
+`
 
   function onPageChange(p) {
     setPage(p)
   }
 
-
-
   useEffect(() => {
-    setData(response.slice((page - 1) * resultsPerPage, page * resultsPerPage))
-  }, [page])
+
+    Request.getRequest("/listObras?size=500&page=0").then(res => {
+      setObras(res.data.obras.slice((page - 1) * resultsPerPage, page * resultsPerPage))
+      setTotalResults(res.data.obras.length)})
+    }, [page]
+  );
 
     const [isModalOpen, setIsModalOpen] = useState(false)
   
@@ -72,17 +85,19 @@ function CriarAnuncio() {
             </tr>
           </TableHeader>
           <TableBody>
-            {data.map((user, i) => (
+            {obras.map((obra, i) => (
               <TableRow key={i}>
-                <TableCell>
+                <TableCell> 
                   <div className="flex items-center text-sm">
                     <div>
-                      <p className="font-semibold">{user.name}</p>
-                      <p className="text-xs text-gray-600 dark:text-gray-400">{user.job}</p>
+                      <p className="font-semibold">{obra.name}</p>
                     </div>
                   </div>
-                </TableCell>
-                
+                  </TableCell>
+                <TableCell><Hext>
+                  <span className="text-sm" >{obra.description}</span>
+                  </Hext>
+                  </TableCell>          
                 
                 <TableCell>
                   
@@ -95,7 +110,7 @@ function CriarAnuncio() {
 
                 </TableCell>
                 <TableCell>
-                  <span className="text-sm">{new Date(user.date).toLocaleDateString()}</span>
+                  <span className="text-sm">{new Date(obra.createdAt).toLocaleDateString()}</span>
                 </TableCell>
               </TableRow>
             ))}
