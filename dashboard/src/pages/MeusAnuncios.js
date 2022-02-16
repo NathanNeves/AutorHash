@@ -64,7 +64,7 @@ function MeusAnuncios() {
 
       <div className="flex">
       
-      <Card style={{width: "100%"}} className="mb-6">
+     {/* <Card style={{width: "100%"}} className="mb-6">
       
             <CardBody>
             <SectionTitle>Filtro:</SectionTitle>
@@ -97,7 +97,7 @@ function MeusAnuncios() {
 
             </div>
             </CardBody>
-          </Card>
+          </Card>*/}
 
       </div>
 

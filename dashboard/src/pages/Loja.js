@@ -58,7 +58,7 @@ function Loja() {
       <PageTitle>Loja</PageTitle>
 
       <div className="flex">
-      
+    {/*
       <Card style={{width: "100%"}} className="mb-6">
       
             <CardBody>
@@ -94,14 +94,14 @@ function Loja() {
           </div>
 
             </div>
-            <Button onClick={redirect}>Criar Anúncio</Button>
+            
             </div>
             
             </CardBody>
-          </Card>
+          </Card>*/}
 
-      </div>
-
+      </div> 
+      <Button onClick={redirect} className="mb-5 mt-5">Criar Anúncio</Button>
       <SectionTitle>Anúncios</SectionTitle>
       <div className="grid gap-6 mb-8 md:grid-cols-3">
       {data.map((anuncio, i) => (        

@@ -38,8 +38,9 @@ function AnuncioInfo() {
   return (
     <>
       <PageTitle>Anúncio</PageTitle>
-      <div className="mb-4 mt-2">
-      <Button size="larger">Editar Anúncio</Button>
+      <div className="flex mb-4 mt-2">
+      <Button size="larger" className="mr-5">Editar Anúncio</Button>
+      <Button size="larger" style={{background: "#d11a2a"}} >Excluir Anúncio</Button>
       </div>
       <div>
       <Card style={{width: "100%"}} className="mb-6">

@@ -136,10 +136,10 @@ const Hext = styled.p`
       <div className="grid gap-6 mt-8 md:grid-cols-1">
       
       <TableContainer className="mb-2">
-      <SectionTitle>Minhas Obras</SectionTitle>
+      {/* <SectionTitle>Minhas Obras</SectionTitle>
         <Card style={{width: "100%"}} className="mb-2">
       
-      <CardBody>
+        <CardBody>
       <SectionTitle>Filtro:</SectionTitle>
       <div className="flex direction-row">
        
@@ -159,7 +159,7 @@ const Hext = styled.p`
 
       </div>
       </CardBody>
-    </Card>
+    </Card> */}
 
 
         <Table>
