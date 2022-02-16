@@ -53,7 +53,7 @@ const redirect = ()=> {
 
   useEffect(() => {
 
-    Request.getRequest("/getAnuncios?size=500&page=0&my=0").then(res =>{
+    Request.getRequest("/getAnuncios?size=500&page=0&my=1").then(res =>{
       setData(res.data.Anuncios.slice((page - 1) * resultsPerPage, page * resultsPerPage))
       setTotalResults(res.data.Anuncios.length)
     })

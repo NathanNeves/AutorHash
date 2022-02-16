@@ -12,6 +12,7 @@ function AnuncioInfo() {
   const [anuncio, setAnuncio] = useState({})
   const [obra, setObra] = useState({})
   const [aux, setAux] = useState(0)
+  const [isMine,setIsMine] = useState(false)
 
 
   const {id} = useParams()
@@ -25,6 +26,12 @@ function AnuncioInfo() {
     }
 
     useEffect(() => {
+
+      if(localStorage.getItem("userId") == obra.userId){
+        setIsMine(true)
+      }else{
+        setIsMine(false)
+      }
       
       if(aux==0){
         Request.getRequest("/getAnuncio?anuncioId="+id).then(res => {
@@ -39,8 +46,15 @@ function AnuncioInfo() {
     <>
       <PageTitle>Anúncio</PageTitle>
       <div className="flex mb-4 mt-2">
-      <Button size="larger" className="mr-5">Editar Anúncio</Button>
-      <Button size="larger" style={{background: "#d11a2a"}} >Excluir Anúncio</Button>
+        {isMine ?
+        <Button size="larger" className="mr-5">Editar Anúncio</Button>:
+        <></>
+        }
+        {isMine ?
+        <Button size="larger" style={{background: "#d11a2a"}} >Excluir Anúncio</Button>
+        :
+        <></>
+      }
       </div>
       <div>
       <Card style={{width: "100%"}} className="mb-6">
@@ -57,7 +71,11 @@ function AnuncioInfo() {
             <p className=" text-gray-600 dark:text-gray-400">{new Date(obra.createdAt).toLocaleDateString()}</p>
             </div>
             </div>
+            {!isMine ?
             <Button onClick={()=>{openModal()}}>Comprar Obra</Button>
+            :
+            <></>
+            }
             </div>
             </CardBody>
           </Card>

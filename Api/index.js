@@ -64,9 +64,9 @@ app.get("/api/getObra",verifyJWT,ObraController.getObra);
 app.post('/api/buy',verifyJWT,store.buyAutorCoins);
 app.get('/api/getAnuncio',verifyJWT,LojaController.getSingleAd);
 app.get('/api/getAnuncios',verifyJWT,LojaController.listAds);
-app.delete('/api/deletarAnuncio',verifyJWT,AdController.deleteAd);
+app.post('/api/deletarAnuncio',verifyJWT,AdController.deleteAd);
 app.post('/api/criarAnuncio',verifyJWT,AdController.createAd);
-app.put('/api/editarAnuncio',verifyJWT,AdController.editAd);
+app.post('/api/editarAnuncio',verifyJWT,AdController.editAd);
 app.get('/api/getSaldo',verifyJWT,UserController.getUserBalance);
 
 
