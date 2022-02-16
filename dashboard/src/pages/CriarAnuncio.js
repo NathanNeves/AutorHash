@@ -22,17 +22,13 @@ function CriarAnuncio() {
   const [data, setData] = useState([])
   const history = useHistory();
 
-  // pagination setup
   const resultsPerPage = 5
   const totalResults = response.length
 
-  // pagination change control
   function onPageChange(p) {
     setPage(p)
   }
 
-  // on page change, load new sliced data
-  // here you would make another server request for new data
 
 
   useEffect(() => {
@@ -74,7 +70,7 @@ function CriarAnuncio() {
             <tr>
               <TableCell>Obra</TableCell>
               
-              <TableCell>Anúnciar</TableCell>
+              <TableCell>Anunciar</TableCell>
               <TableCell>Data de Registro</TableCell>
             </tr>
           </TableHeader>
