@@ -3,7 +3,7 @@ import { SearchIcon } from '../icons'
 import PageTitle from '../components/Typography/PageTitle'
 import SectionTitle from '../components/Typography/SectionTitle'
 import { useHistory } from 'react-router-dom'
-
+import styled from 'styled-components';
 import {
   Table,
   TableHeader,
@@ -25,6 +25,17 @@ import Request from '../Classes/Request'
 
 function MeusAnuncios() {
  
+  const HoverText = styled.p`
+	
+	:hover {
+		cursor: pointer;
+	}
+`
+
+const redirect = ()=> {
+  history.push("/app/criaranuncio")
+}
+
   const [page, setPage] = useState(1)
   const [data, setData] = useState([])
   const [totalResults, setTotalResults] = useState(0)
@@ -92,6 +103,9 @@ function MeusAnuncios() {
       </div>
 
       <SectionTitle>Anúncios</SectionTitle>
+
+      <Button onClick={redirect} className="mb-5">Criar Anúncio</Button>
+
       <TableContainer className="mb-8">
         <Table>
           <TableHeader>
@@ -104,19 +118,19 @@ function MeusAnuncios() {
           <TableBody>
             {data.map((anuncio, i) => (
               <TableRow key={i} onClick={()=>{redirectAnuncio(anuncio.id)}}>
-                <TableCell>
+                <TableCell><HoverText>
                   <div className="flex items-center text-sm">
                     <div>
                       <p className="font-semibold">{anuncio.obra.name}</p>
                     </div>
                   </div>
-                </TableCell>
-                <TableCell>
+                  </HoverText></TableCell>
+                <TableCell><HoverText>
                   <span className="text-sm">AUT$ {anuncio.valor}</span>
-                </TableCell>
-                <TableCell>
+                  </HoverText></TableCell>
+                <TableCell><HoverText>
                   <span className="text-sm">{new Date(anuncio.createdAt).toLocaleDateString()}</span>
-                </TableCell>
+                  </HoverText></TableCell>
               </TableRow>
             ))}
           </TableBody>
