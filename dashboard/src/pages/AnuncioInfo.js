@@ -9,6 +9,7 @@ import logo from "../icons/AutorCoin.png"
 
 function AnuncioInfo() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen2, setIsModalOpen2] = useState(false)
   const [anuncio, setAnuncio] = useState({})
   const [obra, setObra] = useState({})
   const [aux, setAux] = useState(0)
@@ -21,6 +22,14 @@ function AnuncioInfo() {
     }
   
     function closeModal() {
+      setIsModalOpen(false)
+    }
+
+    function openModal2() {
+      setIsModalOpen(true)
+    }
+  
+    function closeModal2() {
       setIsModalOpen(false)
     }
 
@@ -40,7 +49,7 @@ function AnuncioInfo() {
       <PageTitle>Anúncio</PageTitle>
       <div className="flex mb-4 mt-2">
       <Button size="larger" className="mr-5">Editar Anúncio</Button>
-      <Button size="larger" style={{background: "#d11a2a"}} >Excluir Anúncio</Button>
+      <Button size="larger" style={{background: "#d11a2a"}} onClick={()=>{openModal2()}}>Excluir Anúncio</Button>
       </div>
       <div>
       <Card style={{width: "100%"}} className="mb-6">
@@ -63,8 +72,30 @@ function AnuncioInfo() {
           </Card>
           </div>
 
+          <Modal isOpen={isModalOpen2} onClose={()=>{closeModal2()}}>
+        <ModalHeader>Deseja excluir o anúncio?</ModalHeader>
+        <ModalBody>
+        
+        <b >LEMBRE-SE!</b><br />
+        <p>Remover o anúncio não irá excluir a sua Obra.</p>
+          
+        </ModalBody>
+        <ModalFooter>
+          
+          <div className="hidden sm:block">
+            <Button layout="outline" onClick={()=>{closeModal2()}}>
+              Cancelar
+            </Button>
+          </div>
+          <div className="hidden sm:block">
+            <Button>Confirmar</Button>
+          </div>
+          
+        </ModalFooter>
+      </Modal>
+
           <Modal isOpen={isModalOpen} onClose={()=>{closeModal()}}>
-        <ModalHeader>Confirmar o Registro</ModalHeader>
+        <ModalHeader>Confirmar a Compra</ModalHeader>
         <ModalBody>
         <div className="flex">
         <b className="mb-2 mr-1 text-gray-600 dark:text-gray-400">Anúncio:</b> 
@@ -81,7 +112,7 @@ function AnuncioInfo() {
             </div>
         
         <b >LEMBRE-SE!</b><br />
-        <p>Confira as informações inseridas nos campos. Caso estejam corretas clique em continuar</p>
+        <p>Confira as informações nos campos. Caso estejam corretas clique em continuar</p>
           
         </ModalBody>
         <ModalFooter>
