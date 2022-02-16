@@ -74,7 +74,7 @@ function CriarAnuncio() {
             <tr>
               <TableCell>Obra</TableCell>
               
-              <TableCell>Anúnciar</TableCell>
+              <TableCell>Anunciar</TableCell>
               <TableCell>Data de Registro</TableCell>
             </tr>
           </TableHeader>
