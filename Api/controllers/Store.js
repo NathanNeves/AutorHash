@@ -58,7 +58,7 @@ class Store{
             res.status(200).send({msg:"Transação realizada com sucesso"});
         }catch(e){
             console.log(e);
-            res.status(200).send({mensagem:"Erro interno no sistema"});
+            res.status(500).send({mensagem:"Erro interno no sistema"});
         }
     }
 }
