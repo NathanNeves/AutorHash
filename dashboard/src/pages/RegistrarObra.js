@@ -91,7 +91,7 @@ function RegistrarObra() {
         <Modal isOpen={isModalOpen} onClose={closeModal}>
         <ModalHeader>Confirmar o Registro</ModalHeader>
         <ModalBody>
-        <p>O registro de sua obra irá custar um total de 0.11111 AutorCoins</p><br />
+        <p>O registro de sua obra irá custar um total de AUT$ 2</p><br />
         <b >LEMBRE-SE!</b><br />
         <p>Confira as informações inseridas nos campos. Caso estejam corretas clique em continuar</p>
           
