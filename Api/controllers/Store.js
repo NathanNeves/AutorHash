@@ -42,22 +42,26 @@ class Store{
 
 
     buyAutorCoins = async (req,res) => {
+        let numeroGrande = 1000000000000000000
         console.log("cheguei aqui")
         try{
             let {transactionHash} = req.body;
+            console.log(transactionHash)
             let transacao =  await Transacao.findOne({where:{transactionHash}});
             let transactionInfo = await this.web3.eth.getTransactionReceipt(transactionHash);
             let transactionValue = await this.web3.eth.getTransaction(transactionHash);
             transactionValue = transactionValue.value
             if(transacao !== null){
+                console.log("sera?")
                 return res.status(403).send({msg:"Transacao invalida"});
             }
             
-            if(transactionInfo.from !== req.user.publicAddress || transactionInfo.to  !== process.env.STORE_WALLET || transactionInfo.status == false || transactionValue > 0  ){ 
+            if(transactionInfo.from !== req.user.publicAddress || transactionInfo.to  !== process.env.STORE_WALLET.toLowerCase() || transactionInfo.status == false || transactionValue <= 0  ){ 
                 return res.status(403).send({msg:"Transação invalida"});
             }
             let user = await User.findByPk(req.user.id);
-            user.moeda = transactionValue*950;
+            user.moeda += (transactionValue/numeroGrande)*950;
+            console.log("valor: "+user.moeda)
             await user.save();
             res.status(200).send({msg:"Transação realizada com sucesso"});
         }catch(e){

@@ -62,6 +62,7 @@ app.get("/api/getObra",verifyJWT,ObraController.getObra);
 app.post('/api/buy',verifyJWT,store.buyAutorCoins);
 app.get('/api/getAnuncio',verifyJWT,LojaController.getSingleAd);
 app.get('/api/getAnuncios',verifyJWT,LojaController.listAds);
+app.get('/api/getSaldo',verifyJWT,UserController.getUserBalance);
 
 
 app.listen(8000,()=>{

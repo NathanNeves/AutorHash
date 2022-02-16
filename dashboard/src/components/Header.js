@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { SidebarContext } from '../context/SidebarContext'
 import {
   SearchIcon,
@@ -20,6 +20,7 @@ function Header() {
 
   const [isNotificationsMenuOpen, setIsNotificationsMenuOpen] = useState(false)
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
+  const [saldo, setSaldo] = useState(0.000)
 
   function handleNotificationsClick() {
     setIsNotificationsMenuOpen(!isNotificationsMenuOpen)
@@ -32,6 +33,11 @@ function Header() {
   const redirect = ()=> {
     history.push("/app/comprarAutorcoin")
   }
+
+  useEffect(() => {
+    let saldoo = localStorage.getItem("saldo")
+    setSaldo(saldoo)
+  })
 
   return (
     <header className="z-40 py-4 bg-white shadow-bottom dark:bg-gray-800">
@@ -64,7 +70,7 @@ function Header() {
             <Button onClick={redirect}>Comprar AUT$</Button>
           </li>
           <li>
-            AUT$ 46.760,89
+            AUT$ {saldo}
           </li>
           {/* <!-- Theme toggler --> */}
           <li className="flex">

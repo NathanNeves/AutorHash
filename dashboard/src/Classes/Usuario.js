@@ -1,5 +1,6 @@
 import axios from './Axios';
 import jwt_decode from "jwt-decode";
+import Request from './Request';
 
 
 export default class Usuario{
@@ -33,7 +34,9 @@ export default class Usuario{
                 localStorage.setItem("token",response.token);
                 localStorage.setItem('refreshToken',response.refreshToken)
                 localStorage.setItem('userId',decoded.id)
-                localStorage.setItem('nome',decoded.nome)
+                localStorage.setItem('nome',decoded.name)
+                let saldo = await Request.getRequest("/getSaldo")
+                localStorage.setItem('saldo',saldo.data.balance)
                 return true;
             }
 
