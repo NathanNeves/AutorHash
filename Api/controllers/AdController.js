@@ -62,7 +62,7 @@ class AdController{
             let contract = await new this.web3.eth.Contract(JSON.parse(contract_abi).abi,process.env.NFT_CONTRACT_ADDRESS); 
             let account = this.web3.eth.accounts.transfer(process.env.PRIVATE_WALLET_KEY);
             let transaction = await contract.methods.transferFrom;
-            let response = await transaction(process.env.STORE_WALLET,req.user.publicAddress).send({from:account.address,gas:200000});
+            let response = await transaction(process.env.STORE_WALLET,req.user.publicAddress,nftId).send({from:account.address,gas:200000});
             let anuncio = await Anuncio.findOne({where:{obraId:nftId}});
             if(anuncio == null){
                 return res.status(403).send({msg:"NFT não existente em nenhum anuncio"});
