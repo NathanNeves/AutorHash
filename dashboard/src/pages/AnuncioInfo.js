@@ -38,8 +38,9 @@ function AnuncioInfo() {
   return (
     <>
       <PageTitle>Anúncio</PageTitle>
-      <div className="mb-4 mt-2">
-      <Button size="larger">Editar Anúncio</Button>
+      <div className="flex mb-4 mt-2">
+      <Button size="larger" className="mr-5">Editar Anúncio</Button>
+      <Button size="larger" style={{background: "#d11a2a"}} >Excluir Anúncio</Button>
       </div>
       <div>
       <Card style={{width: "100%"}} className="mb-6">
@@ -53,7 +54,7 @@ function AnuncioInfo() {
             </div>
             <div className="flex">
             <p className="mb-3 mr-1 text-gray-600 dark:text-gray-400">Criado em:</p> 
-            <p className="mb-1 text-gray-600 dark:text-gray-400">{new Date(obra.createdAt).toLocaleDateString()}</p>
+            <p className=" text-gray-600 dark:text-gray-400">{new Date(obra.createdAt).toLocaleDateString()}</p>
             </div>
             </div>
             <Button onClick={()=>{openModal()}}>Comprar Obra</Button>
@@ -78,14 +79,7 @@ function AnuncioInfo() {
             <b className="mb-3 mr-1 text-gray-600 dark:text-gray-400">Criado em:</b> 
             <p className="mb-3 text-gray-600 dark:text-gray-400">{new Date(obra.createdAt).toLocaleDateString()}</p>
             </div>
-        <div className="flex">
-            
-            
-            <b className="mb-3 mr-1 text-gray-600 dark:text-gray-400">Obra:</b> 
-            <p className="mb-3 text-gray-600 dark:text-gray-400">{obra.name}</p>
-            
-            
-            </div>
+        
         <b >LEMBRE-SE!</b><br />
         <p>Confira as informações inseridas nos campos. Caso estejam corretas clique em continuar</p>
           

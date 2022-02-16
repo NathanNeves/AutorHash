@@ -22,17 +22,13 @@ function CriarAnuncio() {
   const [data, setData] = useState([])
   const history = useHistory();
 
-  // pagination setup
   const resultsPerPage = 5
   const totalResults = response.length
 
-  // pagination change control
   function onPageChange(p) {
     setPage(p)
   }
 
-  // on page change, load new sliced data
-  // here you would make another server request for new data
 
 
   useEffect(() => {
@@ -54,10 +50,7 @@ function CriarAnuncio() {
       <PageTitle>Criar Anúncio</PageTitle>
 
       <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <Label>
-          <span>Anúncio</span>
-          <Input className="mt-1" placeholder="Nome do Anúncio"/>
-        </Label>
+        
 
         
 
@@ -74,7 +67,7 @@ function CriarAnuncio() {
             <tr>
               <TableCell>Obra</TableCell>
               
-              <TableCell>Anúnciar</TableCell>
+              <TableCell>Anunciar</TableCell>
               <TableCell>Data de Registro</TableCell>
             </tr>
           </TableHeader>
@@ -127,21 +120,14 @@ function CriarAnuncio() {
         <ModalHeader>Confirmar Anúncio</ModalHeader>
         <ModalBody>
         <div className="flex">
-        <b className="mb-2 mr-1 text-gray-600 dark:text-gray-400">Anúncio:</b> 
-            <p className="mb-2 text-gray-600 dark:text-gray-400">Nome do Anúncio</p>
+            <b className="mb-3 mr-1 text-gray-600 dark:text-gray-400">Obra:</b> 
+            <p className="mb-3 text-gray-600 dark:text-gray-400">Título da Obra</p>
             </div>
         <div className="flex">
         <b className="mb-2 mr-1 text-gray-600 dark:text-gray-400">Valor:</b> 
             <p className="mb-2 text-gray-600 dark:text-gray-400">0 AUT$</p>
             </div>
-        <div className="flex">
-            
-            
-            <b className="mb-3 mr-1 text-gray-600 dark:text-gray-400">Obra:</b> 
-            <p className="mb-3 text-gray-600 dark:text-gray-400">Título da Obra</p>
-            
-            
-            </div>
+        
         <b >LEMBRE-SE!</b><br />
         <p>Confira as informações de anúncio acima. Caso estejam corretas clique em continuar</p>
           

@@ -30,13 +30,11 @@ function Loja() {
 	}
 `
 
-  // pagination setup
-  const resultsPerPage = 10
+  const resultsPerPage = 9
   const [totalResults, setTotalResults] = useState(0)
   const [page,setPage] = useState(0)
   const [data,setData] = useState([])
 
-  // pagination change control
   function onPageChange(p) {
     setPage(p)
   }
@@ -45,12 +43,9 @@ function Loja() {
     history.push("/app/anuncio/"+anuncioID)
   }
 
-
-  // on page change, load new sliced data
-  // here you would make another server request for new data
   useEffect(() => {
 
-    Request.getRequest("/getAnuncios?size=500&page=0&my=false").then(res =>{
+    Request.getRequest("/getAnuncios?size=500&page=0&my=0").then(res =>{
       setData(res.data.Anuncios.slice((page - 1) * resultsPerPage, page * resultsPerPage))
       setTotalResults(res.data.Anuncios.length)
     })
@@ -63,7 +58,7 @@ function Loja() {
       <PageTitle>Loja</PageTitle>
 
       <div className="flex">
-      
+    {/*
       <Card style={{width: "100%"}} className="mb-6">
       
             <CardBody>
@@ -99,14 +94,14 @@ function Loja() {
           </div>
 
             </div>
-            <Button onClick={redirect}>Criar Anúncio</Button>
+            
             </div>
             
             </CardBody>
-          </Card>
+          </Card>*/}
 
-      </div>
-
+      </div> 
+      <Button onClick={redirect} className="mb-5 mt-5">Criar Anúncio</Button>
       <SectionTitle>Anúncios</SectionTitle>
       <div className="grid gap-6 mb-8 md:grid-cols-3">
       {data.map((anuncio, i) => (        

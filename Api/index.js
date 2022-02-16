@@ -67,6 +67,7 @@ app.get('/api/getAnuncios',verifyJWT,LojaController.listAds);
 app.delete('/api/deletarAnuncio',verifyJWT,AdController.deleteAd);
 app.post('/api/criarAnuncio',verifyJWT,AdController.createAd);
 app.put('/api/editarAnuncio',verifyJWT,AdController.editAd);
+app.get('/api/getSaldo',verifyJWT,UserController.getUserBalance);
 
 
 app.listen(8000,()=>{

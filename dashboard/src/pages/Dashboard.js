@@ -39,17 +39,13 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components';
 
 
-
- 
-       
-  
-
-
 function Dashboard() {
   const [page, setPage] = useState(1)
   const [nome, setNome] = useState("")
   const [obras, setObras] = useState([])
   const [totalResults, setTotalResults] = useState(0)
+  const [totalResults1, setTotalResults1] = useState(0)
+  const [saldo, setSaldo] = useState(0.000)
   const history = useHistory();
 
   const HoverText = styled.p`
@@ -68,11 +64,9 @@ const Hext = styled.p`
 }
 `
 
-  // pagination setup
   const resultsPerPage = 5
 
 
-  // pagination change control
   function onPageChange(p) {
     setPage(p)
   }
@@ -85,8 +79,6 @@ const Hext = styled.p`
     history.push("/app/obra/"+obraID)
   }
 
-  // on page change, load new sliced data
-  // here you would make another server request for new data
   
   useEffect(() => {
 
@@ -94,6 +86,10 @@ const Hext = styled.p`
       setObras(res.data.obras.slice((page - 1) * resultsPerPage, page * resultsPerPage))
       setTotalResults(res.data.obras.length)
     })
+    Request.getRequest("/getAnuncios?size=500&page=0&my=1").then(res =>{
+      setTotalResults1(res.data.Anuncios.length)
+    })
+    setSaldo(localStorage.getItem("saldo"))
     setNome(localStorage.getItem("nome"))
   }, [page])
 
@@ -101,9 +97,9 @@ const Hext = styled.p`
     <>
       <PageTitle>Meu Painel</PageTitle>
       <SectionTitle>Olá, {nome}</SectionTitle>
-      {/* <!-- Cards --> */}
+
       <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3">
-        <InfoCard title="Obras Registradas" value="12">
+        <InfoCard title="Obras Registradas" value={totalResults}>
           <RoundIcon
             icon={MuseuIcon}
             iconColorClass="text-orange-500 dark:text-orange-100"
@@ -112,7 +108,7 @@ const Hext = styled.p`
           />
         </InfoCard>
 
-        <InfoCard title="Total de AutorCoins" value="46.760,89">
+        <InfoCard title="Total de AutorCoins" value={saldo}>
           <RoundIcon
             icon={MoneyIcon}
             iconColorClass="text-green-500 dark:text-green-100"
@@ -122,7 +118,7 @@ const Hext = styled.p`
 
         </InfoCard>
 
-        <InfoCard title="Total de Anúncios" value="376">
+        <InfoCard title="Total de Anúncios" value={totalResults1}>
           <RoundIcon
             icon={AnuncioIcon}
             iconColorClass="text-blue-500 dark:text-blue-100"
@@ -140,10 +136,10 @@ const Hext = styled.p`
       <div className="grid gap-6 mt-8 md:grid-cols-1">
       
       <TableContainer className="mb-2">
-      <SectionTitle>Minhas Obras</SectionTitle>
+      {/* <SectionTitle>Minhas Obras</SectionTitle>
         <Card style={{width: "100%"}} className="mb-2">
       
-      <CardBody>
+        <CardBody>
       <SectionTitle>Filtro:</SectionTitle>
       <div className="flex direction-row">
        
@@ -163,7 +159,7 @@ const Hext = styled.p`
 
       </div>
       </CardBody>
-    </Card>
+    </Card> */}
 
 
         <Table>
