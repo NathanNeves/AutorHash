@@ -77,9 +77,21 @@ class UserController{
 
         }catch(e){
             console.log(e);
-            return res.status(500).send({error:"Erro interno do sistema"});
+            return res.status(500).send({msg:"Erro interno do sistema"});
             
         }
+    }
+
+
+    static getUserBalance = async (req,res)  => {
+        try{
+            let user = await User.findByPk(req.user.id);
+            return res.status(200).send({balance:user.moeda});
+
+        }catch(e){
+            return res.status(500).send({msg:"Erro interno no sistema"});
+        }
+
     }
 
 
