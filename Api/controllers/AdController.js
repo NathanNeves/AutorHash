@@ -1,4 +1,5 @@
 const { Anuncio } = require("../models");
+const fs = require("fs");
 const contract_abi = fs.readFileSync('../blockchain/build/contracts/AutToken.json','utf-8');
 
 class AdController{

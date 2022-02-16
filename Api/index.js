@@ -16,7 +16,7 @@ let { NFTStorage, File } = require('nft.storage');
 const { application } = require('express');
 const LojaController = require('./controllers/LojaController');
 const AdController = require('./controllers/AdController');
-const 
+
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, './uploads')
