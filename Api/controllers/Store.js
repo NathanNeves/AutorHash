@@ -13,7 +13,12 @@ class Store{
     mint =  async(req,res) =>{
         try{
             let {name,description} = req.body;
-            
+            let user = await User.findOne(req.user.id);
+            if(user.moeda <= 0){
+                return res.status(403).send({msg:"Saldo insuficiente"});
+            }
+            user.moeda-= 2000;
+            await user.save();
             const {filename,mimetype,originalname} = req.file;
             const metadata = await this.client.store({
                 name,
@@ -22,12 +27,11 @@ class Store{
                   type: mimetype,
                 })
             });
-            
             let contract = await new this.web3.eth.Contract(JSON.parse(contract_abi).abi,process.env.NFT_CONTRACT_ADDRESS); 
             let account = this.web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_WALLET_KEY);
             let transaction = await contract.methods.authenticateDocument;
             let response = await transaction(req.user.publicAddress,metadata.url).send({from:account.address,gas:200000});
-            await Obra.create({name,description,image_url:metadata.url,userId:req.user.id,id:response.events.Transfer.returnValues.tokenId});
+            await Obra.create({name,description,image_url:metadata.data.image.href.replace('ipfs://','https://ipfs.io/ipfs/'),userId:req.user.id,id:response.events.Transfer.returnValues.tokenId});
             await fs.promises.rm('./uploads/'+filename)
             return res.status(200).send({msg:response});
         }catch(e){
@@ -58,7 +62,7 @@ class Store{
             res.status(200).send({msg:"Transação realizada com sucesso"});
         }catch(e){
             console.log(e);
-            res.status(200).send({mensagem:"Erro interno no sistema"});
+            res.status(500).send({msg:"Erro interno no sistema"});
         }
     }
 }

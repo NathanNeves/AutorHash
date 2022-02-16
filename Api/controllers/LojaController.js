@@ -4,7 +4,7 @@ class LojaController{
 
     static listAds = async(req,res) =>{
             try{
-                let {price,page,name,description,data_inicio,data_fim,size,my} = req.query;
+                let {greatPrice,minorPrice,page,name,description,data_inicio,data_fim,size,my} = req.query;
                 let where = {
                 }
 
