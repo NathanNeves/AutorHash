@@ -30,13 +30,11 @@ function Loja() {
 	}
 `
 
-  // pagination setup
   const resultsPerPage = 10
   const [totalResults, setTotalResults] = useState(0)
   const [page,setPage] = useState(0)
   const [data,setData] = useState([])
 
-  // pagination change control
   function onPageChange(p) {
     setPage(p)
   }
@@ -45,9 +43,6 @@ function Loja() {
     history.push("/app/anuncio/"+anuncioID)
   }
 
-
-  // on page change, load new sliced data
-  // here you would make another server request for new data
   useEffect(() => {
 
     Request.getRequest("/getAnuncios?size=500&page=0&my=false").then(res =>{

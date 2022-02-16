@@ -39,12 +39,6 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components';
 
 
-
- 
-       
-  
-
-
 function Dashboard() {
   const [page, setPage] = useState(1)
   const [nome, setNome] = useState("")
@@ -68,11 +62,9 @@ const Hext = styled.p`
 }
 `
 
-  // pagination setup
   const resultsPerPage = 5
 
 
-  // pagination change control
   function onPageChange(p) {
     setPage(p)
   }
@@ -85,8 +77,6 @@ const Hext = styled.p`
     history.push("/app/obra/"+obraID)
   }
 
-  // on page change, load new sliced data
-  // here you would make another server request for new data
   
   useEffect(() => {
 
@@ -101,7 +91,7 @@ const Hext = styled.p`
     <>
       <PageTitle>Meu Painel</PageTitle>
       <SectionTitle>Olá, {nome}</SectionTitle>
-      {/* <!-- Cards --> */}
+
       <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3">
         <InfoCard title="Obras Registradas" value="12">
           <RoundIcon

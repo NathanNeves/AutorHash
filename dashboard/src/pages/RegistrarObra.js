@@ -72,10 +72,7 @@ function RegistrarObra() {
           <Input onChange={e => setName(e.target.value)} value={name} className="mt-1" placeholder="Título da Obra"/>
         </Label>
 
-        {/* <Label className="mt-2">
-          <span>Nome do Autor</span>
-          <Input className="mt-1" placeholder="Nome do Autor e Co-Autores"/>
-        </Label> */}
+       
 
         <Label className="mt-3">
           <span>Descrição da Obra</span>
