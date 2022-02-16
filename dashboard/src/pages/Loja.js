@@ -30,7 +30,7 @@ function Loja() {
 	}
 `
 
-  const resultsPerPage = 10
+  const resultsPerPage = 9
   const [totalResults, setTotalResults] = useState(0)
   const [page,setPage] = useState(0)
   const [data,setData] = useState([])
