@@ -44,6 +44,8 @@ function Dashboard() {
   const [nome, setNome] = useState("")
   const [obras, setObras] = useState([])
   const [totalResults, setTotalResults] = useState(0)
+  const [totalResults1, setTotalResults1] = useState(0)
+  const [saldo, setSaldo] = useState(0.000)
   const history = useHistory();
 
   const HoverText = styled.p`
@@ -84,6 +86,10 @@ const Hext = styled.p`
       setObras(res.data.obras.slice((page - 1) * resultsPerPage, page * resultsPerPage))
       setTotalResults(res.data.obras.length)
     })
+    Request.getRequest("/getAnuncios?size=500&page=0&my=1").then(res =>{
+      setTotalResults1(res.data.Anuncios.length)
+    })
+    setSaldo(localStorage.getItem("saldo"))
     setNome(localStorage.getItem("nome"))
   }, [page])
 
@@ -93,7 +99,7 @@ const Hext = styled.p`
       <SectionTitle>Olá, {nome}</SectionTitle>
 
       <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3">
-        <InfoCard title="Obras Registradas" value="12">
+        <InfoCard title="Obras Registradas" value={totalResults}>
           <RoundIcon
             icon={MuseuIcon}
             iconColorClass="text-orange-500 dark:text-orange-100"
@@ -102,7 +108,7 @@ const Hext = styled.p`
           />
         </InfoCard>
 
-        <InfoCard title="Total de AutorCoins" value="46.760,89">
+        <InfoCard title="Total de AutorCoins" value={saldo}>
           <RoundIcon
             icon={MoneyIcon}
             iconColorClass="text-green-500 dark:text-green-100"
@@ -112,7 +118,7 @@ const Hext = styled.p`
 
         </InfoCard>
 
-        <InfoCard title="Total de Anúncios" value="376">
+        <InfoCard title="Total de Anúncios" value={totalResults1}>
           <RoundIcon
             icon={AnuncioIcon}
             iconColorClass="text-blue-500 dark:text-blue-100"

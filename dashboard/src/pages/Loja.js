@@ -45,7 +45,7 @@ function Loja() {
 
   useEffect(() => {
 
-    Request.getRequest("/getAnuncios?size=500&page=0&my=false").then(res =>{
+    Request.getRequest("/getAnuncios?size=500&page=0&my=0").then(res =>{
       setData(res.data.Anuncios.slice((page - 1) * resultsPerPage, page * resultsPerPage))
       setTotalResults(res.data.Anuncios.length)
     })

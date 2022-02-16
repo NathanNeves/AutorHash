@@ -27,7 +27,7 @@ class LojaController{
                 let whereAnuncio = {
                     status:true
                 };
-                if(my === true){
+                if(my==1){
                     whereAnuncio.userId = req.user.id;
                     delete whereAnuncio['status'];
                 }
