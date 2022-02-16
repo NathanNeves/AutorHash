@@ -1,5 +1,5 @@
 const User = require("../models/User");
-const { Obra,Transacao, Anuncio, User } = require("../models");
+const { Obra,Transacao, Anuncio} = require("../models");
 const fs = require('fs');
 let { File,Blob } = require('nft.storage');
 const contract_abi = fs.readFileSync('../blockchain/build/contracts/AutToken.json','utf-8');

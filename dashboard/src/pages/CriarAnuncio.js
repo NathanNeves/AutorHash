@@ -21,6 +21,7 @@ import Request from '../Classes/Request'
 function CriarAnuncio() {
 
   const [page, setPage] = useState(1)
+  const [valor, setValor] = useState(1)
   const [obras, setObras] = useState([])
   const [totalResults, setTotalResults] = useState(0)
   const history = useHistory();
@@ -63,13 +64,9 @@ function CriarAnuncio() {
       <PageTitle>Criar Anúncio</PageTitle>
 
       <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-        
-
-        
-
         <Label className="mt-3">
           <span>Valor:</span>
-          <Input type="number" className="mt-1" placeholder="" />
+          <Input type="number" className="mt-1" value={valor} onChange={e=>e.target.value} />
         </Label>
         
         <div className="px-4 py-3 mt-5 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
@@ -79,7 +76,6 @@ function CriarAnuncio() {
           <TableHeader>
             <tr>
               <TableCell>Obra</TableCell>
-              
               <TableCell>Anunciar</TableCell>
               <TableCell>Data de Registro</TableCell>
             </tr>
@@ -103,7 +99,6 @@ function CriarAnuncio() {
                   
                 <Label radio>
                   <div className="flex flex-justify-center ml-6">
-                    
                   <Input type="radio" size="larger" value="" name="Selecionar" />
                   </div>
                 </Label>
