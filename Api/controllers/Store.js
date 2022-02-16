@@ -13,7 +13,7 @@ class Store{
     mint =  async(req,res) =>{
         try{
             let {name,description} = req.body;
-            let user = await User.findOne(req.user.id);
+            let user = await User.findByPk(req.user.id);
             if(user.moeda <= 0){
                 return res.status(403).send({msg:"Saldo insuficiente"});
             }
